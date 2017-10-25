@@ -26,6 +26,14 @@
                     <form id="my-register-form">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="alert alert-danger alert-cont login_error" style="display: none;">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <p id="error-message">Alert body ...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="alert alert-danger alert-cont reg_error" style="display: none;">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                     <span class="glyphicon glyphicon-info-sign"></span> <span id="error-message" class="message"></span>

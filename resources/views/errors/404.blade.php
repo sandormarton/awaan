@@ -25,7 +25,12 @@
     <link rel="stylesheet" type="text/css" href="{{asset("/css/select2.min.css")}}" />
     <link rel="stylesheet" type="text/css" href="{{asset("/css/loader.css")}}" />
     <link rel="stylesheet" type="text/css" href="{{asset("/css/template.css")}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset("/css/main.css")}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset("/css/main.css")}}?v=12" />
+
+
+
+
+
 
 
     @if(Session::get('lang') == 'en')
@@ -115,6 +120,7 @@
                             <h4>Sorry - Page Not Found!</h4>
                             <p>The page you are looking for was moved, removed, renamed or might never existed. <br>
                                 You stumbled upon a broken link :(</p>
+                            <a href="http://awaan.ae"><div class="btn btn-back-home">Back To Home</div></a>
                         </div>
 
                     </article>
@@ -123,7 +129,6 @@
                         <ul class="footer-sm-ul">
                             <li><a target="_blank" title="Facebook" href="https://www.facebook.com/OnAwaan/"><img src="{{ asset("images/icon-sm-facebook.png")}} " alt="Facebook"></a></li>
                             <li><a target="_blank" title="Twitter" href="https://twitter.com/OnAwaan"><img src="{{ asset("images/icon-sm-twitter.png")}}" alt="Twitter"></a></li>
-                            <li><a target="_blank" title="Youtube" href="#"><img src="{{ asset("images/icon-sm-youtube.png")}}" alt="Youtube"></a></li>
                         </ul>
 
                     </footer>

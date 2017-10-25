@@ -67,7 +67,7 @@ foreach($content->seasons as $id=>$item){
 
     <!--  SHOWS CAROUSEL SECTION	[START]	-->
     <div class="showpage-banner-wrapper">
-        <div class="container">
+        <div class="container custom-margin-bottom-inverse">
             <div class="image-section">
                 <div class="banner-content" style="background-image: url({{$shadow_image}}),url({{$cover}})">
 
@@ -182,35 +182,38 @@ foreach($content->seasons as $id=>$item){
                                     {{--<a href="#" class="add-to-my-list">أضف إلى قائمتي</a>--}}
 
                                 </div>
-                                @if(isset($content->seasons) && !empty($content->seasons) && is_array($content->seasons)  && sizeof($content->seasons) > 1)
-                                    <div class="dropdown-section">
-                                        <select class="form-control showpage-dropdown" id="season-selector">
-                                            <?php
 
-                                                if(isset($content->seasons) && !empty($content->seasons) && is_array($content->seasons)){
-                                                    foreach ($content->seasons as $season){
-                                                        if(Session::get('lang') == 'en'){
-                                                            $season_title = $season->title_en;
-                                                        }else{
-                                                            $season_title = $season->title_ar;
-                                                        }
-                                                        $season_url = URL::to("show/".Request::segment(2) ."/".\App\Helpers\Functions::cleanurl($season_title)."/".$season->id);
-                                                        if( !empty(Request::segment(4)) and Request::segment(4) == $season->id){
-                                                            echo '<option value="'.$season->id.'" data-url="'. $season_url.'" selected>'.$season_title.'</option>';
-                                                        }else{
-                                                            echo '<option value="'.$season->id.'" data-url="'.$season_url.'" >'.$season_title.'</option>';
-                                                        }
-
-                                                    }
-                                                }
-                                            ?>
-                                        </select>
-                                    </div>
-                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
+                @if(isset($content->seasons) && !empty($content->seasons) && is_array($content->seasons)  && sizeof($content->seasons) > 1)
+                    <div class='col-md-2 col-sm-4  drop-season-custom'>
+                    <div class="dropdown-section">
+                        <select class="form-control showpage-dropdown" id="season-selector">
+                            <?php
+
+                            if(isset($content->seasons) && !empty($content->seasons) && is_array($content->seasons)){
+                                foreach ($content->seasons as $season){
+                                    if(Session::get('lang') == 'en'){
+                                        $season_title = $season->title_en;
+                                    }else{
+                                        $season_title = $season->title_ar;
+                                    }
+                                    $season_url = URL::to("show/".Request::segment(2) ."/".\App\Helpers\Functions::cleanurl($season_title)."/".$season->id);
+                                    if( !empty(Request::segment(4)) and Request::segment(4) == $season->id){
+                                        echo '<option value="'.$season->id.'" data-url="'. $season_url.'" selected>'.$season_title.'</option>';
+                                    }else{
+                                        echo '<option value="'.$season->id.'" data-url="'.$season_url.'" >'.$season_title.'</option>';
+                                    }
+
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

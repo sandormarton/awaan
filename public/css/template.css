@@ -1651,6 +1651,16 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .terms-footer{  color: white;}
 .terms-footer:hover{  color: #2bb6f3;}
 
+.drop-season-custom{
+	position: relative;
+	top: -58px;
+	float: left;
+	left: 14px;
+}
+.custom-margin-bottom-inverse{
+	margin-bottom: -20px;
+}
+
 @media (max-width: 1200px) {
 
 	.menu-wrapper .searchform-div .search-form { margin-top: 0;}

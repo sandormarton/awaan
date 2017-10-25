@@ -168,7 +168,12 @@ body:after {
 .premium-wrapper .premium-box{
     margin: 0 auto; width: 70%; background-color: rgba(26, 26, 26, 0.45); padding: 15px
 }
-
+.btn-back-home{
+    background: white;
+    color: #318dcc;
+    font-size: 21px;
+    margin-top: 12px;
+}
 @media only screen and (max-width: 1400px) {
 
     .premium-wrapper .subscribe_nav li > a {

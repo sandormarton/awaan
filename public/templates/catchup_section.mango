@@ -1,0 +1,16 @@
+{{#each today_catch}}
+<div class="item video-list-div">
+
+    <div class="video-list-item">
+        <div class="video-list-image">
+            <a href="catchup/{{channel_id}}/title/{{id}}/{{slug title_en}}">
+                <img data-src="{{catchup_img}}" class="img-responsive owl-lazy" /></a>
+        </div>
+        <div class="video-list-content">
+            <a href="catchup/{{channel_id}}/title/{{id}}/{{slug title_en}}" class="video-list-title">{{title_en}}</a>
+            <label class="video-category">{{formatted_time}}</label>
+        </div>
+    </div>
+
+</div>
+{{/each}}

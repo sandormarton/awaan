@@ -1,0 +1,20 @@
+{{#each videos}}
+<div class="item video-list-div col-md-4">
+    <div data-title="{{title_ar}}" data-id="206590" class="video-list-item">
+        <div class="video-list-image">
+            <a href="video/{{id}}/{{slug title_ar}}">
+                <img alt="{{title_ar}}" title="{{title_ar}}" class="img-responsive owl-lazy center-block" data-src="http://admango.cdn.mangomolo.com/analytics/{{img}}" src="http://admango.cdn.mangomolo.com/analytics/{{img}}"></a>
+            <div class="you-watched-div " style="width: 110px;  background: #337ab7 !important; right: 0">
+            	<div class="progress" style="border:1px solid #FFF;  border-radius:10px; background: #337ab7 !important; height: 10px !important"">
+					<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{secondsToPercentage position duration}}" aria-valuemin="0" aria-valuemax="100" style="width: {{secondsToPercentage position duration}}%;  background: #FFFFFF !important">
+
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="video-list-content">
+            <a href="video/{{id}}/{{slug title_ar}}" class="video-list-title giveMeEllipsis">{{title_ar}}</a>
+        </div>
+    </div>
+</div>
+{{/each}}

@@ -1,0 +1,22 @@
+<div class="col-lg-11 col-md-11 center-col">
+	<div class="col-lg-7 col-md-7 banner-player-wrapper">
+	    <div class="embed-responsive embed-responsive-16by9">
+	        {{#each banners}}
+	            {{#equal @index "0" }}
+	            <iframe class="embed-responsive-item" allowfullscreen="" src="{{ embed }}&autoplay=false&vmap=awaan&jwplayer=7&responsive=fit" style="min-height: 100%; height: 100%"></iframe>
+	            {{/equal}}
+	        {{/each}}
+	    </div>
+	</div>
+	<div class="col-lg-5 col-md-5 banner-items-wrapper ">
+	    {{#each banners}}
+	    <div class="col-md-6 col-sm-3 col-xs-6 banner-item-column">
+	        <a href="javascript:void(0)"  iframe-src="{{ embed }}&autoplay=false&vmap=awaan&jwplayer=7&responsive=fit" class="banner-item-link">
+	            <img src="http://admin.mangomolo.com/analytics/{{banner_img}}" class="img-responsive center-block" />
+	            <div class="ovrerlay-bg"></div>
+	            <label class="play-link"><i class="glyphicon glyphicon-play"></i></label>
+	        </a>
+	    </div>
+	    {{/each}}
+	</div>
+</div>

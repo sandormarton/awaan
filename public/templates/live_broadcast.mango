@@ -1,0 +1,15 @@
+{{#each channels}}
+        <div class="item link-list-div">
+            {{#ifCond @index "==" 0}}
+            <a href="#" data-url="{{stream_url}}" class="active">
+                {{else}}
+                {{#ifCond premuim "==" 1}}
+                <a href="#" data-url="premium">
+                    {{else}}
+                    <a href="#" data-url="{{stream_url}}">
+                        {{/ifCond}}
+                        {{/ifCond}}
+                        <img src="http://admango.cdn.mangomolo.com/analytics/{{live_icon}}" class="img-circle" title="Live Broadcast" alt="Live Broadcast" />
+                    </a>
+        </div>
+{{/each}}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mangomolo Player</title>
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="//cdn.embed.ly/player-0.0.11.min.js"></script>
+
+</head>
+<body>
+
+<iframe id="frameID" src="http://admin.mangomolo.com/analytics/index.php/customers/embed/video?id=26803808&user_id=80&countries=WyJBRCJd&w=480&h=360&zone=&filter=DENY&autoplay=false&signature=9a062e21a313aef82dc8d9c0fd8bedf5&responsive=fit&jwplayer=7" width="480" height="360"></iframe>
+<iframe id="frameID2" src="http://admin.mangomolo.com/analytics/index.php/customers/embed/video?id=26803808&user_id=80&countries=WyJBRCJd&w=480&h=360&zone=&filter=DENY&autoplay=false&signature=9a062e21a313aef82dc8d9c0fd8bedf5&responsive=fit&jwplayer=7" width="480" height="360"></iframe>
+<iframe id="frameID3" src="http://admin.mangomolo.com/analytics/index.php/customers/embed/video?id=26803808&user_id=80&countries=WyJBRCJd&w=480&h=360&zone=&filter=DENY&autoplay=false&signature=9a062e21a313aef82dc8d9c0fd8bedf5&responsive=fit&jwplayer=7" width="480" height="360"></iframe>
+<iframe id="frameID4" src="http://admin.mangomolo.com/analytics/index.php/customers/embed/video?id=26803808&user_id=80&countries=WyJBRCJd&w=480&h=360&zone=&filter=DENY&autoplay=false&signature=9a062e21a313aef82dc8d9c0fd8bedf5&responsive=fit&jwplayer=7" width="480" height="360"></iframe>
+
+
+<script>
+    $(document).ready(function(){
+        $('iframe').each(function(){
+            var player = new playerjs.Player(this);
+            player.on('play', function(){
+                var playing = $(this).attr('id');
+                stop_all(playing);
+
+            }, this);
+        });
+
+        function stop_all(id){
+            $(document).find('iframe').each(function () {
+                $(this).attr('src', function(i, src) {
+                    var s = src.split("#")[0];
+                    return s+"#n";
+                });
+            });
+            $(document).find('iframe').each(function () {
+                if( $(this).attr('id') != id ){
+                    $(this).attr('src', function(i, src) {
+                        var s = src.split("#")[0];
+                        return s+"#pause";
+                    });
+                }
+            });
+        }
+
+
+    });
+</script>
+
+</body>
+</html>

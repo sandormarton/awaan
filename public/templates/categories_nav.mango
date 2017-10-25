@@ -1,0 +1,10 @@
+{{#each categories}}
+<div class="item link-list-div">
+    {{#ifCond @index "==" 0}}
+    <a href="#" data-id="{{id}}" class="active">
+        {{else}}
+        <a href="#" data-id="{{id}}">
+            {{/ifCond}}
+            {{title_ar}}</a>
+</div>
+{{/each}}

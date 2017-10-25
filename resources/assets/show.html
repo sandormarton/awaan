@@ -1,0 +1,259 @@
+@extends('layouts.master_inner')
+@section('title', 'Welcome Awan')
+<!--This defines a home  section which gets displayed via "yield" -->
+
+@section('allshow')
+<div class="innerpage-rightbar" id="innerpage-rightbar">
+    <div class="innerpage-rightbar-header">
+        <div class="logo-div">
+            <a href="#"><img src="images/logo-2.png" /></a>
+        </div>
+        <div class="search-div">
+            <form method="post">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                    </span>
+                    <input type="text" name="search" class="form-control"  placeholder="برامج" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="innerpage-rightbar-menubar">
+        <ul class="navbar-menu">
+            <li><a href="#" class="drama-menu">مسلسلات</a></li>
+            <li class="active"><a href="#" class="shows-menu">برامج</a> <span> > جميع البرامج </span></li>
+        </ul>
+    </div>
+    <div class="innerpage-rightbar-showsbar">
+        <div class="shows-category-divs clearfix">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="category-block">
+                    <a href="#"><img src="images/show-category-img-drama.png" class="img-responsive" /></a>
+                    <a class="category-block-hover" href="#">Drama</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="category-block">
+                    <a href="#"><img src="images/show-category-img-cartoons.png" class="img-responsive" /></a>
+                    <a class="category-block-hover" href="#">Cartoons</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="category-block">
+                    <a href="#"><img src="images/show-category-img-national_day.png" class="img-responsive" /></a>
+                    <a class="category-block-hover" href="#">National Day</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="category-block">
+                    <a href="#"><img src="images/show-category-img-food.png" class="img-responsive" /></a>
+                    <a class="category-block-hover" href="#">Food</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="category-block">
+                    <a href="#"><img src="images/show-category-img-video_clips.png" class="img-responsive" /></a>
+                    <a class="category-block-hover" href="#">Video Clips</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="category-block">
+                    <a href="#"><img src="images/show-category-img-religion.png" class="img-responsive" /></a>
+                    <a class="category-block-hover" href="#">Religion</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="category-block">
+                    <a href="#"><img src="images/show-category-img-special_coverage.png" class="img-responsive" /></a>
+                    <a class="category-block-hover" href="#">Special Coverage</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="category-block">
+                    <a href="#"><img src="images/show-category-img-documentaries.png" class="img-responsive" /></a>
+                    <a class="category-block-hover" href="#">Documentaries</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="innerpage-rightbar-smbar">
+        <ul class="footer-sm-ul">
+            <li><a target="_blank" title="Facebook" href="#"><img src="images/icon-sm-facebook.png" alt="Facebook"></a></li>
+            <li><a target="_blank" title="Twitter" href="#"><img src="images/icon-sm-twitter.png" alt="Twitter"></a></li>
+            <li><a target="_blank" title="Youtube" href="#"><img src="images/icon-sm-youtube.png" alt="Youtube"></a></li>
+            <li><a title="English" href="#"><img src="images/icon-en.png" alt="English"></a></li>
+        </ul>
+        <p class="copyright-text">Dubai Channels Network &copy; 2016</p>
+    </div>
+</div>
+
+<div class="innerpage-leftbar">
+
+    <div class="mobile-menu visible-xs">
+        <button id='trigger' class="btn btn-mobile-menu"><i class="ion-navicon-round"></i></button>
+    </div>
+
+    <div class="shows-list-wrapper">
+        <div class="shows-cover-image">
+            <ul id="ShowsBanners" class="ShowsBanners-slider">
+                <li><img src="images/shows-cover-1.png" class="img-responsive" /></li>
+                <li><img src="images/shows-cover-2.png" class="img-responsive" /></li>
+                <li><img src="images/shows-cover-3.png" class="img-responsive" /></li>
+                <li><img src="images/shows-cover-4.png" class="img-responsive" /></li>
+                <li><img src="images/shows-cover-5.png" class="img-responsive" /></li>
+            </ul>
+        </div>
+        <div class="shows-items-wrapper shows-picks-list-wrapper">
+            <h3 class="module-title">قد يعجبك أيضاً</h3>
+            <a href="#" class="more-btn"> > شاهد المزيد</a>
+            <div id="shows-picks-list" class="shows-page-video-list shows-picks-list">
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-1.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-2.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-3.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-4.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-5.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-6.jpg" class="img-responsive" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="shows-items-wrapper shows-latest-episodes-list-wrapper">
+            <h3 class="module-title">آخر الحلقات</h3>
+            <a href="#" class="more-btn"> > شاهد المزيد</a>
+            <div id="shows-latest-episodes-list" class="shows-page-video-list shows-latest-episodes-list">
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-1.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-2.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-3.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-4.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-5.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-6.jpg" class="img-responsive" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="shows-items-wrapper shows-most-watched-list-wrapper">
+            <h3 class="module-title">الأكثر مشاهدة</h3>
+            <a href="#" class="more-btn"> > شاهد المزيد</a>
+            <div id="shows-most-watched-list" class="shows-page-video-list shows-most-watched-list">
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-1.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-2.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-3.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-4.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-5.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-6.jpg" class="img-responsive" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="shows-items-wrapper shows-top-rated-list-wrapper">
+            <h3 class="module-title">الأكثر مشاهدة</h3>
+            <a href="#" class="more-btn"> > شاهد المزيد</a>
+            <div id="shows-top-rated-list" class="shows-page-video-list shows-top-rated-list">
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-1.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-2.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-3.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-4.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-5.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-6.jpg" class="img-responsive" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-wrapper">
+        <p>. كل الحقوق محفوظة &copy; Awan</p>
+        <p>سياسة الخصوصية</p>
+    </footer>
+
+</div>
+@endsetion

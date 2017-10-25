@@ -1,0 +1,236 @@
+
+
+@extends('layouts.master_inner')
+@section('title', 'Welcome Awan')
+<!--This defines a home  section which gets displayed via "yield" -->
+
+@section('show')
+<!-- MAIN CONTAINER [START] -->
+<div class="innerpage-rightbar" id="innerpage-rightbar">
+    <div class="innerpage-rightbar-header">
+        <div class="logo-div">
+            <a href="#"><img src="images/logo-2.png" /></a>
+        </div>
+        <div class="search-div">
+            <form method="post">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                    </span>
+                    <input type="text" name="search" class="form-control"  placeholder="برامج" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="innerpage-rightbar-menubar">
+        <ul class="navbar-menu">
+            <li class="active"><a href="#" class="drama-menu">مسلسلات</a></li>
+            <li><a href="#" class="shows-menu">برامج</a></li>
+        </ul>
+    </div>
+
+    <div class="innerpage-rightbar-smbar">
+        <ul class="footer-sm-ul">
+            <li><a target="_blank" title="Facebook" href="#"><img src="images/icon-sm-facebook.png" alt="Facebook"></a></li>
+            <li><a target="_blank" title="Twitter" href="#"><img src="images/icon-sm-twitter.png" alt="Twitter"></a></li>
+            <li><a target="_blank" title="Youtube" href="#"><img src="images/icon-sm-youtube.png" alt="Youtube"></a></li>
+            <li><a title="English" href="#"><img src="images/icon-en.png" alt="English"></a></li>
+        </ul>
+        <p class="copyright-text">Dubai Channels Network &copy; 2016</p>
+    </div>
+</div>
+
+<div class="innerpage-leftbar">
+
+    <div class="mobile-menu visible-xs">
+        <button id='trigger' class="btn btn-mobile-menu"><i class="ion-navicon-round"></i></button>
+    </div>
+
+    <div class="dramadetail-list-wrapper">
+        <div class="drama-cover-image">
+            <img src="images/drama-cover-image.png" class="img-responsive" />
+        </div>
+        <div class="drama-description-div">
+            <h4 class="drama-title">مسلسل بوقلبين</h4>
+            <p>هو ذات بمباركة والديون, واُسدل إستيلاء والكساد إذ بها. على ان مكّن فرنسية الرئيسية, هو قررت وأزيز العالم، يتم. عل ثانية وباءت مقاطعة هذا. فصل إذ خلاف اتفاقية, بـ خلاف واُسدل الأوروبية فصل. من الحكومة البولندي اليابان، بعض, تم يتم عُقر إستعمل استراليا،, أن بالسيطرة وباستثناء هذه.</p>
+        </div>
+        <div class="drama-search-bar">
+            <div class="col-lg-8 col-md-6 col-sm-12"><h3>مسلسل بوقلبين</h3></div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <select class="season-select-box form-control">
+                    <option>no season</option>
+                    <option>season 1</option>
+                    <option>season 2</option>
+                    <option>season 3</option>
+                    <option>season 4</option>
+                    <option>season 5</option>
+                </select>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <button class="btn btn-blue">
+                    <i class="ion-android-favorite-outline"></i> المفضلة
+                </button>
+            </div>
+        </div>
+        <div class="drama-episode-list-wrapper">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-1.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-2.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-3.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-4.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-5.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-6.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-7.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-8.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-1.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="episode-box">
+                        <div class="episode-img">
+                            <a href="#"><img src="images/drama-episode-2.jpg" class="img-responsive"/></a>
+                            <div class="episode-duration">0:39:26</div>
+                        </div>
+                        <div class="episode-content">
+                            <a href="#">ترويج حلقة التصفيات النهائية محمد عبد...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="drama-related-list-wrapper">
+            <h3 class="module-title">قد يعجبك أيضاً</h3>
+            <a href="#" class="more-btn"> > شاهد المزيد</a>
+            <div id="drama-related-list" class="drama-related-list">
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-1.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-2.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-3.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-4.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-5.jpg" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="item drama-related-list-div">
+                    <a href="#">
+                        <img src="images/drama-related-6.jpg" class="img-responsive" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-wrapper">
+        <p>. كل الحقوق محفوظة &copy; Awan</p>
+        <p>سياسة الخصوصية</p>
+    </footer>
+
+</div>
+
+@endsection
+<!-- MAIN CONTAINER [END] -->
+

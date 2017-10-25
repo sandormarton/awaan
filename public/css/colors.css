@@ -1,0 +1,197 @@
+[data-color="48"]{
+    background: #535353 !important;
+}
+
+[data-color="49"]{
+    background: #D30044 !important;
+}
+
+ [data-color="6"]{
+    background: #0a7985 !important;
+}
+
+[data-color="10"]{
+    background: #d9d9d9 !important;
+}
+
+ [data-color="25"]{
+    background: #7997ca !important;
+}
+
+ [data-color="12"]{
+    background: #7997ca !important;
+}
+
+[data-color="13"]{
+    background: #a6b0b8 !important;
+}
+
+[data-color="23"]{
+    background: #b02227 !important;
+}
+
+[data-color="9"]{
+    background: #f8ae3d !important;
+}
+
+[data-color="32"]{
+    background: #cfcfcf !important;
+}
+
+
+[data-cat-color="30355"]:hover{
+    background: #efc515;
+}
+[data-cat-color="30355"]{
+    /*a3mal*/
+    background:url('../images/cat-icon/30355.png');
+
+}
+[data-cat-color="205911"]:hover{
+    background: #6ec386;
+}
+[data-cat-color="205911"]{
+    /*cartoon*/
+    background:url('../images/cat-icon/205911.png');
+}
+[data-cat-color="30364"]:hover{
+    background: #305576;
+}
+[data-cat-color="30364"]{
+    /*wsa2eke*/
+
+    background:url('../images/cat-icon/30364.png');
+}
+
+[data-cat-color="30348"]:hover{
+    background: #2a2b2c;
+}
+[data-cat-color="30348"]{
+    /*moslslat*/
+
+    background:url('../images/cat-icon/30348.png');
+}
+
+[data-cat-color="30350"]:hover{
+    background: #93a5a4;
+}
+[data-cat-color="30350"]{
+    /*tfeh*/
+    background:url('../images/cat-icon/30350.png');
+
+}
+[data-cat-color="30353"]:hover{
+    background: #6188c6;
+}
+[data-cat-color="30353"]{
+    /*tabe5*/
+
+    background:url('../images/cat-icon/30353.png');
+}
+
+[data-cat-color="30356"]:hover{
+    background: #e87f25;
+}
+[data-cat-color="30356"]{
+    /*97a w jmal*/
+
+    background:url('../images/cat-icon/30356.png');
+}
+[data-cat-color="30362"]:hover{
+    background: #10b89b;
+}
+[data-cat-color="30362"]{
+    /*7warat 79rey*/
+
+    background:url('../images/cat-icon/30362.png');
+}
+
+[data-cat-color="207257"]:hover{
+    background: #3766b0;
+}
+[data-cat-color="207257"]{
+    /*yom lshahed*/
+
+    background:url('../images/cat-icon/207257.png');
+}
+
+[data-cat-color="30590"]:hover{
+    background: #82cdb8;
+}
+[data-cat-color="30590"]{
+    /*7al yom lw6ne*/
+
+    background:url('../images/cat-icon/30590.png');
+}
+[data-cat-color="30352"]:hover{
+    background: #dce23b;
+}
+[data-cat-color="30352"]{
+    /*7al yom lw6ne*/
+
+    background:url('../images/cat-icon/30352.png');
+}
+/*[data-cat-color="30352"]{*/
+    /*!*7al yom lw6ne*!*/
+    /*background: #c3ce8c;*/
+/*}*/
+
+[data-cat-color="30349"]:hover{
+    background: #557580;
+}
+[data-cat-color="30349"]{
+    /*7al yom lw6ne*/
+
+    background:url('../images/cat-icon/30349.png');
+}
+[data-cat-color="30345"]:hover{
+    background: #dfcde4;
+}
+[data-cat-color="30345"]{
+    /*7al yom lw6ne*/
+
+    background:url('../images/cat-icon/30345.png');
+}
+[data-cat-color="30363"]:hover{
+    background: #7e669c;
+}
+[data-cat-color="30363"]{
+    /*7al yom lw6ne*/
+
+    background:url('../images/cat-icon/30363.png');
+}
+[data-cat-color="30347"]:hover{
+    background: #66bacd;
+}
+[data-cat-color="30347"]{
+    /*7al yom lw6ne*/
+
+    background:url('../images/cat-icon/30347.png');
+}
+[data-cat-color="30360"]:hover{
+    background: #c6c6c6;
+}
+[data-cat-color="30360"]{
+    /*7al yom lw6ne*/
+
+    background:url('../images/cat-icon/30360.png');
+}
+[data-cat-color="208109"]{
+    /*7al yom lw6ne*/
+    background:url('../images/cat-icon/208109.png');
+}
+
+[data-cat-color="208109"]:hover{
+
+    background: #000000;
+}
+
+[data-cat-color="-1"]{
+    /*7al yom lw6ne*/
+    background:url('../images/cat-icon/-1.png');
+}
+
+[data-cat-color="-1"]:hover{
+
+    background: #d4a6cd;
+}

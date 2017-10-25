@@ -1,0 +1,181 @@
+/* CSS Document */
+
+.col-xs-15 {
+    float: left;
+}
+@media (min-width: 768px) {
+	.col-sm-15 {
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        float: left;
+    }
+}
+
+.select2-container { float: right; margin-right: 8px;}
+.select2-container .select2-selection--single .select2-selection__rendered { padding-left: 20px!important; padding-right: 35px!important;}
+
+.menu-wrapper .navbar-main .navbar-header .navbar-brand.site-logo { padding-left: 0; padding-right: 15px;}
+.menu-wrapper .navbar-main .navbar-header .navbar-brand.site-menu-folder { padding-left: 15px; padding-right: 20px;}
+
+.menu-wrapper .navbar-main .navbar-header .navbar-brand.site-menu-folder span { right: auto; left: 27px;}
+
+.menu-wrapper .navbar-main .menuprogramCollapse { right: auto; left: 10%;}
+.menuprogramCollapse .menuprogram-list .menuprogram-content a h4 { font-size: 16px;}
+.menuprogramCollapse .menuprogram-list .menuprogram-time span { left: auto; right: 5px;}
+.menu-wrapper .navbar-main .navbar-nav .channel-menu .morediv { left: auto; right: 20px;}
+
+.menu-wrapper .searchform-div .btn-search { left: auto; right: 0;}
+
+
+.homebanner-wrapper .homebanner-carousel .program-div .program-text .info-blocks a { margin-left: 0; margin-right: 10px;}
+.homebanner-wrapper .channel-carousel .owl-nav div.owl-prev { left: -50px;}
+.homebanner-wrapper .channel-carousel .owl-nav div.owl-next { right: 0;}
+
+.homeprogramssection-wrapper .homeprograms-section .title-section .btn-viewall { float: right;}
+
+.homeprogramssection-wrapper .homeprograms-section .data-section .data-carousel .owl-dots { left: auto; right: 0;}
+
+.homeprogramssection-wrapper .homeprograms-section.catchup-programs-section .viewall-dropdown { float: right;}
+.homeprogramssection-wrapper .homeprograms-section.catchup-programs-section .viewall-dropdown.day-dropdown { margin-left: 0; margin-right: 15px;}
+.homeprogramssection-wrapper .homeprograms-section .data-section .data-carousel.catchup-carousel .item .channel-logo { padding-left: 0; padding-right: 15px;}
+
+.homeprogramssection-wrapper .homeprograms-section.catchup-programs-section .day-dropdown + .select2-container { margin-right: 20px;}
+
+.distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .owl-dots { left: auto; right: 10px;}
+.distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .badge { left: 0; right: auto;}
+
+.distinctive-programs-section .content-text-wrapper .distinctive-programs-details { background-position: right center, left center;}
+.distinctive-programs-section .content-text-wrapper .program-title-span { margin-left: 0; margin-right: 15px;}
+.distinctive-programs-section .content-text-wrapper .program-details .link-section a { background-position: left!important; padding-left: 30px; padding-right: 5px;}
+
+.showscategory-carouellist-wrapper .showscategory-carouellist-section .title-section .select2 { margin-left: 15px;}
+
+.live-broadcast-wrapper .btn-arithmetic { float: right;}
+.spreadsheet-software-wrapper .btn-spreadsheet { float: right;}
+
+
+.favorite-shows-list-wrapper .content a.delete-link { float: right; left: auto; right: 0;}
+
+
+.favorite-video-list-wrapper .content a.delete-link{ float: right; left: auto; right: 0;}
+
+
+.login-wrapper .login-container .btn-fblogin i { right: auto; left: 15px;}
+
+
+.radio-programs-section .title-section .select-box { float: right;}
+.radio-home-listof-shows .radio-menu-header-wrapper .programs-filters { float: right;}
+
+
+.radio-home-listof-shows .radio-player-section .radio-current-programs-div .program-div p { margin-right: 0; margin-left: 15px;}
+
+
+.radio-home-listof-shows .radio-menu-header-wrapper .menu-div .navbar-nav li a { border-left: 1px solid #000000; border-right: none;}
+.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .playing-program .program-play-col::after { left: auto; right: 5px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .program-list { padding-left: 30px; padding-right: 15px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .program-list .volume-control-div { float: right; margin-left: 0; margin-right: 50px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .program-list .title-div { padding-right: 0; padding-left: 40px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .program-summary-col span.program-min::after { left: auto; right: -6px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .program-summary-col span.program-favourite { text-align: center;}
+
+
+.radio-programs-section .title-section .btn-viewall { float: right;}
+
+.showpage-banner-wrapper .banner-content { background-position: right center, left center;}
+.showpage-banner-wrapper .banner-content .showpage-title .showpage-title-span { margin-left: 0; margin-right: 15px;}
+.showpage-banner-wrapper .banner-content .showpage-details .share-details { float: right;}
+.showpage-banner-wrapper .banner-content .showpage-details .link-section a { background-position: left!important; padding-left: 30px; padding-right: 0;}
+
+
+.showscategory-carouellist-wrapper .showscategory-carouellist-section .title-section .sortcategory-dropdown { float: right; margin-left: 5px; margin-right: 0;}
+
+
+.signup-wrapper .signup-container .btn-fblogin i { left: 15px; right: auto;}
+
+
+.video-wrapper .video-content-wrapper .video-detail-div .btns-div { left: auto; right: 7px;}
+.video-wrapper .video-content-wrapper .sm-detail-div .sm-buttons-div { text-align: right;}
+.video-wrapper .video-content-wrapper .more-episodes-div .title-section .btn-viewall { float: right;}
+
+
+.live-wrapper .channel-content-wrapper .uplcoming-shows-program .overlay { left: auto; right: 15px;}
+
+
+.footer-wrapper .text-awaan-logo img { margin-left: 0; margin-right: 20px;}
+.footer-wrapper .text-awaan-sm { text-align: right;}
+.footer-wrapper .text-awaan-sm span { margin-left: 0; margin-right: 20px;}
+.footer-wrapper .text-awaan-sm a { padding-left: 0; padding-right: 10px;}
+.footer-wrapper .text-awaan-sm a:last-child { padding-right: 0;}
+
+.catchup-page-wrapper .title-section .title { padding-right: 0; padding-left: 15px;}
+
+.catchupnew-page-wrapper .title-section .select-box { float: right;}
+
+.homeprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .ribbin-new-episode{    background: url(../images/ribbin-new-episode-en.png) no-repeat;}
+.homeprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .ribbin-new-series { background: url('../images/ribbin-new-series-en.png') no-repeat;}
+.radio-home-listof-shows .radio-player-section .radio-current-programs-div .program-div p span {
+    color: #a0a0a0;
+    padding-right: 5px;
+    border-right: 1px solid #a0a0a0;
+    border-left: none;
+    margin-right: 5px;
+}
+#offset_modal .title-embed,
+#offset_modal .title-copy{
+    float: left;
+}
+#offset_modal .modal-header .close,
+#offset_modal .btn-group-time{
+    float: right;
+}
+#offset_modal .label-start{
+    margin-right: 12px;
+}
+.menu-wrapper .navbar-main .navbar-nav li a{
+    font-size: 14px;
+}
+.films-programs-section .owl-carousel .owl-stage{
+    float: left;
+}
+.movie-wrapper .homeprograms-section .title-section .btn-viewall{
+    float: right;
+}
+.border-movie{
+    border-right: 1px solid #919191;
+}
+.border-movie{
+    border-left: none;
+}
+.b-actors-container{padding-left: 30px;}
+@media(max-width: 1200px) {
+
+	.radio-home-listof-shows .radio-menu-header-wrapper .programs-filters { float: none;}
+	.menu-wrapper .searchform-div { float: right;}
+}
+
+
+@media(max-width: 991px) {
+
+	.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .program-list { padding: 15px 0;}
+    .border-movie{border-right:none;}
+}
+
+
+@media(max-width: 767px) {
+
+	.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .program-list .title-div { padding-left: 10px;}
+	.radio-home-listof-shows .radio-showdetails-wrapper .program-list-div .program-list .volume-control-div { margin-right: 10px;}
+
+	.menu-wrapper .searchform-div .radiobtn-div { float: left;}
+	.menu-wrapper .navbar-toggle { margin-right: 5px;}
+	.menu-wrapper .searchform-div .search-form { margin: 2px 5px 2px 0;}
+
+}

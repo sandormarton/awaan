@@ -1,0 +1,25 @@
+<div class="item video-list-div">
+    {{#each categories_current}}
+    {{#ifCond @index "%" 2}}
+</div> <div class="item video-list-div">
+    {{/ifCond}}
+    <div class="video-list-item">
+        <div class="video-list-image">
+            <img class="owl-lazy" data-src="http://admango.cdn.mangomolo.com/analytics/{{thumbnail}}" />
+        </div>
+        <div class="video-list-content">
+            <div class="video-details">
+                <label class="video-title"><a href="show/{{id}}/{{slug title_ar}}">{{title_ar}}</a></label>
+                <label class="video-category"></label>
+            </div>
+            <div class="video-show-likes">
+                <a class="share-btn" href="javascript:void(0)">
+                    <i class="ion-android-share-alt"></i>
+                </a>
+                &nbsp;
+            </div>
+        </div>
+        <div class="overlay-bg"></div>
+    </div>
+    {{/each}}
+</div>

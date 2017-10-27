@@ -13,25 +13,29 @@
 
             <link type="image/x" href="{{ asset("images/favicon.png")}}" rel="shortcut icon" />
 
-    
-		    <link rel="stylesheet" type="text/css" href="{{ asset("/css/bootstrap.min.css")}}" />
-		    @if(Session::get('lang') == 'ar')
+		    {{--<link rel="stylesheet" type="text/css" href="{{ asset("/css/bootstrap.min.css")}}" />--}}
+
+            <link rel="stylesheet" type="text/css" href="{{asset("/css/_styles.min.css")}}" />
+
+            @if(Session::get('lang') == 'ar')
 		    <link rel="stylesheet" type="text/css" href="{{ asset("/css/bootstrap-rtl.min.css")}}" />
             @endif
-        	<link rel="stylesheet" type="text/css" href="{{asset("/css/bootstrap-theme.min.css")}}" />
-        	<link rel="stylesheet" type="text/css" href="{{asset("/css/font-awesome.min.css")}}" />
-        	<link rel="stylesheet" type="text/css" href="{{asset("/css/mCustomScrollbar.min.css")}}" />
-        	<link rel="stylesheet" type="text/css" href="{{asset("/css/owl.carousel.min.css")}}" />
-        	<link rel="stylesheet" type="text/css" href="{{asset("/css/select2.min.css")}}" />
-        	<link rel="stylesheet" type="text/css" href="{{asset("/css/loader.css")}}" />
+
+        	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/bootstrap-theme.min.css")}}" />--}}
+        	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/font-awesome.min.css")}}" />--}}
+        	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/mCustomScrollbar.min.css")}}" />--}}
+        	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/owl.carousel.min.css")}}" />--}}
+        	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/select2.min.css")}}" />--}}
+        	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/loader.css")}}" />--}}
+
             <link rel="stylesheet" type="text/css" href="{{asset("/css/template.css")}}" />
 
 
             @if(Session::get('lang') == 'en')
                 <link rel="stylesheet" type="text/css" href="{{asset("/css/template-en.css")}}" />
             @endif
-        	<link rel="stylesheet" type="text/css" href="{{asset("/css/colors.css")}}" />
-            <link rel="stylesheet" type="text/css" href="{{asset("/js/rating/jquery.rateyo.min.css")}}" />
+        	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/colors.css")}}" />--}}
+            {{--<link rel="stylesheet" type="text/css" href="{{asset("/js/rating/jquery.rateyo.min.css")}}" />--}}
 
             <script>
                 var user_id = {{(Session::has('user_info')) ? Session::get('user_info')->id : 'false'}};
@@ -46,21 +50,21 @@
             <!--<![endif]-->
 
             {{--<script src="{{asset('/js/jquery.nicescroll.min.js')}}"></script>--}}
-            <script src="{{asset('/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-            <script src="{{asset('/js/bootstrap.min.js')}}"></script>
-            <script src="{{asset('/js/loader.min.js')}}"></script>
-            <script src="{{asset('/js/owl.carousel.min.js')}}"></script>
+            {{--<script src="{{asset('/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>--}}
+            {{--<script src="{{asset('/js/bootstrap.min.js')}}"></script>--}}
+            {{--<script src="{{asset('/js/loader.min.js')}}"></script>--}}
+            {{--<script src="{{asset('/js/owl.carousel.min.js')}}"></script>--}}
             {{--<script src="{{asset('/js/jssor.slider-26.3.0.min.js')}}"></script>--}}
-            <script src="{{asset('/js/jquery.maskedinput.min.js')}}"></script>
-            <script src="{{asset('/js/jquery.unveil.js')}}"></script>
-            <script src="{{asset('/js/jquery.lazy.min.js')}}"></script>
-            <script src="{{asset('/js/select2.full.min.js')}}"></script>
+            {{--<script src="{{asset('/js/jquery.maskedinput.min.js')}}"></script>--}}
+            {{--<script src="{{asset('/js/jquery.unveil.js')}}"></script>--}}
+            {{--<script src="{{asset('/js/jquery.lazy.min.js')}}"></script>--}}
+            {{--<script src="{{asset('/js/select2.full.min.js')}}"></script>--}}
+
+            <script src="{{asset('/js/_scripts.js')}}"></script>
+
             <script src="{{asset('/js/template.js')}}"></script>
             <script src="{{asset('/js/main.js')}}"></script>
 
-
-
-    
             <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
             <!--[if lt IE 9]>
@@ -68,11 +72,7 @@
             <script type="text/javascript" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
 
-
             <script type="text/javascript" src="https://imasdk.googleapis.com/js/sdkloader/gpt_proxy.js"></script>
-
-
-
 
             <?php
             $apiobj = new \App\Providers\ApiRequest();

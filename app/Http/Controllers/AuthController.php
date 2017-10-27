@@ -50,6 +50,15 @@ class AuthController extends BaseController
     }
 
     public function login(Request $request){
+
+        try{
+            if( ! $request->secure() )
+                return redirect()->secure('/auth/login' );
+
+        }catch (\Exception $exception){
+
+        }
+
         if($request->ajax()) {
             try{
                 if($request->input('logged')){
@@ -88,6 +97,39 @@ class AuthController extends BaseController
             }
         }
         return $this->view("auth.login");
+    }
+
+    public function reset(Request $request){
+        return $this->view("auth.reset");
+    }
+
+    public function resetPassword(Request $request)
+    {
+        $hash = $request->get('hash');
+        $token = substr(sha1($hash), 0, 32);
+        $email = $request->get('email');
+        //  $username = $request->get('username');
+        $emailname = explode('@', $request->get('email'));
+
+        $username = $emailname[0];
+
+        if ($hash && $token) {
+            // Data to be used on the email view
+            $data = array('token' => $token,
+                'user' => $username,
+                'messagebodysection1' => ' يرجى النقر على الوصله ادناه او نسخها ولصقها في المتصفح
+                                لتتمكن من وضع كلمة السر الخاصة بك',
+                'messagebodysection2' => '<a href="http://awaan.ae/?token='. $token.'">الرابط</a>
+                        و شكرا'
+            );
+            // Send the welcome email
+            $result = Mail::send(['html' => 'emails.newsletter_table'], $data, function ($message) use ($email) {
+                $message->from('no-reply@awaan.ae', 'Awaan');
+                $message->subject('Password Recovery')
+                    ->to($email);
+            });
+        }
+        return response()->json(['sent' =>'result: ' . $result]);
     }
 
     public function logout(Request $request){

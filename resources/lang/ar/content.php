@@ -75,6 +75,7 @@ return [
         'invalid' => 'كلمة السر و/أو اسم المستخدم غير صحيحة',
         'rememberpassword' => 'تذكر كلمة المرور',
         'forgotpassword' => 'هل نسيت كلمة المرور؟',
+        'resetPass' => 'استعادة كلمة المرور؟',
         'noaccount' => "ليس لديك حساب بعد؟",
         'username' => 'اسم المستخدم',
         'password' => 'كلمة السر',
@@ -91,7 +92,10 @@ return [
         'newpassconfirm' => 'تأكيد كلمة السر الجديدة',
         'newpassbtn' => 'تغيير',
         'newtitle' => 'تغيير كلمة السر',
-        'changed_success' => 'تم تغيير كلمة السر الخاصة بك '
+        'changed_success' => 'تم تغيير كلمة السر الخاصة بك ',
+        'changed_failed' => 'حدث خطأ!',
+        'no_email' => 'لا يوجد ايميل مسجل!',
+        'check_mail' => 'تم ارسال معلومات التهيئة الى ايميلك',
     ],
     'search' => [
         'videos' => 'الفيديوهات',

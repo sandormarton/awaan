@@ -56,8 +56,13 @@ Route::get('catchup_frame/{id}/{slug?}/{video_id?}/{video_slug?}/{tab?}', array(
 Route::get('channel_videos_frame/{channel_id}/{limit?}', array('uses' => 'Home@channel_videos_frame'))->where('channel_id', '[0-9]+')->where('limit', '[0-9]+');
 
 Route::any('auth/register', array('uses' => 'AuthController@register'));
+Route::any('auth/reset', array('uses' => 'AuthController@reset'));
 Route::any('auth/login', array('uses' => 'AuthController@login'));
 Route::any('auth/logout', array('uses' => 'AuthController@logout'));
+
+Route::post('reset', ['as' => 'reset', 'uses' => 'AuthController@resetPassword']);
+
+Route::get('auth/resetbytoken', ['as' => 'do_reset', 'uses' => 'AuthController@resetByToken']);
 
 Route::get('episodes', ['as' => 'episodes', 'uses' => 'Episodes@index']);
 Route::get('allshows', ['as' => 'allshows', 'uses' => 'Shows@GetAllShows']);

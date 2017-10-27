@@ -114,39 +114,39 @@ jQuery(document).ready(function($) {
     });
 
 
-    $(".change_password").submit(function (e) {
-
-        e.preventDefault();
-        // e.stopPropagation();
-
-        var password_reset = $(document).find('.password_reset').val();
-        var password_confirm = $(document).find('.password_reset_confirm').val();
-
-        var token_code = $(document).find('.token_code').val();
-
-        if($.trim(password_reset) != $.trim(password_confirm)) {
-            alert('Please Check Confirm Password');
-            return false;
-        }
-        $.post('http://admin.mangomolo.com/analytics/index.php/plus/change_password',
-                {user_id: 71, password: $.trim(password_reset), token: token_code}, function (content) {
-
-            if(content != '' && !$.isEmptyObject(content)) {
-                $(".reset_success").fadeIn().show();
-                setTimeout(function () {
-                    $('#passwordChangeModal').modal('hide');
-                    location.replace('/');
-                }, 3000);
-
-            } else {
-                $(".reset_error ").fadeIn().show();
-
-                //alert('your token has expired please submit another forgot password request!');
-            }
-
-        }, "json");
-
-    });
+    // $(".change_password").submit(function (e) {
+    //
+    //     e.preventDefault();
+    //     // e.stopPropagation();
+    //
+    //     var password_reset = $(document).find('.password_reset').val();
+    //     var password_confirm = $(document).find('.password_reset_confirm').val();
+    //
+    //     var token_code = $(document).find('.token_code').val();
+    //
+    //     if($.trim(password_reset) != $.trim(password_confirm)) {
+    //         alert('Please Check Confirm Password');
+    //         return false;
+    //     }
+    //     $.post('http://admin.mangomolo.com/analytics/index.php/plus/change_password',
+    //             {user_id: 71, password: $.trim(password_reset), token: token_code}, function (content) {
+    //
+    //         if(content != '' && !$.isEmptyObject(content)) {
+    //             $(".reset_success").fadeIn().show();
+    //             setTimeout(function () {
+    //                 $('#passwordChangeModal').modal('hide');
+    //                 location.replace('/');
+    //             }, 3000);
+    //
+    //         } else {
+    //             $(".reset_error ").fadeIn().show();
+    //
+    //             //alert('your token has expired please submit another forgot password request!');
+    //         }
+    //
+    //     }, "json");
+    //
+    // });
 
     $(".reset_password").submit(function (e) {
 
@@ -159,24 +159,58 @@ jQuery(document).ready(function($) {
 
             if(content.length != 0 && !$.isEmptyObject(content.email)) {
 
-                $.post('http://awaan.ae/mydcn/token', {email: content.email, hash: content.hash}, function (data) {
-
-                    $(".reset_success").show();
+                // $.post('http://beta.awaandev.mangomolo.com/reset', {email: content.email, hash: content.hash}, function (data) {
+                $.post('http://awaan.ae/reset', {email: content.email, hash: content.hash}, function (data) {
+                    console.log('ok');
+                    $(".login_success").show();
                 }, "json");
                 /*the message added here bcauze mydcn/token return no response */
-                $(".reset_success").show();
+                $(".login_success").show();
                 setTimeout(function () {
-                    $(".reset_success").fadeOut();
-                    $('#passwordModal').modal('hide');
+                    $(".login_success").fadeOut();
+                    // $('#passwordModal').modal('hide');
                 }, 3000);
             } else {
-                $(".reset_error").fadeIn().show();
+                $(".login_error").fadeIn().show();
                 setTimeout(function () {
-                    $(".reset_error").fadeOut();
+                    $(".login_error").fadeOut();
                 }, 3000);
             }
 
         }, "json");
+    });
+
+    $(".change_password").submit(function (e) {
+
+        e.preventDefault();
+        // e.stopPropagation();
+        var password_reset = $(document).find('.password_reset').val();
+        var password_confirm = $(document).find('.password_reset_confirm').val();
+        var token_code = $(document).find('.token_code').val();
+        if($.trim(password_reset) != $.trim(password_confirm)) {
+            alert('Please Check Confirm Password');
+            return false;
+        }
+        $.post('http://admin.octivid.com/analytics/index.php/plus/change_password',
+            {user_id: 71, password: $.trim(password_reset), token: token_code}, function (content) {
+                //  console.log(content);
+                // alert('Password Changed');
+                if(content != '' && !$.isEmptyObject(content)) {
+                    // $(".reset_success").fadeIn().show();
+                    $(".login_success").fadeIn().show();
+                    setTimeout(function () {
+                        // $('#passwordChangeModal').modal('hide');
+                        // location.replace('/');
+                    }, 3000);
+
+                } else {
+                    $(".login_error").fadeIn().show();
+                    alert('somthing went wrong');
+                    //alert('your token has expired please submit another forgot password request!');
+                }
+
+            }, "json");
+
     });
 
     /**

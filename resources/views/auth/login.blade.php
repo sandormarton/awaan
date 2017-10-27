@@ -62,7 +62,7 @@
                     <div class="seperator"></div>
 
                     <div class="col-md-6 center-col">
-                        <h3 class="subtitle">{{ trans('content.loginmodal.forgotpassword') }}</h3>
+                        <a href="{{URL::to("auth/reset")}}?"><h3 class="subtitle">{{ trans('content.loginmodal.forgotpassword') }}</h3></a>
                             <a href="{{URL::to("auth/register")}}?" class="btn btn-block btn-awaanblueborderbtn btn-forgotpass">{{ trans('content.loginmodal.register') }}</a>
                     </div>
                     <div class="seperator"></div>

@@ -73,6 +73,7 @@ return [
         'invalid' => 'Invalid username and/or password.',
         'rememberpassword' => 'Remember Password',
         'forgotpassword' => 'Forgot Password?',
+        'resetPass' => 'Reset password',
         'noaccount' => "Don't have an account yet?",
         'username' => 'Username',
         'password' => 'Password',
@@ -90,7 +91,9 @@ return [
         'newpassbtn' => 'Change',
         'newtitle' => 'Change Password',
         'changed_success' => 'your Password has been changed',
-        'changed_failed' => 'something wrong please try again'
+        'changed_failed' => 'something wrong please try again',
+        'no_email' => 'No email found!',
+        'check_mail' => 'Please check your email for activation!',
     ],
     'search' => [
         'videos' => 'Videos',

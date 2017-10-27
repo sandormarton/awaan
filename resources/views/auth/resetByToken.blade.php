@@ -22,30 +22,38 @@
             <div class="section login-container">
                 <div class="col-lg-5 col-md-7 col-sm-9 center-col login-box-col">
                     <h2 class="title">{{ trans('content.loginmodal.forgotpassword') }}</h2>
-                    <form id="reset_password" class="reset_password">
+                    <form id="change_password" class="change_password">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="alert alert-danger alert-cont login_error" style="display: none;">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                    <p id="error-message">{{ trans('content.forgotmodal.no_email') }}</p>
+                                    <p id="error-message">{{ trans('content.forgotmodal.changed_failed') }}</p>
                                 </div>
                                 <div class="alert alert-danger alert-cont login_success" style="display: none;">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                    <p id="error-message">{{ trans('content.forgotmodal.check_mail') }}</p>
+                                    <p id="error-message">{{ trans('content.forgotmodal.changed_success') }}</p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
+                            <input name="token_code" id="token_code" type="hidden" class="token_code" value="{{$token}}" placeholder="{{ trans('content.forgotmodal.email') }}" required />
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <label style="display: none" for="emailinput">Email</label>
-                                    <input name="email" id="emailinput" type="text" class="form-control reset_email" placeholder="{{ trans('content.forgotmodal.email') }}" required />
+                                    <label style="display: none" for="password_reset">password</label>
+                                    <input name="password" id="password_reset" type="password" class="form-control password_reset" placeholder="{{ trans('content.forgotmodal.newpass') }}" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label style="display: none" for="password_reset_confirm">re password</label>
+                                    <input name="password_confirm" id="password_reset_confirm" type="password" class="form-control password_reset_confirm" placeholder="{{ trans('content.forgotmodal.newpassconfirm') }}" required />
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <button type="submit" class="btn btn-block btn-awaanbluebtn btn-reset">{{ trans('content.loginmodal.resetPass') }}</button>
+                                <button type="submit" class="btn btn-block btn-awaanbluebtn btn-reset2">{{ trans('content.loginmodal.resetPass') }}</button>
                             </div>
                         </div>
                     </form>

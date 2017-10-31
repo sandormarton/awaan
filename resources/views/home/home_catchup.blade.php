@@ -16,7 +16,7 @@
                     $channel_title = 'Channel';
                 }
             ?>
-            {{--*/ $img = config('mangoapi.mangodcn').$item->img;/*--}}
+            {{--*/ $img = (isset($item->catchup_img)) ? $item->catchup_img : config('mangoapi.mangodcn').$item->img;/*--}}
             {{--*/ $live_icon = config('mangoapi.mangodcn').$item->live_icon;/*--}}
             <div class="item">
                 <a href="{{URL::to("catchup/{$item->channel_id}/".\App\Helpers\Functions::cleanurl($channel_title) ."/" . $item->id)}}">

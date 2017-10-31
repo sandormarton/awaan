@@ -5,7 +5,7 @@
 <script src="{{asset("/js/rating/jquery.rateyo.min.js")}}" type="text/javascript"></script>
 
 <script src="https://apis.google.com/js/client.js"> </script>
-<script src="http://player.mangomolo.com/public/js/player-events.js"></script>
+<script src="//player.mangomolo.com/public/js/player-events.js"></script>
 
 <script>
     window.paceOptions = {

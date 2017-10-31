@@ -12,7 +12,7 @@ return [
         'clientscope' => 'awaan',
         'homeaction' => 'home',
         'new_homeaction' => 'new_home',
-        'mangodcn' => 'http://admango.cdn.mangomolo.com/analytics/',
+        'mangodcn' => '//admango.cdn.mangomolo.com/analytics/',
         'categoryshows' => 'CategoryShows',
         'channellivestream' => 'ChannelLiveStream',
         'showdetails' => 'showDetails',

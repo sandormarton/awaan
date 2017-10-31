@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 use App\Providers\ApiRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 class AuthController extends BaseController
 {
     public function __construct(){
@@ -90,6 +91,16 @@ class AuthController extends BaseController
     public function reset(Request $request){
         return $this->view("auth.reset");
     }
+
+
+    public function resetByToken(Request $request){
+        $this->data["token"] = $request -> get("token");
+        if(!isset($this->data["token"]) or empty($this->data["token"])){
+            return redirect()->to('/');
+        }
+        return $this->view("auth.resetByToken");
+    }
+
     public function resetPassword(Request $request)
     {
         $hash = $request->get('hash');
@@ -104,7 +115,7 @@ class AuthController extends BaseController
                 'user' => $username,
                 'messagebodysection1' => ' يرجى النقر على الوصله ادناه او نسخها ولصقها في المتصفح
                                 لتتمكن من وضع كلمة السر الخاصة بك',
-                'messagebodysection2' => '<a href="http://awaan.ae/?token='. $token.'">الرابط</a>
+                'messagebodysection2' => '<a href="http://awaan.ae/auth/resetbytoken?token='. $token.'">الرابط</a>
                         و شكرا'
             );
             // Send the welcome email

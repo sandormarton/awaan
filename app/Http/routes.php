@@ -56,8 +56,13 @@ Route::get('catchup_frame/{id}/{slug?}/{video_id?}/{video_slug?}/{tab?}', array(
 Route::get('channel_videos_frame/{channel_id}/{limit?}', array('uses' => 'Home@channel_videos_frame'))->where('channel_id', '[0-9]+')->where('limit', '[0-9]+');
 
 Route::any('auth/register', array('uses' => 'AuthController@register'));
+Route::any('auth/reset', array('uses' => 'AuthController@reset'));
 Route::any('auth/login', array('uses' => 'AuthController@login'));
 Route::any('auth/logout', array('uses' => 'AuthController@logout'));
+
+Route::post('reset', ['as' => 'reset', 'uses' => 'AuthController@resetPassword']);
+
+Route::get('auth/resetbytoken', ['as' => 'do_reset', 'uses' => 'AuthController@resetByToken']);
 
 Route::get('episodes', ['as' => 'episodes', 'uses' => 'Episodes@index']);
 Route::get('allshows', ['as' => 'allshows', 'uses' => 'Shows@GetAllShows']);
@@ -152,7 +157,7 @@ Route::get('youMaybeLike', ['as' => 'youMaybeLike', 'uses' => 'Home@youMaybeLike
 Route::get('resumeList', ['as' => 'resumeList', 'uses' => 'Home@resumeList']);
 
 Route::group(['prefix' => 'channels'], function () {
-    Route::get('/', ['as' => 'channels', 'uses' => 'Categories@GetChannels']);
+//    Route::get('/', ['as' => 'channels', 'uses' => 'Categories@GetChannels']);
     Route::get('view/{id}/{title}', ['as' => 'view', 'uses' => 'Categories@getChannelRelatedShows'])->where('id', '[0-9]+');
 });
 Route::get('epg/{folder1?}/{folder2?}/{file?}', ['as' => 'epg', 'uses' => 'Home@ReadEpg']);
@@ -213,5 +218,7 @@ Route::get('radio/{id}/{title?}', ['as' => 'radio', 'uses' => 'RadioController@i
 Route::get('radio/catchup/{id}/{title?}', ['as' => 'radio_catchup', 'uses' => 'RadioController@catchup'])->where('id', '[0-9]+');
 Route::get('radio/shows/{id}/{title?}', ['as' => 'radio_shows', 'uses' => 'RadioController@shows'])->where('id', '[0-9]+');
 Route::get('radio/show/{id}/{show_id}/{title?}', ['as' => 'radio_shows', 'uses' => 'RadioController@show_details'])->where('id', '[0-9]+')->where('show_id', '[0-9]+');
+Route::get('radio/inner_show/{id}/{show_id}/{title?}', ['as' => 'radio_shows', 'uses' => 'RadioController@full_show_details'])->where('id', '[0-9]+')->where('show_id', '[0-9]+');
+Route::get('radio/audio/{id}/{audio_id}/{title?}', ['as' => 'radio_audios', 'uses' => 'RadioController@audio_details'])->where('id', '[0-9]+')->where('audio_id', '[0-9]+');
 
 Route::get('video/open_notification/{notification_id}/{id}/{title?}', ['as' => 'open_notification', 'uses' => 'Video@open_notification'])->where('notification_id', '[0-9]+')->where('id', '[0-9]+')->where('show_id', '[0-9]+');

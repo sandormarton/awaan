@@ -326,6 +326,15 @@ return [
         'Thu' => 'THURSDAY',
         'Fri' => 'FRIDAY',
         'Sat' => 'SATURDAY',
+
+        "latest_add" => "Latest add",
+        "more_episodes" => "More episodes",
+        "watch_all_episodes" => "Watch all episodes",
+
+        "episodes" => "Episodes",
+        "all" => "All",
+        "by_date" => "By date",
+        "more" => "More",
     ]
 ];
 ?>

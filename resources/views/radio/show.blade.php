@@ -16,24 +16,6 @@
 @endsection
 @section('main-content')
     <!-- 	 RADIO LIST OF SHOWS WRAPPER [START]		-->
-    {{--<style>--}}
-        {{--.select2-container--default .select2-results__option--highlighted[aria-selected]{--}}
-            {{--background-color: #f05e22 !important;--}}
-        {{--}--}}
-        {{--.select2-dropdown{--}}
-            {{--border-left-color: #f05e22 !important;--}}
-            {{--border-right-color: #f05e22 !important;--}}
-        {{--}--}}
-        {{--.select2-container--default.select2-container--focus .select2-selection--multiple--}}
-        {{--{border:solid black 1px;outline:0}--}}
-        {{--.select2-container--classic .select2-selection--single:focus{border:1px solid #f05e22 !important;}--}}
-        {{--.select2-container--classic.select2-container--open .select2-selection--single{border:1px solid #f05e22 !important;}--}}
-        {{--.select2-container--classic .select2-selection--multiple:focus{border:1px solid #f05e22 !important;}--}}
-        {{--.select2-container--classic.select2-container--open .select2-selection--multiple{border:1px solid #f05e22 !important;}--}}
-        {{--.select2-container--classic.select2-container--open .select2-dropdown{border-color:#f05e22 !important;}--}}
-
-        {{--.nicescroll-rails .nicescroll-cursors { background-color: #f05e22 !important; border-color:#f05e22 !important;}--}}
-    {{--</style>--}}
     <h1 style="display: none">Awaan</h1>
     <h2 style="display: none">Awaan</h2>
     <div class="radio-home-listof-shows" style=" min-height: 800px;">
@@ -55,52 +37,134 @@
             </div>
 
             <div class="radio-showdetails-wrapper">
-                <?php
-                $img = "";
-                $img=((!empty($content->cat->cover))?config('mangoapi.mangodcn').$content->cat->cover:asset("images/cover-not-available.jpg"));
-                ?>
-                <div class="show-image-div scaleZoomImg2">
-                    <img src="{{$img}}" class="img-responsive" alt="{{(Session::get('lang') == 'ar')?$content->cat->title_ar:$content->cat->title_en}}" />
-                    <div class="overlay" style="background: url({{(Session::get('lang') == 'en')?asset('images/bg-showpage-banner-en.png'):asset('images/bg-showpage-banner.png')}}) repeat scroll 0 0 / cover;"></div>
-                    <div class="show-content-div ">
-                        <h3 class="title">{{(Session::get('lang') == 'ar')?$content->cat->title_ar:$content->cat->title_en}}</h3>
-                        @if(isset($content->cat->show_times) && is_array($content->cat->show_times) && count($content->cat->show_times) > 0)
-                            @foreach($content->cat->show_times as $time)
-                                <div class="timing">
-                                    <span>UAE - {{\App\Helpers\Functions::convertFormat($time->show_time)}}</span><span>GMT - {{\App\Helpers\Functions::convertToGMTime($time->show_time)}}</span>
+                <div class="audio-top-wrapper">
+                    <div class="row">
+                        <div class="col-md-8 audio-top-left-col">
+                            <?php $img=((!empty($content->cat->cover))?config('mangoapi.mangodcn').$content->cat->cover:asset("images/cover-not-available.jpg")); ?>
+                            <div class="audio-current-details-div" data-mh="heightConsistancy">
+                                <div class="img-div" style="background-image: url({{$img}});background-size: cover;background-position: center top;background-repeat: no-repeat;">
+                                    <div class="row" style="height: 264px;">
+                                        <div class="col-md-12 player show-audio-player" id="video_embed_player">
+                                        </div>
+                                    </div>
+                                    {{--<img src="{{asset("images")}}/audio-program-img.png" class="img-responsive" />--}}
                                 </div>
-                                <div class="frequency">{{trans('content.radio.view')}} - {{trans('content.radio.'.$time->day)}}</div>
-                            @endforeach
-                        @endif
-                    </div>
-                    @if(Session::has('user_info'))
-                        <?php
-                        $uid = Session::get('user_info');
-                        ?>
-                        <div class="audio-rate-like">
-                            @if(isset($content->cat->faved_id) and !empty($content->cat->faved_id))
-                                <a href="#" class="add-to-my-list favadd favorited" data-channeluserid="<?=$uid->id?>"    data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}">{{ trans('content.whole.delete_from_list') }}</a>
-                            @else
-                                <a href="#" class="add-to-my-list favadd" data-channeluserid="<?=$uid->id?>"    data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}">{{ trans('content.whole.add_to_list') }}</a>
-                            @endif
+                                <div class="text-div">
+                                    <h2 class="program-date">{{(Session::get('lang') == 'ar')?$content->cat->title_ar:$content->cat->title_en}}</h2>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <p>{{(Session::get('lang') == 'ar')?$content->cat->description_ar:$content->cat->description_en}}</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            @if(isset($first_audio))
+                                                <p><i class="fa fa-clock-o"></i> {{$first_audio->recorder_date}}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    @if(Session::has('user_info'))
+                                        <?php
+                                        $uid = Session::get('user_info');
+                                        ?>
+                                        @if(isset($content->cat->faved_id) and !empty($content->cat->faved_id))
+                                            <a href="#" class="btn btn-plus favadd favorited" data-channeluserid="<?=$uid->id?>" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}"><i class="fa fa-minus"></i></a>
+                                        @else
+                                            <a href="#" class="btn btn-plus favadd" data-channeluserid="<?=$uid->id?>" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}"><i class="fa fa-plus"></i></a>
+                                        @endif
 
-                            <div id="rateYo" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}" data-channeluserid="<?=$uid->id?>"></div>
+                                        <div id="rateYo" style="display: inline-block;top: 5px;" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}" data-channeluserid="<?=$uid->id?>"></div>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
-                    @endif
+                        <div class="col-md-4 audio-top-right-col">
+                            <div class="audio-top-right-div" data-mh="heightConsistancy">
+                                <div class="last-on-div">
+                                    <h2 class="title">{{trans("content.radio.latest_add")}}</h2>
+                                    <div class="media">
+                                        <div class="media-left">
 
+                                        </div>
+                                        @if(isset($first_audio))
+                                            <a href="#" style="color: white;" class="audio_media" onclick="return false;" data-id="{{$first_audio->id}}" data-signature="{{$first_audio->signature}}">
+                                                <div class="media-body">
+                                                    <label class="date">{{$first_audio->recorder_date}}</label>
+                                                    <h4 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$first_audio->title_ar:$first_audio->title_en}}</h4>
+                                                </div>
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="more-episodes-div">
+                                    <h2 class="title">{{trans("content.radio.more_episodes")}}</h2>
+                                    @if(isset($more_videos[0]))
+                                        <div class="programs-div">
+                                            <h3 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}</h3>
+                                            <a href="#" onclick="return false;" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[0]->recorder_date}}</a>
+                                            <a href="#" onclick="return false;" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" /></a>
+                                        </div>
+                                    @endif
+                                    @if(isset($more_videos[1]))
+                                        <div class="programs-div">
+                                            <h3 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$more_videos[1]->title_ar:$more_videos[1]->title_en}}</h3>
+                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[1]->recorder_date}}</a>
+                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" /></a>
+                                        </div>
+                                    @endif
+
+                                    <a href="{{URL::to("radio/inner_show/{$current_channel->id}/{$content->cat->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$content->cat -> title_ar:$content->cat -> title_en))}}" class="see-all-episodes">
+                                        {{trans("content.radio.watch_all_episodes")}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- PROGRAM-LIST-DIV [START] -->
-                <div class="program-list-div">
-                    @include("radio.list_audios")
-                </div>
-                <!-- PROGRAM-LIST-DIV [END] -->
+                <div class="audio-episodes-wrapper">
 
+                    <h3 class="title">{{trans("content.radio.episodes")}}</h3>
+                    <div class="audio-episodes-container">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#all_episodes" aria-controls="all_episodes" role="tab" data-toggle="tab">{{trans("content.radio.all")}}</a></li>
+                            <li role="presentation"><a href="#bydate_episodes" aria-controls="bydate_episodes" role="tab" data-toggle="tab">{{trans("content.radio.by_date")}}</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="all_episodes">
+                                @include("radio.list_audios",[
+                                    "audio_list" => $content->audio,
+                                ])
+                                @if(isset($load_more) && $load_more)
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <a href="{{URL::to("radio/inner_show/{$current_channel->id}/{$content->cat->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$content->cat -> title_ar:$content->cat -> title_en))}}" class="btn btn-awaanbluebtn btn-viewall">{{trans("content.radio.more")}}</a>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="bydate_episodes">
+                                @if($content->ordered_audio)
+                                    @include("radio.list_audios",[
+                                        "audio_list" => $content->ordered_audio,
+                                    ])
+                                    @if(isset($load_more) && $load_more)
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <a href="{{URL::to("radio/inner_show/{$current_channel->id}/{$content->cat->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$content->cat -> title_ar:$content->cat -> title_en))}}" class="btn btn-awaanbluebtn btn-viewall">{{trans("content.radio.more")}}</a>
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="radio-programs-section radio-ourprograms-section">
                     <div class="title-section">
                         <h3>{{trans("content.radio.related_shows")}}‎</h3>
-                        <button class="btn btn-awaanbluebtn btn-viewall" {{($load_more)?'':"style=display:none;"}}>المزيد</button>
                     </div>
                     <div class="content-section">
                         <div class="row">
@@ -144,7 +208,7 @@
 
         $(document).ready( function() {
 
-            @if(isset($content->audio[0]->id)){
+                @if(isset($current_audio->id)){
                 var player;
 
                 var media_id,media_signature;
@@ -152,9 +216,9 @@
                 player_loader();
 
                 var attributes = {
-                    src: 'http://player.mangomolo.com/dev/audio?id={{$content->audio[0]->id}}&user_id=71&countries=Q0M=&zone=&filter=DENY&autoplay=false&signature={{$content->audio[0]->signature}}',
+                    src: 'http://player.mangomolo.com/dev/audio?id={{$current_audio->id}}&user_id=71&countries=Q0M=&zone=&filter=DENY&autoplay=false&signature={{$current_audio->signature}}',
                     id: 'video_embedd', frameborder: 0,
-                    style: 'border: 0; overflow: hidden; width: 100%'
+                    style: 'border: 0; overflow: hidden; width: 100%;height: 69px;'
                 };
 
                 setTimeout(function(){
@@ -206,30 +270,30 @@
 
                 });
             }
-            @endif
+                    @endif
 
-        var page = 1;
+            var page = 1;
 
-        var update_data = function (append) {
-            if(!append)
-                $(".program-list-div").html('<img src="{{asset("images/loading_icon.gif")}}" style="margin-right: 40%;" alt="Loding">');
+            var update_data = function (append) {
+                if(!append)
+                    $(".program-list-div").html('<img src="{{asset("images/loading_icon.gif")}}" style="margin-right: 40%;" alt="Loding">');
 
-            $.get( "{{Request::url()}}", {page:page},function( data,textStatus, request ) {
-                if(request.getResponseHeader('x-load-more') == ''){
-                    $(".btn-viewall").css('display','none');
-                }
+                $.get( "{{Request::url()}}", {page:page},function( data,textStatus, request ) {
+                    if(request.getResponseHeader('x-load-more') == ''){
+                        $(".btn-viewall").css('display','none');
+                    }
 
-                if(append)
-                    $(".program-list-div").append( data );
-                else
-                    $(".program-list-div").html( data );
+                    if(append)
+                        $(".program-list-div").append( data );
+                    else
+                        $(".program-list-div").html( data );
+                });
+            };
+
+            $(".btn-viewall").click(function() {
+                page += 1;
+                update_data(true);
             });
-        };
-
-        $(".btn-viewall").click(function() {
-            page += 1;
-            update_data(true);
-        });
 
             //Store frequently elements in variables
             var slider  = jQuery('#slider'),
@@ -244,17 +308,11 @@
                 if(jQuery(this).hasClass('favorited')) {
                     jQuery(this).html('');
                     jQuery(this).removeClass('favorited');
-                    htmltext = 'Favorites';
-                    if(jQuery(this).data('lang') == 'ar') {
-                        htmltext = 'أضف إلى قائمتي';
-                    }
+                    htmltext = '<i class="fa fa-plus"></i>';
                     jQuery(this).html(htmltext);
                 } else {
                     jQuery(this).find('button').html('');
-                    htmltext = 'Remove Favorites';
-                    if(jQuery(this).data('lang') == 'ar') {
-                        htmltext = 'حذف من قائمتي';
-                    }
+                    htmltext = '<i class="fa fa-minus"></i>';
                     jQuery(this).html(htmltext);
                     jQuery(this).addClass('favorited');
                 }

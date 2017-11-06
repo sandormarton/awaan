@@ -19,7 +19,7 @@
         @yield('main-content')
         </div>
         <!--footer begins-->
-        @if(ends_with(Route::currentRouteAction(), 'RadioController@show_details') || ends_with(Route::currentRouteAction(), 'RadioController@index')  || ends_with(Route::currentRouteAction(), 'RadioController@catchup') )
+        @if(ends_with(Route::currentRouteAction(), 'RadioController@index')  || ends_with(Route::currentRouteAction(), 'RadioController@catchup') )
             @include('include.footer_audio')
         @else
             @include('include.footer')

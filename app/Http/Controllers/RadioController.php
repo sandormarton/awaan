@@ -110,12 +110,98 @@ class RadioController extends BaseController
 
         $api = new ApiRequest();
         $this->data["content"] = $api->getRadioShowDetails($show_id,$season,!empty($request -> get("page"))?$request -> get("page"):1);
-//        dd( $this->data["content"]);
+        if(!isset($this->data["content"]->cat) || !isset($this->data["content"]->cat->id)){
+            abort("404");
+        }
+
+        if(isset($this->data["content"]->ordered_audio) && is_array($this->data["content"]->ordered_audio) && count($this->data["content"]->ordered_audio) > 0){
+            $this->data["first_audio"] = $this->data["content"]->ordered_audio[0];
+            $this->data["current_audio"] = $this->data["content"]->ordered_audio[0];
+        }
+
+        $this->data["more_videos"] = [];
+        if(isset($this->data["content"]->ordered_audio[1])) $this->data["more_videos"][] = $this->data["content"]->ordered_audio[1];
+        if(isset($this->data["content"]->ordered_audio[2])) $this->data["more_videos"][] = $this->data["content"]->ordered_audio[2];
+
         $this->data["load_more"] = count($this->data["content"]->audio)  > 5;
 
         if($request->ajax())
             return response($this->view("radio.list_audios"))->header('x-load-more', $this->data["load_more"]);
 
+        return $this->view("radio.show");
+    }
+
+    public function full_show_details(Request $request,$id,$show_id, $title = "", $season = ""){
+        $this->getCurrentChannel($id);
+        $this->data["need_links"] = "yes";
+        if(!isset($this->data["current_channel"]) || empty($this->data["current_channel"])){
+            return redirect()->to('');
+        }
+
+        $api = new ApiRequest();
+        $this->data["content"] = $api->getRadioShowDetails($show_id,$season,!empty($request -> get("page"))?$request -> get("page"):1);
+        if(!isset($this->data["content"]->cat) || !isset($this->data["content"]->cat->id)){
+            abort("404");
+        }
+
+        if(isset($this->data["content"]->audio) && is_array($this->data["content"]->audio) && count($this->data["content"]->audio) > 0){
+            $this->data["first_audio"] = $this->data["content"]->audio[0];
+            $this->data["current_audio"] = $this->data["content"]->audio[0];
+        }
+
+        $this->data["more_videos"] = [];
+        if(isset($this->data["content"]->audio[1])) $this->data["more_videos"][] = $this->data["content"]->audio[1];
+        if(isset($this->data["content"]->audio[2])) $this->data["more_videos"][] = $this->data["content"]->audio[2];
+
+        $this->data["load_more"] = count($this->data["content"]->audio)  > 5;
+        if($request->ajax()){
+            if($request->input("ordered") == "yes"){
+                $this->data["audio_list"] = $this->data["content"]->ordered_audio;
+                return response($this->view("radio.list_audios"))->header('x-load-more', $this->data["load_more"]);
+            }else{
+                $this->data["audio_list"] = $this->data["content"]->audio;
+                return response($this->view("radio.list_audios"))->header('x-load-more', $this->data["load_more"]);
+            }
+        }
+
+        return $this->view("radio.full_show");
+    }
+
+    public function audio_details(Request $request,$id,$audio_id, $title = "", $season = ""){
+        $this->getCurrentChannel($id);
+        if(!isset($this->data["current_channel"]) || empty($this->data["current_channel"])){
+            return redirect()->to('');
+        }
+
+        $api = new ApiRequest();
+        $this->data["current_audio"] = $api->getAudioInfo($audio_id);
+        if(!isset($this->data["current_audio"]->audio) || !isset($this->data["current_audio"]->audio->parent) || !isset($this->data["current_audio"]->audio->parent->id)){
+            abort(404);
+        }
+
+        $this->data["current_audio"] = $this->data["current_audio"]->audio;
+        $show_id=$this->data["current_audio"]->parent->id;
+        $this->data["content"] = $api->getRadioShowDetails($show_id,$season,!empty($request -> get("page"))?$request -> get("page"):1);
+        if(!isset($this->data["content"]->cat) || !isset($this->data["content"]->cat->id)){
+            abort("404");
+        }
+
+        if(isset($this->data["content"]->ordered_audio) && is_array($this->data["content"]->ordered_audio) && count($this->data["content"]->ordered_audio) > 0){
+            $this->data["first_audio"] = $this->data["content"]->ordered_audio[0];
+        }
+
+        $i=0;
+        $this->data["more_videos"] = [];
+        if(isset($this->data["content"]->ordered_audio) && is_array($this->data["content"]->ordered_audio) && count($this->data["content"]->ordered_audio) > 0){
+            foreach ($this->data["content"]->ordered_audio as $item) {
+                if($item->id != $audio_id && $item->id != $this->data["first_audio"]->id){
+                    $this->data["more_videos"][] = $item;
+                    $i++;
+                    if($i >= 2) break;
+                }
+            }
+        }
+        $this->data["load_more"] = count($this->data["content"]->audio)  > 5;
         return $this->view("radio.show");
     }
 

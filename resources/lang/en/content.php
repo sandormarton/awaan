@@ -93,7 +93,7 @@ return [
         'changed_success' => 'your Password has been changed',
         'changed_failed' => 'something wrong please try again',
         'no_email' => 'No email found!',
-        'check_mail' => 'Please check your email for activation!',
+        'check_mail' => 'Please check your email!',
     ],
     'search' => [
         'videos' => 'Videos',
@@ -160,6 +160,7 @@ return [
         'Moudablaj' => 'مدبلج',
         'Badawi' => 'بدوي',
         'Terki' => 'تركي',
+        'Arabic' => 'Arabic',
     ],
     'video' => [
         'favorites' => 'Favorites',

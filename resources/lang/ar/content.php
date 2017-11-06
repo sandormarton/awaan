@@ -184,6 +184,7 @@ return [
         'Moudablaj' => 'مدبلج',
         'Badawi' => 'بدوي',
         'Terki' => 'تركي',
+        'Arabic' => 'عربي',
     ],
     'videos_favorites_rows' => [
 

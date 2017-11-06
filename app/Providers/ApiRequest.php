@@ -794,17 +794,25 @@ class ApiRequest {
         return \GuzzleHttp\json_decode($responses);
     }
 
-    public function getRadioShowDetails($show_id,$season = "",$p = 1,$limit = 6,$cast = "1", $times = "yes"){
+    public function getRadioShowDetails($show_id,$season = "",$p = 1,$limit = 6,$cast = "1", $times = "yes", $need_ordered_audios = "yes"){
         if(isset(Session::get('user_info')->id)){
             $this->userid = Session::get('user_info')->id;
-            $this->url = 'index.php/nand?scope=audio&action=show&channel_userid='.$this->userid.'&key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&show_id='.$show_id.''.'&season='.$season.'&p='.$p.'&limit='.$limit.'&cast='.$cast.'&times='.$times.$this->extraquery.'&_t='.time().'';
+            $this->url = 'index.php/nand?scope=audio&action=show&channel_userid='.$this->userid.'&key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&show_id='.$show_id.''.'&season='.$season.'&p='.$p.'&limit='.$limit.'&cast='.$cast.'&times='.$times.'&need_ordered_audios='.$need_ordered_audios.$this->extraquery.'&_t='.time().'';
         }else{
-            $this->url = 'index.php/nand?scope=audio&action=show&key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&show_id='.$show_id.''.'&season='.$season.'&p='.$p.'&limit='.$limit.'&cast='.$cast.'&times='.$times.$this->extraquery.'&_t='.time().'';
+            $this->url = 'index.php/nand?scope=audio&action=show&key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&show_id='.$show_id.''.'&season='.$season.'&p='.$p.'&limit='.$limit.'&cast='.$cast.'&times='.$times.'&need_ordered_audios='.$need_ordered_audios.$this->extraquery.'';
         }
 
         if(!empty($this->url)) {
             $responses = $this->GetResponse(array('url' => $this->url));
 
+        }
+        return \GuzzleHttp\json_decode($responses);
+    }
+
+    public function getAudioInfo($id, $full = 0){
+        $this->url = 'index.php/nand?scope=audio&action=audio_details&key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&id='.$id.'&full='.$full;
+        if(!empty($this->url)) {
+            $responses = $this->GetResponse(array('url' => $this->url));
         }
         return \GuzzleHttp\json_decode($responses);
     }

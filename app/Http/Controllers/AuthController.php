@@ -115,7 +115,7 @@ class AuthController extends BaseController
                 'user' => $username,
                 'messagebodysection1' => ' يرجى النقر على الوصله ادناه او نسخها ولصقها في المتصفح
                                 لتتمكن من وضع كلمة السر الخاصة بك',
-                'messagebodysection2' => '<a href="http://awaan.ae/auth/resetbytoken?token='. $token.'">الرابط</a>
+                'messagebodysection2' => '<a href="https://awaan.ae/auth/resetbytoken?token='. $token.'">الرابط</a>
                         و شكرا'
             );
             // Send the welcome email

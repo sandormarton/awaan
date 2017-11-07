@@ -5,6 +5,8 @@ $cover = config('mangoapi.mangodcn').$content->cat->cover;
 $description = $content->cat->description_ar;
 $type = $content->cat->root_title;
 $sessions_select='';
+$production_year = (isset($content->cat->production_year))?$content->cat->production_year:"";
+
 //    $show_times = $content->cat->show_times;
 $authors = $content->cat->authors;
 
@@ -49,6 +51,12 @@ foreach($content->seasons as $id=>$item){
         $authors = $item-> authors;
     }elseif(isset($item -> authors) && !empty($item -> authors) && count($item -> authors) > 0  && empty(Request::segment(4)) && $item->id == $content->default_season){
         $authors = $item-> authors;
+    }
+
+    if(isset($item -> production_year) && !empty($item -> production_year) && $item->id == Request::segment(4)){
+        $production_year = $item -> production_year;
+    }elseif(!empty($item -> cover) && empty(Request::segment(4)) && $item->id == $content->default_season){
+        $production_year = $item -> production_year;
     }
 }
 ?>
@@ -142,11 +150,11 @@ foreach($content->seasons as $id=>$item){
                                         @endif
                                     </p>
                                 @endif
-                                @if(!empty($content->cat->production_year))
+                                @if(!empty($production_year))
                                     @if(Session::get('lang') == 'en')
-                                        <p>Production year : {{$content->cat->production_year}}</p>
+                                        <p>Production year : {{$production_year}}</p>
                                     @else
-                                        <p>سنة الإنتاج - {{$content->cat->production_year}}</p>
+                                        <p>سنة الإنتاج - {{$production_year}}</p>
                                     @endif
 
                                 @endif

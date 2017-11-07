@@ -139,6 +139,11 @@ return [
                 App\Providers\AuthServiceProvider::class,
                 App\Providers\EventServiceProvider::class,
                 App\Providers\RouteServiceProvider::class,
+
+                /**
+                 *  Custom
+                 */
+                Folklore\Image\ImageServiceProvider::class,
         ],
         /*
           |--------------------------------------------------------------------------
@@ -183,6 +188,7 @@ return [
                 'Validator' => Illuminate\Support\Facades\Validator::class,
                 'View' => Illuminate\Support\Facades\View::class,
                 'HTML' => Illuminate\Html\HtmlFacade::class,
-                'Functions' => App\Helpers\Functions::class
+                'Functions' => App\Helpers\Functions::class,
+                'Image' => Folklore\Image\Facades\Image::class,
         ],
 ];

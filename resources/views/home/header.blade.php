@@ -82,6 +82,7 @@
                                 </a>
                                 <div class="dropdown-menu channel-menu">
 
+                                    @if(isset($channels))
                                     @foreach($channels  as $item)
                                         <?php
                                         if(Session::get('lang') == 'ar'){
@@ -100,7 +101,9 @@
                                                 <div class="item @if(($item->id == Request::segment(3)) && ( Request::segment(1) == 'channels')) active @endif"><a href="{{URL::to("channels/view/{$item->id}/".\App\Helpers\Functions::cleanurl($title))}}"><img src="{{$img}}" alt="{{$title}}" /></a></div>
                                         @endif
                                     @endforeach
+                                    @endif
                                     <hr class="channel--seperator">
+                                     @if(isset($radio_channels))
                                     @foreach($radio_channels as $item)
                                             <?php
                                             if(Session::get('lang') == 'ar'){
@@ -119,6 +122,7 @@
                                                 <div class="item item-audio @if(($item->id == Request::segment(2)) && ( Request::segment(1) == 'radio')) active @endif"><a href="{{URL::to("radio/{$item->id}/".\App\Helpers\Functions::cleanurl($title))}}"><img src="{{$img}}" alt="{{$title}}" /></a></div>
                                             @endif
                                     @endforeach
+                                        @endif
                                 </div>
                             </li>
                             <li class="@if('catchup' == Request::segment(1)) active @endif"><a href="{{URL::to('catchup')}}">Catch Up</a></li>
@@ -155,9 +159,11 @@
                             <img src="{{ asset("images/icon-audio.png")}}" alt="awaan audio icon" />
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            @if(isset($radio_channels))
                             @foreach($radio_channels as $channel)
                                 <li><a href="{{URL::to("radio/".$channel->id."/".\App\Helpers\Functions::cleanurl($channel->title_ar))}}">{{$channel->title_ar}}</a></li>
                             @endforeach
+                                @endif
                         </ul>
                     </div>
                     <div class="languageswitcher-div">

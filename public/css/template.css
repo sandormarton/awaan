@@ -1712,6 +1712,38 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	margin-bottom: -20px;
 }
 
+#copyEmbedModel .modal-body{
+	padding: 0;
+}
+#copyEmbedModel legend{
+	color: #ffffff;
+}
+#copyEmbedModel .modal-header,
+#copyEmbedModel .modal-footer
+{
+	display: none;
+}
+#copyEmbedModel .modal-body .form-wrapper .form-control{
+	direction: ltr;
+}
+#copyEmbedModel .modal-dialog{
+	margin-top: 75px;
+}
+.pop-modal-embed{
+	width:100%;
+	padding: 24px;
+	background: rgba(0, 0, 0, 0.7);
+}
+#copyEmbedModel input,
+#copyEmbedModel input[type=checkbox],
+#copyEmbedModel input[type=radio]
+{
+	margin-left: 12px;
+}
+#copyEmbedModel .modal-body label{
+	display: inline-block;
+	margin-left: 12px;
+}
 
 @media (max-width: 1200px) {
 

@@ -168,7 +168,7 @@ return [
             'videoplay' => 'التشغيل التلقائي',
             'responsive' => 'ابعاد متناسبة',
             'result' => 'النتيجة',
-            'embedcode' => 'كود التشف',
+            'embedcode' => 'كود التشفير',
             'generatecode' => 'انشاء كود التشفير',
             'embedparam' => 'خيارات التضمين',
             'offset' => 'البدء من الثانية',

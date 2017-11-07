@@ -1,11 +1,11 @@
 <div class="modal awaan-user-section-modal fade" id="copyEmbedModel" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-close-round"></i></span></button>
             </div>
             <div class="modal-body">
-                <div class="col-lg-10 col-md-10 col-sm-11 col-xs-12 login-wrapper">
+                <div class="col-lg-10 col-md-10 col-sm-11 col-xs-12 login-wrapper pop-modal-embed">
                     <div class="site-logo">
                         <a href="#"><img src="/images/logo.png" alt="AWAAN" class="img-responsive center-block" /></a>
                     </div>

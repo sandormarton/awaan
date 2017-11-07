@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 
             console.log(response);
 
-            $.post('admin.mangomolo.com/analytics/index.php/plus/register', {
+            $.post('https://admin.mangomolo.com/analytics/index.php/plus/register', {
                 username: response.first_name,
                 firstname: response.first_name,
                 lastname: response.last_name,
@@ -153,14 +153,14 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         // e.stopPropagation();
 
-        $.post('admin.mangomolo.com/analytics/index.php/plus/reset_password',
+        $.post('https://admin.mangomolo.com/analytics/index.php/plus/reset_password',
                 {user_id: 71, email: $(document).find(".reset_email").val()}
         , function (content) {
 
             if(content.length != 0 && !$.isEmptyObject(content.email)) {
 
                 // $.post('http://beta.awaandev.mangomolo.com/reset', {email: content.email, hash: content.hash}, function (data) {
-                $.post('awaan.ae/reset', {email: content.email, hash: content.hash}, function (data) {
+                $.post('https://awaan.ae/reset', {email: content.email, hash: content.hash}, function (data) {
                     console.log('ok');
                     $(".login_success").show();
                 }, "json");
@@ -191,7 +191,7 @@ jQuery(document).ready(function($) {
             alert('Please Check Confirm Password');
             return false;
         }
-        $.post('admin.octivid.com/analytics/index.php/plus/change_password',
+        $.post('https://admin.mangomolo.com/analytics/index.php/plus/change_password',
             {user_id: 71, password: $.trim(password_reset), token: token_code}, function (content) {
                 //  console.log(content);
                 // alert('Password Changed');
@@ -221,7 +221,7 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         e.stopPropagation();
 
-        $.post('admin.mangomolo.com/analytics/index.php/plus/login', {user_id: 71, email: $(".login_form input[name=email]").val(), password: $("input[name=password]").val()})
+        $.post('https://admin.mangomolo.com/analytics/index.php/plus/login', {user_id: 71, email: $(".login_form input[name=email]").val(), password: $("input[name=password]").val()})
                 .done(function (content) {
 
                     content = $.parseJSON(content);
@@ -305,7 +305,7 @@ jQuery(document).ready(function($) {
             return false;
         }
 
-        $.post('admin.mangomolo.com/analytics/index.php/plus/register', $('input[name!=ebcaptchainput]', '.register_form').serialize(), function (data) {
+        $.post('https://admin.mangomolo.com/analytics/index.php/plus/register', $('input[name!=ebcaptchainput]', '.register_form').serialize(), function (data) {
 
             if(typeof data.error != "undefined" && data.error == 'exist') {
                 $(".reg_error .message").html("البريد الإلكتروني مستخدم بالفعل، يرجى استخدام بريد إلكتروني مختلف");

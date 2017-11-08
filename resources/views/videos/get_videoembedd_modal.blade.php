@@ -1,3 +1,5 @@
+<div class="modal awaan-user-section-modal fade " id="copyEmbedModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
 <div class="modal awaan-user-section-modal fade" id="copyEmbedModel" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -14,12 +16,6 @@
                     <div class="form-wrapper">
 
                         {{--*/ $userid=0/*--}}
-                        @if(Session::has('user'))
-                        <?php
-                        $userid = session('user')['id'];
-                        ?>
-                        @endif
-
 
                         <form class="fetchEmbedCode" method="post">
                             <fieldset>

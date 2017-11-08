@@ -61,13 +61,14 @@ if(Session::get('lang') == 'en'){
                                     @else
                                         <a  class="btn btn-favourite active-fav" data-channeluserid="<?=$uid->id?>" data-lang="{{Session::get('lang')}}" data-id="{{$vid}}"><img src="{{asset('images/icon-fav-active.png')}}" alt="favourite" /></a>
                                     @endif
-                                    {{--<a class="btn btn-embaded get_offset"  data-toggle="modal" data-target="#dd" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{asset('images/icon-embaded.png')}}" alt="embed" /></a>--}}
+                                    <a class="btn btn-embaded get_offset"  data-toggle="modal" data-target="#dd" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{asset('images/share-icon.png')}}" alt="embed" /></a>
                                     <a class="btn btn-embaded" data-toggle="modal" data-target="#copyEmbedModel"
                                        role="button" aria-haspopup="true" aria-expanded="false">
                                         <img src="{{asset('images/icon-embaded.png')}}" alt="{{ trans('content.video.getemb') }}" />
                                     </a>
                             @else
                                 <a href="<?=URL::to('auth/login')?>" class="btn btn-favourite"><img src="{{asset('images/icon-fav.png')}}" alt="favourite" /></a>
+                                <a href="<?=URL::to('auth/login')?>?" class="btn btn-embaded"><img src="{{asset('images/share-icon.png')}}" alt="share" /></a>
                                 <a href="<?=URL::to('auth/login')?>?" class="btn btn-embaded"><img src="{{asset('images/icon-embaded.png')}}" alt="embed" /></a>
                             @endif
 

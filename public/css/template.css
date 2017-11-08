@@ -484,7 +484,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .owl-dots .owl-dot span { display: block; height: 10px; width: 10px; border-radius: 20px; border: 2px solid #FFFFFF;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .owl-dots .owl-dot.active span { border-color: #307CC0; background: #307CC0;}
 
-.distinctive-programs-section .content-text-wrapper { position: relative; height: 318px;}
+.distinctive-programs-section .content-text-wrapper { position: relative; height: 336px;	min-height: 336px;}
 .distinctive-programs-section .content-text-wrapper .distinctive-programs-details { 
 	display: table; width: 100%;
 	background-image: url('../images/program-details-program-img.png'), url('../images/overlay-programs-details.png');
@@ -502,6 +502,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .distinctive-programs-section .content-text-wrapper .distinctive-programs-details.selected { 	
 	visibility: visible;
   	opacity: 1;
+	min-height: 336px;
 }
 .distinctive-programs-section .content-text-wrapper .program-title { margin-top: 10px; margin-bottom: 10px;}
 .distinctive-programs-section .content-text-wrapper .program-title-span { font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Bold', tahoma; font-size: 17px; margin-left: 15px;}
@@ -1442,26 +1443,24 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
   	padding-left: 1px;
   	padding-right: 1px;
 }
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .audio-current-details-div { background: #2BB6F3;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .audio-top-right-div { background: #2BB6F3;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .img-div img { width: 100%;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .text-div { color: #FFFFFF; padding: 0 15px 15px 15px;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .text-div .program-date { margin: 0; padding: 15px 0; font-size: 20px; font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .text-div { background: #2BB6F3; color: #FFFFFF; padding: 0 15px 15px 15px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .text-div .program-date { margin: 0; padding: 15px 0; font-size: 25px; font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .text-div .btn-plus { background: #ffffff; border-radius: 0; font-size: 18px; height: 35px;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .text-div .btn-download { background: #f8d264; border-radius: 0; height: 35px;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .text-div .btn-download i { padding-left: 5px; font-size: 18px; position: relative; top: 2px;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div { background: #2BB6F3; padding: 15px; border-bottom: 2px solid #2E2E2E;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .title { margin: 0; padding-bottom: 15px; font-size: 20px; font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div { background: #2BB6F3; padding: 15px; margin-bottom: 2px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .title { margin: 0; padding-bottom: 15px; font-size: 25px; font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media { margin: 0;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media label { font-weight: normal;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media h4 { margin: 0 0 10px 0; font-size: 15px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media h4 { margin: 0 0 10px 0; font-size: 20px;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media .telecast { }
 
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div { background: #2BB6F3; padding: 15px;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .title { margin: 0; padding-bottom: 10px; font-size: 20px; font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div { background: #2BB6F3; padding: 15px; min-height: 362px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .title { margin: 0; padding-bottom: 20px; font-size: 25px; font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .programs-div { border-right: 10px solid rgba(255, 255, 255, 0.7); margin-bottom: 30px; padding: 10px;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .programs-div h3 { font-family: 'HelveticaNeueMEforSKY-Reg', 'MyriadPro-Semibold', tahoma; font-weight: normal; margin: 0; text-transform: uppercase; font-size: 15px;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .programs-div .program-date { font-family: 'HelveticaNeueMEforSKY-Reg', 'MyriadPro-Semibold', tahoma; font-weight: normal; font-size: 15px; color: #FFFFFF;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .programs-div h3 { font-family: 'HelveticaNeueMEforSKY-Reg', 'MyriadPro-Semibold', tahoma; font-weight: normal; margin: 0; text-transform: uppercase; font-size: 20px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .programs-div .program-date { font-family: 'HelveticaNeueMEforSKY-Reg', 'MyriadPro-Semibold', tahoma; font-weight: normal; font-size: 20px; color: #FFFFFF;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .programs-div .program-play { float: left;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div .see-all-episodes { font-family: 'HelveticaNeueMEforSKY-Reg', 'MyriadPro-Semibold', tahoma; color: #FFFFFF; font-size: 18px;}
 
@@ -1471,8 +1470,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .nav-tabs > li.active > a,
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .nav-tabs > li > a:hover { color: #2BB6F3; background: #FFFFFF; border-color: #FFFFFF;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .tab-content { background: #FFFFFF; color: #444444; padding: 15px;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .tab-content .media { border-top: 1px solid #EEEEEE; padding-top: 15px;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .tab-content .media:first-child { border-top: none;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .tab-content .media { border-bottom: 1px solid #EEEEEE; padding-bottom: 15px;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .tab-content .media .media-left { position: relative;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .tab-content .media .media-left .overlay { position: absolute; bottom: 0; right: 0; background: #2BB6F3; padding: 10px;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-episodes-wrapper .audio-episodes-container .tab-content .media .media-left .overlay img { width: 25px;}
@@ -1714,8 +1712,37 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	margin-bottom: -20px;
 }
 
-.show-audio-player {
-	top: 198px;position: absolute;width: 100%;
+#copyEmbedModel .modal-body{
+	padding: 0;
+}
+#copyEmbedModel legend{
+	color: #ffffff;
+}
+#copyEmbedModel .modal-header,
+#copyEmbedModel .modal-footer
+{
+	display: none;
+}
+#copyEmbedModel .modal-body .form-wrapper .form-control{
+	direction: ltr;
+}
+#copyEmbedModel .modal-dialog{
+	margin-top: 75px;
+}
+.pop-modal-embed{
+	width:100%;
+	padding: 24px;
+	background: rgba(0, 0, 0, 0.7);
+}
+#copyEmbedModel input,
+#copyEmbedModel input[type=checkbox],
+#copyEmbedModel input[type=radio]
+{
+	margin-left: 12px;
+}
+#copyEmbedModel .modal-body label{
+	display: inline-block;
+	margin-left: 12px;
 }
 #copyEmbedModel .modal-body{
 	padding: 0;
@@ -1922,6 +1949,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	.radio-home-listof-shows .radio-menu-header-wrapper .logo-div { margin-bottom: 15px;}
 
 	.movie-wrapper .actors-container .related-series-col { display: inline-block;}
+
 }
 
 
@@ -1972,6 +2000,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	.radio-home-listof-shows .radio-menu-header-wrapper .col-xs-9 { width: 100%;}
 
 	.radio-home-listof-shows .radio-menu-header-wrapper .menu-div { margin-top: 0; margin-bottom: 15px;}
+
 }
 
 .kh-ellipsis{

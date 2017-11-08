@@ -7,11 +7,11 @@
  */
 ?>
 @extends('layouts.master')
-@section('title', 'Video on Demand - AWAAN Login')
+@section('title', 'Video on Demand - Reset password')
 @section('social_header_meta')
     @include('include.custom_social_header',[
-        'current_title'=>"Video on Demand - AWAAN Login",
-        'current_description'=>"Video on Demand - AWAAN Login",
+        'current_title'=>"Video on Demand - Reset password",
+        'current_description'=>"Video on Demand - Reset password",
     ])
 @endsection
 @section('main-content')
@@ -21,54 +21,36 @@
 
             <div class="section login-container">
                 <div class="col-lg-5 col-md-7 col-sm-9 center-col login-box-col">
-                    <h2 class="title">{{ trans('content.loginmodal.signin') }}</h2>
-                    <form id="my-login-form">
+                    <h2 class="title">{{ trans('content.loginmodal.forgotpassword') }}</h2>
+                    <form id="reset_password" class="reset_password">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="alert alert-danger alert-cont login_error" style="display: none;">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                    <p id="error-message">Alert body ...</p>
+                                    <p id="error-message">{{ trans('content.forgotmodal.no_email') }}</p>
+                                </div>
+                                <div class="alert alert-danger alert-cont login_success" style="display: none;">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <p id="error-message">{{ trans('content.forgotmodal.check_mail') }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <label style="display: none" for="usernameinput">username</label>
-                                    <input name="username" id="usernameinput" type="text" class="form-control" placeholder="{{ trans('content.loginmodal.username') }}" required />
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="display: none" for="passwordinput">password</label>
-                                    <input name="password" id="passwordinput" type="password" class="form-control" placeholder="{{ trans('content.loginmodal.password') }}" required />
+                                    <label style="display: none" for="emailinput">Email</label>
+                                    <input name="email" id="emailinput" type="text" class="form-control reset_email" placeholder="{{ trans('content.forgotmodal.email') }}" required />
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember_me" type="checkbox"> {{ trans('content.loginmodal.rememberpassword') }}
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <button type="submit" class="btn btn-block btn-awaanbluebtn btn-login">{{ trans('content.loginmodal.signin') }}</button>
+                            <div class="col-md-12 col-sm-12">
+                                <button type="submit" class="btn btn-block btn-awaanbluebtn btn-reset">{{ trans('content.loginmodal.resetPass') }}</button>
                             </div>
                         </div>
                     </form>
 
                     <div class="seperator"></div>
-
-                    <div class="col-md-6 center-col">
-                        <a href="{{URL::to("auth/reset")}}?"><h3 class="subtitle">{{ trans('content.loginmodal.forgotpassword') }}</h3></a>
-                            <a href="{{URL::to("auth/register")}}?" class="btn btn-block btn-awaanblueborderbtn btn-forgotpass">{{ trans('content.loginmodal.register') }}</a>
-                    </div>
-                    <div class="seperator"></div>
-                    <div class="col-md-6 center-col">
-                        <a href="#" class="btn btn-block btn-fblogin fb_login">{{ trans('content.register.signinfb') }} <i class="fa fa-facebook"></i></a>
-                    </div>
                 </div>
             </div>
 

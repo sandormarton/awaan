@@ -6,6 +6,15 @@ use Closure;
 
 class RequestMiddleware
 {
+    protected $except = [
+        'catchup/*/*',
+        'live/*/*',
+        'video/*/*',
+        'radio/*/*',
+        'radio/show/*/*/*',
+        'live/',
+    ];
+
     /**
      * Handle an incoming request.
      *
@@ -15,11 +24,24 @@ class RequestMiddleware
      */
     public function handle($request, Closure $next)
     {
-
-        if(!$request->is('auth/login') && $request->secure()){
+        if (!$request->secure() && !$this->shouldPassThrough($request)) {
+            return redirect()->to($request->getRequestUri(), 302, [], true); //$request->getRequestUri()
+        }else{
+            if($request->secure() && $this->shouldPassThrough($request))
             return redirect()->to($request->getRequestUri(), 302, [], false); //$request->getRequestUri()
         }
 
         return $next($request);
+    }
+
+    protected function shouldPassThrough($request)
+    {
+        foreach ($this->except as $except) {
+            if ($request->is($except)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

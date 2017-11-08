@@ -36,7 +36,7 @@
                                         <div class="program-overlay"></div>
                                         <div class="program-text">
                                             <h3 class="title">{{$title}}</h3>
-                                            <h4 class="sub-title">{{ trans('content.whole.new_episode') }}</h4>
+                                            {{--<h4 class="sub-title">{{ trans('content.whole.new_episode') }}</h4>--}}
                                             <div class="info-blocks">
                                                 <div>
                                                     <img src="{{asset("images/icon-play.png")}}" alt="play icon" />

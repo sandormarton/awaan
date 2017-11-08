@@ -148,7 +148,7 @@
             }
             ?>
             <h3 id="cat_name_back" style="display: none">{{$cat_title}}</h3>
-            <h3 id="channel_name_back" style="display: none">{{$cat_title}}</h3>
+            <h3 id="channel_name_back" style="display: none"></h3>
             <h3 id="cat_name">{{$cat_title}}</h3>
             <div class="row" id="programs-container">
                 @if($catid != 208109)
@@ -319,10 +319,6 @@
                 return false;
             });
 
-
-
-
-
             jQuery('body').on('click','.category-selector', function(e) {
                 jQuery('#loadmore-cat').css('display','inline-block');
                 jQuery('#programs-container').html('');
@@ -342,12 +338,18 @@
                     data: {
                         p: 1,
                         cat_id: cat_id,
-                        channel_id: channel_id,
+                        channel_id: channel_id
                     },
                     beforeSend: function(){
                         // $('#loader-icon').show();
                     },
                     complete: function(){
+                        history.pushState({
+                            cat_id: cat_id,
+                            channel_id: channel_id,
+                            cat_name: cat_name,
+                            urlPath:'{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id
+                        },"", '{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id);
                         // $('#loader-icon').hide();
                     },
                     success: function(data){
@@ -397,13 +399,23 @@
                         production_date: production_date,
                         order_type: order_type,
                         order: order,
-                        channel_id: channel_id,
+                        channel_id: channel_id
                     },
                     beforeSend: function(){
                         // $('#loader-icon').show();
                     },
                     complete: function(){
                         // $('#loader-icon').hide();
+                        history.pushState({
+                            cat_id: cat_id,
+                            cat_name: cat_name,
+                            language: language,
+                            production_date: production_date,
+                            order_type: order_type,
+                            order: order,
+                            channel_id: channel_id,
+                            urlPath:'{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id
+                        },"", '{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id);
                     },
                     success: function(data){
                         offset = 2;
@@ -429,7 +441,6 @@
                 });
             });
 
-
             jQuery('#language-selector').change(function() {
                 jQuery('#loadmore-cat').css('display','inline-block');
                 jQuery('#programs-container').html('');
@@ -438,6 +449,7 @@
                     language = '';
                 console.log('languange : ' + language);
                 var cat_id = jQuery('#loadmore-cat').attr('data-category-id');
+                var cat_name = jQuery('#cat_name_back').html();
                 console.log(' production_date '+production_date);
                 console.log(' cat_id '+ cat_id);
                 jQuery.ajax({
@@ -456,6 +468,16 @@
                         // $('#loader-icon').show();
                     },
                     complete: function(){
+                        history.pushState({
+                            cat_id: cat_id,
+                            cat_name: cat_name,
+                            language: language,
+                            production_date: production_date,
+                            order_type: order_type,
+                            order: order,
+                            channel_id: channel_id,
+                            urlPath:'{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id
+                        },"", '{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id);
                         // $('#loader-icon').hide();
                     },
                     success: function(data){
@@ -486,6 +508,7 @@
                 jQuery('#programs-container').html('');
                 production_date = jQuery(this).val();
                 var cat_id = jQuery('#loadmore-cat').attr('data-category-id');
+                var cat_name = jQuery('#cat_name_back').html();
                 jQuery.ajax({
                     type: "GET",
                     url: "{{URL::to("show/allprograms")}}",
@@ -502,6 +525,16 @@
                         // $('#loader-icon').show();
                     },
                     complete: function(){
+                        history.pushState({
+                            cat_id: cat_id,
+                            cat_name: cat_name,
+                            language: language,
+                            production_date: production_date,
+                            order_type: order_type,
+                            order: order,
+                            channel_id: channel_id,
+                            urlPath:'{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id
+                        },"", '{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id);
                         // $('#loader-icon').hide();
                     },
                     success: function(data){
@@ -536,6 +569,7 @@
                 order = jQuery(this).find('option:selected').attr('data-order');
                 console.log(order);
                 var cat_id = jQuery('#loadmore-cat').attr('data-category-id');
+                var cat_name = jQuery('#cat_name_back').html();
                 jQuery.ajax({
                     type: "GET",
                     url: "{{URL::to("show/allprograms")}}",
@@ -552,6 +586,16 @@
                         // $('#loader-icon').show();
                     },
                     complete: function(){
+                        history.pushState({
+                            cat_id: cat_id,
+                            cat_name: cat_name,
+                            language: language,
+                            production_date: production_date,
+                            order_type: order_type,
+                            order: order,
+                            channel_id: channel_id,
+                            urlPath:'{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id
+                        },"", '{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id);
                         // $('#loader-icon').hide();
                     },
                     success: function(data){
@@ -582,15 +626,20 @@
                 jQuery('#loadmore-cat').css('display','inline-block');
                 jQuery('#programs-container').html('');
                 channel_id = jQuery(this).find('option:selected').attr('data-id');
+                var channel_name = "";
                 if(jQuery(this).val() == 'none')
                     jQuery('#cat_name').html(jQuery('#cat_name_back').html());
                 else{
                     jQuery('#cat_name').html(jQuery('#cat_name_back').html() + ' - ' + jQuery(this).val());
                     jQuery('#channel_name_back').html(jQuery(this).val());
+                    channel_name = jQuery(this).val();
                 }
 
                 console.log(channel_id);
+                console.log(channel_name);
+                console.log("ssss");
                 var cat_id = jQuery('#loadmore-cat').attr('data-category-id');
+                var cat_name = jQuery('#cat_name_back').html();
                 jQuery.ajax({
                     type: "GET",
                     url: "{{URL::to("show/allprograms")}}",
@@ -607,8 +656,22 @@
                         // $('#loader-icon').show();
                     },
                     complete: function(){
+                        history.pushState({
+                            cat_id: cat_id,
+                            cat_name: cat_name,
+                            language: language,
+                            production_date: production_date,
+                            order_type: order_type,
+                            order: order,
+                            channel_id: channel_id,
+                            channel_name: channel_name,
+                            urlPath:'{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id
+                        },"", '{{URL::to("show/allprograms")}}/'+cat_id+'/'+cat_name+'?p=1&channel_id='+channel_id);
                         // $('#loader-icon').hide();
                     },
+
+
+
                     success: function(data){
                         console.log(data);
                         offset = 2;
@@ -633,6 +696,84 @@
                 });
             });
 
+        });
+
+        window.addEventListener('popstate', function(e) {
+            var old_data = e.state;
+            console.log(old_data);
+            var cat_id = '{{$cat_name->id}}';
+            var cat_name = '{{$cat_name->title_ar}}';
+            var channel_id = 0;
+            var language = 0;
+            var production_date = 0;
+            var order_type = 0;
+            var order = 0;
+            var channel_name = "";
+
+            if(old_data != null){
+                cat_id = old_data.cat_id;
+                cat_name = old_data.cat_name;
+                channel_id = old_data.channel_id;
+
+                if (typeof(old_data.language) !== 'undefined') language = old_data.language;
+                if (typeof(old_data.production_date) !== 'undefined') production_date = old_data.production_date;
+                if (typeof(old_data.order_type) !== 'undefined') order_type = old_data.order_type;
+                if (typeof(old_data.order) !== 'undefined') order = old_data.order;
+                if (typeof(old_data.channel_name) !== 'undefined') channel_name = old_data.channel_name;
+            }
+            jQuery('#loadmore-cat').css('display','inline-block');
+            jQuery('#programs-container').html('');
+            jQuery('#loadmore-cat').attr('data-category-offset',2);
+
+            jQuery('#loadmore-cat').attr('data-category-id',cat_id);
+            jQuery('#cat_name').html(cat_name);
+            jQuery('#cat_name_back').html(cat_name);
+
+            jQuery('#channel_name_back').html(channel_name);
+            if(jQuery('#channel_name_back').html() != '')
+                jQuery('#cat_name').html(jQuery('#cat_name_back').html() + ' - ' + jQuery('#channel_name_back').html());
+            console.log(cat_name);
+            jQuery.ajax({
+                type: "GET",
+                url: "{{URL::to("show/allprograms")}}",
+                data: {
+                    p: 1,
+                    cat_id: cat_id,
+                    channel_id: channel_id,
+                    language: language,
+                    production_date: production_date,
+                    order_type: order_type,
+                    order: order,
+                },
+                beforeSend: function(){
+                    // $('#loader-icon').show();
+                },
+                complete: function(){
+                },
+                success: function(data){
+                    jQuery('#language-selector').html(data['lang_html']);
+//                        jQuery('#channel-selector').html(data['channel_html']);
+                    jQuery('#date-selector').html(data['date_html']);
+                    console.log('lang' + data['lang_html']);
+                    console.log('date_html' + data['date_html']);
+                    if(data['count'] >= 16){
+                        jQuery('#programs-container').html(data['html']);
+                    }else{
+                        jQuery('#programs-container').html(data['html']);
+                        jQuery('#loadmore-cat').css('display','none');
+                    }
+                    jQuery(".lazy-image-handler").Lazy({
+                        onFinishedAll: function() {
+                            jQuery(this).removeData("src");
+                            jQuery(this).addClass("loaded");
+                        }
+                    });
+                    setTimeout(function() {
+                        $("body").getNiceScroll().resize();
+                    }, 1000);
+                },
+                error: function(){}
+            });
         });
     </script>
 @endsection

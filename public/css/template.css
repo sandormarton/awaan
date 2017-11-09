@@ -1715,6 +1715,9 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	margin-bottom: -20px;
 }
 
+.show-audio-player {
+	top: 198px;position: absolute;width: 100%;
+}
 
 .show-audio-player {
 	top: 198px;position: absolute;width: 100%;
@@ -1776,6 +1779,42 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	width:100%;
 	padding: 24px;
 	background: rgba(0, 0, 0, 0.96);
+}
+#copyEmbedModel input,
+#copyEmbedModel input[type=checkbox],
+#copyEmbedModel input[type=radio]
+{
+	margin-left: 12px;
+}
+#copyEmbedModel .modal-body label{
+	display: inline-block;
+	margin-left: 12px;
+}
+#copyEmbedModel .modal-body{
+	padding: 0;
+}
+#copyEmbedModel legend{
+	color: #ffffff;
+}
+#copyEmbedModel .modal-header,
+#copyEmbedModel .modal-footer
+{
+	display: none;
+}
+#copyEmbedModel .modal-body .form-wrapper .form-control{
+	direction: ltr;
+}
+#copyEmbedModel .modal-dialog{
+
+}
+#copyEmbedModel .site-logo .center-block{
+	/*position: relative;*/
+	/*left: 24px;*/
+}
+.pop-modal-embed{
+	width:100%;
+	padding: 24px;
+	background: rgba(0, 0, 0, 0.93);
 }
 #copyEmbedModel input,
 #copyEmbedModel input[type=checkbox],

@@ -1,13 +1,14 @@
-<div class="modal awaan-user-section-modal fade " id="copyEmbedModel" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+
 <div class="modal awaan-user-section-modal fade" id="copyEmbedModel" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-close-round"></i></span></button>
             </div>
+
             <div class="modal-body">
                 <div class="col-lg-10 col-md-10 col-sm-11 col-xs-12 login-wrapper pop-modal-embed">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <div class="site-logo">
                         <a href="#"><img src="/images/logo.png" alt="AWAAN" class="img-responsive center-block" /></a>
                     </div>
@@ -16,6 +17,9 @@
                     <div class="form-wrapper">
 
                         {{--*/ $userid=0/*--}}
+
+
+
 
                         <form class="fetchEmbedCode" method="post">
                             <fieldset>
@@ -72,6 +76,12 @@
         s -= m*60;
         return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); //zero padding on minutes and seconds
     }
+
+
+
+
+
+
 
     $(function () {
         $('#videoAutoPlay,#videoResponsive,#videoWidth,#videoHeight').on('change', function () {

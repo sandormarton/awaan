@@ -214,7 +214,6 @@ if(Session::get('lang') == 'en'){
         </div><!-- CONTAINER [END]	-->
     </div>
 
-
     <div class="modal fade" id="offset_modal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="background-color: #2e2e2e">

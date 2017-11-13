@@ -1437,7 +1437,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 /* AUDIO NEW */
 
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .row { margin-left: -1px; margin-right: -1px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .row { margin-left: -1px; margin-right: -1px; position: relative;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper [class^="col-"],
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper [class*=" col-"] {
   	padding-left: 1px;
@@ -1716,11 +1716,8 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 }
 
 .show-audio-player {
-	top: 198px;position: absolute;width: 100%;
-}
-
-.show-audio-player {
-	top: 198px;position: absolute;width: 100%;
+	position: absolute;width: 100%;
+	background: rgba(0,0,0,0.6); bottom: 0; height: 66px;
 }
 #copyEmbedModel .modal-body{
 	padding: 0;

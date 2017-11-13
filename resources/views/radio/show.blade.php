@@ -316,7 +316,7 @@
                     jQuery(this).html(htmltext);
                     jQuery(this).addClass('favorited');
                 }
-                jQuery.post("http://admin.mangomolo.com/analytics/index.php/plus/favor", {
+                jQuery.post("//admin.mangomolo.com/analytics/index.php/plus/favor", {
                     faved_id: jQuery(this).data('id'),
                     channel_userid: jQuery(this).data('channeluserid'),
                     fav_type: 3,
@@ -345,7 +345,7 @@
                     var id = $(rateYoInstance.node).data("id");
                     var channeluserid = $(rateYoInstance.node).data("channeluserid");
 
-                    jQuery.post("http://admin.mangomolo.com/analytics/index.php/plus/rateit", {
+                    jQuery.post("//admin.mangomolo.com/analytics/index.php/plus/rateit", {
                         rated_id: id,
                         rate_value: rating,
                         channel_userid: channeluserid,

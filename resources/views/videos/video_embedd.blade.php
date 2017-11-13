@@ -309,7 +309,7 @@ if(Session::get('lang') == 'en'){
                 jQuery(this).find('img').attr('src','{{asset('images/icon-fav-active.png')}}');
             jQuery(this).addClass('active-fav');
             }
-            jQuery.post("http://admin.mangomolo.com/analytics/index.php/plus/favor", {
+            jQuery.post("//admin.mangomolo.com/analytics/index.php/plus/favor", {
             faved_id: jQuery(this).data('id'),
             channel_userid: jQuery(this).data('channeluserid'),
             user_id: 71

@@ -67,7 +67,6 @@
 
 </div>
 
-
 <script>
     function secondsTimeSpanToHMS(s) {
         var h = Math.floor(s/3600); //Get whole hours

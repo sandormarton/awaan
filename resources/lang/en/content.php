@@ -332,6 +332,8 @@ return [
         "watch_all_episodes" => "Watch all episodes",
 
         "episodes" => "Episodes",
+        "no_episodes" => "There is no episodes.",
+
         "all" => "All",
         "by_date" => "By date",
         "more" => "More",

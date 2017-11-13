@@ -462,7 +462,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .distinctiveprogramssection-wrapper .homeprograms-section { margin-bottom: 0;}
 .distinctiveprogramssection-wrapper .homeprograms-section .title-section h3 { margin: 15px 0; display: inline-block;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item { position: relative; margin-bottom: 15px; padding-right: 1px;}
-.distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .img-div { background-size: cover; background-position: center center; background-repeat: no-repeat; height: 160px;}
+.distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .img-div { background-size: cover; background-position: center center; background-repeat: no-repeat; height: 138px;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .badge { border-radius: 0; color: #ffffff; font-family: "MyriadPro-Regular","HelveticaNeueMEforSKY-Light",tahoma; font-size: 15px; padding: 10px 20px; position: absolute; right: 0; top: 0; text-transform: uppercase; font-weight: normal;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .badge.badge-noordubaifm { background: #f89633;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .badge.badge-dubaione { background: #d0112b;}

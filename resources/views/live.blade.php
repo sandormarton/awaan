@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-3 col-md-3">
                     <div class="uplcoming-shows-wrapper">
                         <div class="row">
                             @if(isset($channel->catchup) && $channel->catchup)
@@ -53,7 +53,7 @@
                                     @if(!is_object($item) || $index == 2)
                                         @break
                                     @endif
-                                        <div class="col-md-12 col-sm-6 col-xs-6">
+                                        <div class="col-md-12 col-sm-6 col-xs-12 live-upcoming-mobo">
                                             <div class="uplcoming-show-div @if($index == 0) active @endif">
                                                 <div class="uplcoming-shows-img-div" style="background-image: url('{{$item->img}}');"></div>
                                                 <div class="uplcoming-shows-program ">

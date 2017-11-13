@@ -44,8 +44,9 @@
                             <div class="audio-current-details-div" data-mh="heightConsistancy">
                                 <div class="img-div" style="background-image: url({{$img}});background-size: cover;background-position: center top;background-repeat: no-repeat;">
                                     <div class="row" style="height: 264px;">
-                                        <div class="col-md-12 player show-audio-player" id="video_embed_player">
-                                        </div>
+                                        @if(isset($content->audio) && is_array($content->audio) && count($content->audio) > 0)
+                                            <div class="col-md-12 player show-audio-player" id="video_embed_player"></div>
+                                        @endif
                                     </div>
                                     {{--<img src="{{asset("images")}}/audio-program-img.png" class="img-responsive" />--}}
                                 </div>
@@ -111,9 +112,11 @@
                                         </div>
                                     @endif
 
-                                    <a href="{{URL::to("radio/inner_show/{$current_channel->id}/{$content->cat->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$content->cat -> title_ar:$content->cat -> title_en))}}" class="see-all-episodes">
-                                        {{trans("content.radio.watch_all_episodes")}}
-                                    </a>
+                                    @if(isset($content->audio) && is_array($content->audio) && count($content->audio) > 0)
+                                        <a href="{{URL::to("radio/inner_show/{$current_channel->id}/{$content->cat->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$content->cat -> title_ar:$content->cat -> title_en))}}" class="see-all-episodes">
+                                            {{trans("content.radio.watch_all_episodes")}}
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -121,33 +124,20 @@
                 </div>
 
                 <div class="audio-episodes-wrapper">
-
                     <h3 class="title">{{trans("content.radio.episodes")}}</h3>
-                    <div class="audio-episodes-container">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#all_episodes" aria-controls="all_episodes" role="tab" data-toggle="tab">{{trans("content.radio.all")}}</a></li>
-                            <li role="presentation"><a href="#bydate_episodes" aria-controls="bydate_episodes" role="tab" data-toggle="tab">{{trans("content.radio.by_date")}}</a></li>
-                        </ul>
+                    @if(isset($content->audio) && is_array($content->audio) && count($content->audio) > 0)
+                        <div class="audio-episodes-container">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#all_episodes" aria-controls="all_episodes" role="tab" data-toggle="tab">{{trans("content.radio.all")}}</a></li>
+                                <li role="presentation"><a href="#bydate_episodes" aria-controls="bydate_episodes" role="tab" data-toggle="tab">{{trans("content.radio.by_date")}}</a></li>
+                            </ul>
 
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active" id="all_episodes">
-                                @include("radio.list_audios",[
-                                    "audio_list" => $content->audio,
-                                ])
-                                @if(isset($load_more) && $load_more)
-                                    <div class="row">
-                                        <div class="col-md-12 text-center">
-                                            <a href="{{URL::to("radio/inner_show/{$current_channel->id}/{$content->cat->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$content->cat -> title_ar:$content->cat -> title_en))}}" class="btn btn-awaanbluebtn btn-viewall">{{trans("content.radio.more")}}</a>
-                                        </div>
-                                    </div>
-                                @endif
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="bydate_episodes">
-                                @if($content->ordered_audio)
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="all_episodes">
                                     @include("radio.list_audios",[
-                                        "audio_list" => $content->ordered_audio,
+                                        "audio_list" => $content->audio,
                                     ])
                                     @if(isset($load_more) && $load_more)
                                         <div class="row">
@@ -156,10 +146,26 @@
                                             </div>
                                         </div>
                                     @endif
-                                @endif
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="bydate_episodes">
+                                    @if($content->ordered_audio)
+                                        @include("radio.list_audios",[
+                                            "audio_list" => $content->ordered_audio,
+                                        ])
+                                        @if(isset($load_more) && $load_more)
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <a href="{{URL::to("radio/inner_show/{$current_channel->id}/{$content->cat->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$content->cat -> title_ar:$content->cat -> title_en))}}" class="btn btn-awaanbluebtn btn-viewall">{{trans("content.radio.more")}}</a>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endif
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @else
+                        <p>{{trans("content.radio.no_episodes")}}</p>
+                    @endif
                 </div>
 
                 <div class="radio-programs-section radio-ourprograms-section">

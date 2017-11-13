@@ -343,6 +343,7 @@ return [
         "watch_all_episodes" => "مشاهدة جميع الحلقات",
 
         "episodes" => "الحلقات",
+        "no_episodes" => "لا يوجد حلقات",
         "all" => "الكل",
         "by_date" => "حسب التاريخ",
         "more" => "المزيد",

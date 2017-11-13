@@ -270,7 +270,7 @@ class Video extends BaseController
     private function getFavoritesVideos($uid)
     {
 
-        $url = "http://admin.mangomolo.com/analytics/index.php/plus/favorites?user_id=" . config('mangoapi.user_id') . "&channel_userid=" . $uid . "&key=" . config('mangoapi.apikey'). "&t=".time();
+        $url = "//admin.mangomolo.com/analytics/index.php/plus/favorites?user_id=" . config('mangoapi.user_id') . "&channel_userid=" . $uid . "&key=" . config('mangoapi.apikey'). "&t=".time();
         if (!empty($url)) {
             $responses = json_decode(file_get_contents($url), true);
         }

@@ -29,7 +29,7 @@
                 console.log('faved_id: ' + jQuery(this).data('id'));
                 var htmltext = '';
                 jQuery(this).parents('.favorite-video-col').css('display','none');
-                jQuery.post("http://admin.mangomolo.com/analytics/index.php/plus/favor", {
+                jQuery.post("//admin.mangomolo.com/analytics/index.php/plus/favor", {
                     faved_id: jQuery(this).data('id'),
                     channel_userid: jQuery(this).data('channeluserid'),
                     user_id: 71

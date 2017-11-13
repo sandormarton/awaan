@@ -322,7 +322,7 @@ class ApiRequest {
 
     public function getFavoritesShows() {
 
-        $this->url = "http://admin.mangomolo.com/analytics/index.php/plus/favorites_shows?user_id=".config('mangoapi.user_id')."".$this->extraquery."&key=".config('mangoapi.apikey');
+        $this->url = "//admin.mangomolo.com/analytics/index.php/plus/favorites_shows?user_id=".config('mangoapi.user_id')."".$this->extraquery."&key=".config('mangoapi.apikey');
 
         if(!empty($this->url)) {
             $responses = json_decode(file_get_contents($this->url), true);

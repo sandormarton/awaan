@@ -244,7 +244,7 @@ class Shows extends BaseController {
     //temporary
     private function getFavoritesShows($uid) {
 
-        $url = "http://admin.mangomolo.com/analytics/index.php/plus/favorites_shows?user_id=".config('mangoapi.user_id')."&channel_userid=".$uid."&key=".config('mangoapi.apikey') . "&t=".time();
+        $url = "//admin.mangomolo.com/analytics/index.php/plus/favorites_shows?user_id=".config('mangoapi.user_id')."&channel_userid=".$uid."&key=".config('mangoapi.apikey') . "&t=".time();
         if(!empty($url)) {
             $responses = json_decode(file_get_contents($url), true);
         }

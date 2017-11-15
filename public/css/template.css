@@ -1454,8 +1454,8 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div { background: #2BB6F3; padding: 15px; border-bottom: 2px solid #2E2E2E;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .title { margin: 0; padding-bottom: 15px; font-size: 20px; font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media { margin: 0;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media label { font-weight: normal;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media h4 { margin: 0 0 10px 0; font-size: 15px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media p { font-weight: normal;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media .title-media { margin: 0 0 10px 0; font-size: 15px;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media .telecast { }
 
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div { background: #2BB6F3; padding: 15px;}

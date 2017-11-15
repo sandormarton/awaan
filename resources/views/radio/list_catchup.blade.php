@@ -24,6 +24,7 @@
             <div class="program-div scaleZoomImg">
                 <a href="#">
                     {{--<img src="{{$img}}" class="img-responsive" />--}}
+                    <p style="display: none;">{{$item -> title_en}}</p>
                     <div class="embed-responsive-item image-div lazy-image-handler"  data-src="{{$img}}"  style="background-image: url('{{asset("images/ajax-loader.gif")}}');"></div>
                 </a>
                 <div class="content-div radio">

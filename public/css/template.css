@@ -462,7 +462,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .distinctiveprogramssection-wrapper .homeprograms-section { margin-bottom: 0;}
 .distinctiveprogramssection-wrapper .homeprograms-section .title-section h3 { margin: 15px 0; display: inline-block;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item { position: relative; margin-bottom: 15px; padding-right: 1px;}
-.distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .img-div { background-size: cover; background-position: center center; background-repeat: no-repeat; height: 160px;}
+.distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .img-div { background-size: cover; background-position: center center; background-repeat: no-repeat; height: 138px;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .badge { border-radius: 0; color: #ffffff; font-family: "MyriadPro-Regular","HelveticaNeueMEforSKY-Light",tahoma; font-size: 15px; padding: 10px 20px; position: absolute; right: 0; top: 0; text-transform: uppercase; font-weight: normal;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .badge.badge-noordubaifm { background: #f89633;}
 .distinctiveprogramssection-wrapper .homeprograms-section .data-section .data-carousel .item .badge.badge-dubaione { background: #d0112b;}
@@ -1113,7 +1113,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 .live-wrapper .channel-content-wrapper { background: #000000; padding: 50px 0;}
 .live-wrapper .channel-content-wrapper .content-title { margin-top: 0; margin-bottom: 20px; font-size: 20px;}
-.live-wrapper .channel-content-wrapper .uplcoming-shows-img-div { background-position: center center; background-repeat: no-repeat; background-size: cover; height: 162px; position: relative;}
+.live-wrapper .channel-content-wrapper .uplcoming-shows-img-div { background-position: center center; background-repeat: no-repeat; background-size: cover; height: 140px; position: relative;}
 .live-wrapper .channel-content-wrapper .uplcoming-shows-program .overlay { position: absolute; width: 56px; height: 40px; top: 20px; left: 15px; background: url("../images/awwangoldshow-overlay.png") no-repeat #29799e; opacity: 0;}
 
 .live-wrapper .channel-content-wrapper .uplcoming-show-div:hover .uplcoming-shows-program  .overlay,
@@ -1454,8 +1454,8 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div { background: #2BB6F3; padding: 15px; border-bottom: 2px solid #2E2E2E;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .title { margin: 0; padding-bottom: 15px; font-size: 20px; font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media { margin: 0;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media label { font-weight: normal;}
-.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media h4 { margin: 0 0 10px 0; font-size: 15px;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media p { font-weight: normal;}
+.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media .title-media { margin: 0 0 10px 0; font-size: 15px;}
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .last-on-div .media .telecast { }
 
 .radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .more-episodes-div { background: #2BB6F3; padding: 15px;}
@@ -1712,7 +1712,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	left: 14px;
 }
 .custom-margin-bottom-inverse{
-	margin-bottom: -20px;
+	/*margin-bottom: -20px;*/
 }
 
 .show-audio-player {
@@ -1823,8 +1823,13 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	display: inline-block;
 	margin-left: 12px;
 }
+.embed-responsive-16by9 {
+	padding-bottom: 51%;
+}
 @media (max-width: 1200px) {
-
+	.embed-responsive-16by9 {
+		padding-bottom: 56.25%;
+	}
 	.menu-wrapper .searchform-div .search-form { margin-top: 0;}
 
 	.menu-wrapper .navbar-main .navbar-nav li a { padding-left: 10px; padding-right: 10px;}
@@ -1887,7 +1892,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	
 	
 	/* LIVE WRAPPER */
-	.live-wrapper .channel-content-wrapper .uplcoming-shows-img-div { height: 170px;}
+	.live-wrapper .channel-content-wrapper .uplcoming-shows-img-div { height: 182px;}
 	.live-wrapper .channel-content-wrapper .uplcoming-shows-wrapper { margin-top: 15px;}
 	#offset_modal .modal-dialog {
 		margin-top: 184px;
@@ -1902,7 +1907,11 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 
 @media (max-width: 767px) {
-
+	.live-upcoming-mobo{
+		float: none;
+		margin:0 auto;
+		max-width: 360px;
+	}
 	.menu-wrapper .navbar-toggle { margin-left: 5px;}
 
 	.menu-wrapper .navbar-main .navbar-toggle { border-color: #2bb6f3;}

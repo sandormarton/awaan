@@ -287,7 +287,7 @@
                                         <div class="ribbin-div ribbin-new-episode"></div>
                                         <span class="title">
                                             <span class="name">{{$title}}</span>
-                                            <span class="name2">{{$item->recorder_date}}</span>
+                                            {{--<span class="name2">{{$item->recorder_date}}</span>--}}
                                         </span>
                                     </a>
                                 </div>

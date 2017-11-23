@@ -15,7 +15,8 @@ gulp.task('scripts-mini', function() {
         "public/js/jquery.maskedinput.min.js",
         "public/js/jquery.unveil.js",
         "public/js/jquery.lazy.min.js",
-        "public/js/select2.full.min.js"
+        "public/js/select2.full.min.js",
+        "public/js/jquery.matchHeight-min.js"
     ])
     .pipe(concat('_scripts.js'))
     .pipe(gulp.dest(jsDest))

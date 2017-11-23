@@ -1712,7 +1712,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	left: 14px;
 }
 .custom-margin-bottom-inverse{
-	margin-bottom: -20px;
+	/*margin-bottom: -20px;*/
 }
 
 .show-audio-player {

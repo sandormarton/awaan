@@ -163,25 +163,25 @@ Route::group(['prefix' => 'channels'], function () {
 Route::get('epg/{folder1?}/{folder2?}/{file?}', ['as' => 'epg', 'uses' => 'Home@ReadEpg']);
 /* show-autoloaders */
 
-Route::get('/show-autoloaders', function() {
-    foreach(spl_autoload_functions() as $callback) {
-        if(is_string($callback)) {
-            echo '- ', $callback, "\n<br>\n";
-        }
-        else if(is_array($callback)) {
-            if(is_object($callback[0])) {
-                echo '- ', get_class($callback[0]);
-            }
-            elseif(is_string($callback[0])) {
-                echo '- ', $callback[0];
-            }
-            echo '::', $callback[1], "\n<br>\n";
-        }
-        else {
-            var_dump($callback);
-        }
-    }
-});
+//Route::get('/show-autoloaders', function() {
+//    foreach(spl_autoload_functions() as $callback) {
+//        if(is_string($callback)) {
+//            echo '- ', $callback, "\n<br>\n";
+//        }
+//        else if(is_array($callback)) {
+//            if(is_object($callback[0])) {
+//                echo '- ', get_class($callback[0]);
+//            }
+//            elseif(is_string($callback[0])) {
+//                echo '- ', $callback[0];
+//            }
+//            echo '::', $callback[1], "\n<br>\n";
+//        }
+//        else {
+//            var_dump($callback);
+//        }
+//    }
+//});
 
 Route::get('gitex', array('uses' => 'Home@competition'));
 
@@ -222,3 +222,30 @@ Route::get('radio/inner_show/{id}/{show_id}/{title?}', ['as' => 'radio_shows', '
 Route::get('radio/audio/{id}/{audio_id}/{title?}', ['as' => 'radio_audios', 'uses' => 'RadioController@audio_details'])->where('id', '[0-9]+')->where('audio_id', '[0-9]+');
 
 Route::get('video/open_notification/{notification_id}/{id}/{title?}', ['as' => 'open_notification', 'uses' => 'Video@open_notification'])->where('notification_id', '[0-9]+')->where('id', '[0-9]+')->where('show_id', '[0-9]+');
+
+
+Route::get("/getImg/{path}", function($path=''){
+
+    try{
+
+        $file_name = basename(base64_decode($path));
+        $files_path = public_path("images/schedule/");
+
+        if(file_exists($files_path.$file_name)){
+            $file = file_get_contents($files_path.$file_name);
+        }else{
+            usleep(200);
+            $file = file_put_contents($files_path.$file_name, file_get_contents(base64_decode($path)));
+        }
+
+        $sLastModified = gmdate('D, d M Y H:i:s', strtotime('now')) . ' GMT';
+
+        return Response::make($file, 200, [
+            'Content-Type' => 'image'
+        ]);
+
+    }catch (\Exception $e){
+
+    }
+    return false;
+});

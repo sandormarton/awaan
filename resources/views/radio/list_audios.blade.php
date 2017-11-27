@@ -26,7 +26,7 @@
                             height: 108px;
                             width: 192px;"></div>
                     <div class="overlay">
-                        <img src="{{asset("images")}}/icon-play.png" />
+                        <img src="{{asset("images")}}/icon-play.png" alt="play icon" />
                     </div>
                 </a>
             </div>

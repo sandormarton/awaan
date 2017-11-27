@@ -148,7 +148,7 @@
             }
             ?>
             <h3 id="cat_name_back" style="display: none">{{$cat_title}}</h3>
-            <h3 id="channel_name_back" style="display: none"></h3>
+            <div id="channel_name_back" style="display: none"></div>
             <h3 id="cat_name">{{$cat_title}}</h3>
             <div class="row" id="programs-container">
                 @if($catid != 208109)

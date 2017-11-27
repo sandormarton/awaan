@@ -88,8 +88,8 @@
                                         @if(isset($first_audio))
                                             <a href="#" style="color: white;" class="audio_media" onclick="return false;" data-id="{{$first_audio->id}}" data-signature="{{$first_audio->signature}}">
                                                 <div class="media-body">
-                                                    <label class="date">{{$first_audio->recorder_date}}</label>
-                                                    <h4 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$first_audio->title_ar:$first_audio->title_en}}</h4>
+                                                    <p class="date">{{$first_audio->recorder_date}}</p>
+                                                    <div class="title-media kh-ellipsis">{{(Session::get('lang') == 'ar')?$first_audio->title_ar:$first_audio->title_en}}</div>
                                                 </div>
                                             </a>
                                         @endif
@@ -101,14 +101,14 @@
                                         <div class="programs-div">
                                             <h3 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}</h3>
                                             <a href="#" onclick="return false;" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[0]->recorder_date}}</a>
-                                            <a href="#" onclick="return false;" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" /></a>
+                                            <a href="#" onclick="return false;" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
                                         </div>
                                     @endif
                                     @if(isset($more_videos[1]))
                                         <div class="programs-div">
                                             <h3 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$more_videos[1]->title_ar:$more_videos[1]->title_en}}</h3>
                                             <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[1]->recorder_date}}</a>
-                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" /></a>
+                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
                                         </div>
                                     @endif
 

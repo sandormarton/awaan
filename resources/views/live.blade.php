@@ -38,7 +38,7 @@
             $live_cover = '';
         }
     ?>
-    <div class="channel-content-wrapper" style="background: url({{$live_cover}}) ">
+    <div class="channel-content-wrapper" style="background: url({{$live_cover}});background-size: cover; ">
         <div class="container">
 
             <h4 class="content-title">@if(Session::get('lang') == 'ar') {{$channel->title_ar}} @else {{$channel->title_en}} @endif</h4>

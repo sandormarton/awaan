@@ -547,7 +547,7 @@
                 navText   : ['',''],
                 rtl       : true,
                 loop      : true,
-                margin    : 25,
+                margin    : 5,
                 nav       : true,
                 responsive: {
                     0:{
@@ -563,7 +563,7 @@
                         items:6
                     },
                     1200:{
-                        items:7
+                        items:6
                     }
                 }
             });

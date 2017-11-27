@@ -146,7 +146,7 @@ return [
         'resume' => 'Resume List',
         'production_year' => 'Production year',
         'watch_now' => 'Watch now',
-        'return_to_category' => 'Return to category',
+        'return_to_show' => 'Back to show',
         'other_movies' => 'Other Movies',
         'latestAdded' => 'Latest added',
         'related_movies' => 'Related movies',

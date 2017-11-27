@@ -1,9 +1,12 @@
 @extends('layouts.master')
 <?php
+
 if(Session::get('lang') == 'en'){
     $title = $content->title_en;
+    $parent_title = $content->cat_title_en;
 }else{
     $title = $content->title_ar;
+    $parent_title = $content->cat_title;
 }
 ?>
 @section('title',substr( $title, 0, 64))
@@ -33,6 +36,10 @@ if(Session::get('lang') == 'en'){
             </div>
             <div class="video-content-wrapper">
                 <?php
+                    if(isset($content->cat_id) and !empty($content->cat_id))
+                        $cat_id_return = $content->cat_id;
+                    else
+                        $cat_id_return = 0;
                 if(Session::get('lang') == 'ar'){
                     $title = $content->title_ar;
                     if(!isset($title) || empty($title)){
@@ -40,7 +47,7 @@ if(Session::get('lang') == 'en'){
                     }
                     if(isset($currentseasons->shows_parent) and !empty($currentseasons->shows_parent) and isset($currentseasons->shows_parent[0]) and !empty($currentseasons->shows_parent[0]) and isset($currentseasons->shows_parent[0]->title_ar) and !empty($currentseasons->shows_parent[0]->title_ar)){
                         $cat = $currentseasons->shows_parent[0]->title_ar;
-                        $cat_id_return = $currentseasons->shows_parent[0]->id;
+
                     }
                 }
                 else{
@@ -50,7 +57,6 @@ if(Session::get('lang') == 'en'){
                     }
                     if(isset($currentseasons->shows_parent) and !empty($currentseasons->shows_parent) and isset($currentseasons->shows_parent[0]) and !empty($currentseasons->shows_parent[0]) and isset($currentseasons->shows_parent[0]->title_en) and !empty($currentseasons->shows_parent[0]->title_en)){
                         $cat = $currentseasons->shows_parent[0]->title_en;
-                        $cat_id_return = $currentseasons->shows_parent[0]->id;
                     }
                 }
                 ?>
@@ -94,7 +100,7 @@ if(Session::get('lang') == 'en'){
                         @if(!empty($currentseasons) && isset($currentseasons->videos) && is_array($currentseasons->videos) && sizeof($currentseasons->videos) > 0)
                             <div class="title-section">
                                 <h3>{{ trans('content.whole.more_episode2') }}</h3>
-                                <a href="{{URL::to('show/allprograms/'.$cat_id_return.'/'. $cat )}}" class="btn btn-awaanbluebtn btn-viewall">{{ trans('content.whole.return_to_category') }}</a>
+                                <a href="{{URL::to('show/'.$cat_id_return.'/'. $parent_title )}}" class="btn btn-awaanbluebtn btn-viewall">{{$parent_title}}</a>
                             </div>
                             <div class="content-div">
                                 <div class="row" id="related-episode-container">

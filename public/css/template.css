@@ -1850,9 +1850,18 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .embed-responsive-16by9 {
 	padding-bottom: 51%;
 }
+#channel-carousel{
+	padding-left: 48px;
+}
+.live-wrapper #channel-carousel{
+	padding-right: 48px;
+}
 @media (max-width: 1200px) {
 	.embed-responsive-16by9 {
 		padding-bottom: 56.25%;
+	}
+	#channel-carousel{
+		padding-right: 48px;
 	}
 	.menu-wrapper .searchform-div .search-form { margin-top: 0;}
 

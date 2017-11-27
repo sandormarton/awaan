@@ -151,7 +151,7 @@ return [
         'other_movies' => 'أفلام أخرى',
         'latestAdded' => 'آخر الاضافات',
         'related_movies' => 'أفلام مشابهة',
-        'return_to_category' => 'العودة للفئة',
+        'return_to_show' => 'العودة للعرض',
     ],
     'video' => [
 

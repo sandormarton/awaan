@@ -1,5 +1,8 @@
 
 jQuery(document).ready( function() {
+
+	jQuery('[data-toggle="popover"]').popover();
+
     // jQuery(".lazy-image").unveil(300);
 
     // jQuery(document).find(".lazy-image-handler").unveil(200, function() {

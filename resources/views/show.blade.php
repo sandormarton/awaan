@@ -1,6 +1,11 @@
 @extends('layouts.master')
 <?php
 
+if(isset($content->cat->root_title) and !empty($content->cat->root_title)){
+    $cat = $content->cat->root_title;
+}else{
+    $cat = '';
+}
 $cover = config('mangoapi.mangodcn').$content->cat->cover;
 $description = $content->cat->description_ar;
 $type = $content->cat->root_title;
@@ -243,6 +248,7 @@ foreach($content->seasons as $id=>$item){
                         @if(Session::get('lang') == 'ar')
                             <?php
                             $title = $item->title_ar;
+                            $cat_name = $item->cat_ar;
                             $video_hover['videotitle']= $item->title_ar;
                             $video_hover['desc'] = '';
                             if(isset($item->description_ar) && !empty($item->description_ar) && (Session::get('lang') == 'ar') ){
@@ -253,6 +259,7 @@ foreach($content->seasons as $id=>$item){
                         @else
                             <?php
                             $title = $item->title_en;
+                            $cat_name = $item->cat_en;
                             $video_hover['videotitle']= $item->title_en;
                             if(isset($item->description_en) && !empty($item->description_en)){
                                 $video_hover['desc']=$item->description_en;
@@ -274,7 +281,7 @@ foreach($content->seasons as $id=>$item){
                         $url = route('video', [$item->id, \App\Helpers\Functions::cleanurl($title)]);
                         $share_url = route('video', [$item->id, rawurlencode(\App\Helpers\Functions::cleanurl($title))]);
                         ?>
-                        <div class="col-md-3 col-sm-4 col-xs-6 showpage-video-col">
+                        <div class="col-md-3 col-sm-4 col-xs-6 showpage-video-col"  data-toggle="popover" data-trigger="hover" data-placement="top" title="{{$cat}}" data-content="<?php echo $title . '&#10;'. $item -> recorder_date ?>">
                             <a href="{{$url}}?x">
                                 <div class="img-div scaleZoomImg">
                                 <!--<img src="{{$img}}" class="img-responsive center-block" />-->
@@ -346,6 +353,7 @@ foreach($content->seasons as $id=>$item){
                         setTimeout(function() {
                             $("body").getNiceScroll().resize();
                         }, 1000);
+                        jQuery('[data-toggle="popover"]').popover();
 
                     },
                     error: function(){}

@@ -172,7 +172,7 @@
                             <a href="{{URL::to('set/en')}}" class="btn btn-awaanbluebtn btn-languageswitcher">En</a>
                         @else
                             <a style="display: none" data-lang="en" id="language-selected"></a>
-                            <a href="{{URL::to('set/ar')}}" class="btn btn-awaanbluebtn btn-languageswitcher">Ar</a>
+                            <a href="{{URL::to('set/ar')}}" class="btn btn-awaanbluebtn btn-languageswitcher">عر</a>
                         @endif
                     </div>
                     <div class="userbtn-div dropdown">

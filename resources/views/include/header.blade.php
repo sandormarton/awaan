@@ -21,6 +21,8 @@
 		    <link rel="stylesheet" type="text/css" href="{{ asset("/css/bootstrap-rtl.min.css")}}" />
             @endif
 
+
+
         	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/bootstrap-theme.min.css")}}" />--}}
         	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/font-awesome.min.css")}}" />--}}
         	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/mCustomScrollbar.min.css")}}" />--}}
@@ -29,6 +31,9 @@
         	{{--<link rel="stylesheet" type="text/css" href="{{asset("/css/loader.css")}}" />--}}
 
             <link rel="stylesheet" type="text/css" href="{{asset("/css/template.css")}}" />
+
+
+
 
 
             @if(Session::get('lang') == 'en')
@@ -74,7 +79,7 @@
 
             <script type="text/javascript" src="https://imasdk.googleapis.com/js/sdkloader/gpt_proxy.js"></script>
 
-            <?php
+<?php
             $apiobj = new \App\Providers\ApiRequest();
             if(ends_with(Route::currentRouteAction(), 'Shows@index')){
                 $id = Request::segment(2);

@@ -68,5 +68,5 @@
 		}
 	?>
 {{--	<iframe class="embed-responsive-item" id="video_embedd" src="{{$embeddcode}}&channel_userid={{$channel_userid}}&dfp={{$google_doubleclick}}&companion={{$companion}}&jwplayer={{$jwplayer}}&stretching=uniform#t={{$offset}}" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>--}}
-	<iframe title="{{$content->title_ar}}" class="embed-responsive-item" id="video_embedd" src="{{$embeddcode}}&channel_userid={{$channel_userid}}&vmap=awaan&jwplayer=7&stretching=uniform#t={{$offset}}" allowfullscreen="allowfullscreen" style="border: 0; overflow: hidden"></iframe>
+	<iframe title="{{$content->title_ar}}" class="embed-responsive-item" scrolling="no" id="video_embedd" src="{{$embeddcode}}&channel_userid={{$channel_userid}}&vmap=awaan&jwplayer=7&stretching=uniform#t={{$offset}}" allowfullscreen="allowfullscreen" style="border: 0; overflow: hidden"></iframe>
 </div>

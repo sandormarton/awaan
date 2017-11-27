@@ -54,7 +54,7 @@
                                         @break
                                     @endif
                                         <div class="col-md-12 col-sm-6 col-xs-12 live-upcoming-mobo">
-                                            <div class="uplcoming-show-div @if($index == 0) active @endif">
+                                            <div class="uplcoming-show-div @if($index == 0) active  @else second-live-upcomming @endif">
                                                 <div class="uplcoming-shows-img-div" style="background-image: url('{{$item->img}}');"></div>
                                                 <div class="uplcoming-shows-program ">
                                                     <div class="overlay"></div>

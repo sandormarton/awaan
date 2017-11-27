@@ -1847,19 +1847,27 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	display: inline-block;
 	margin-left: 12px;
 }
-.embed-responsive-16by9 {
-	padding-bottom: 51%;
-}
+/*.live-wrapper .embed-responsive-16by9 {*/
+	/*padding-bottom: 51%;*/
+	/*padding-bottom: 57%;*/
+/*}*/
+
 #channel-carousel{
 	padding-left: 48px;
 }
 .live-wrapper #channel-carousel{
 	padding-right: 48px;
 }
+.live-wrapper .second-live-upcomming {
+	margin-top: 46px;
+}
 @media (max-width: 1200px) {
-	.embed-responsive-16by9 {
-		padding-bottom: 56.25%;
+	.live-wrapper .second-live-upcomming {
+		margin-top: 0;
 	}
+	/*.live-wrapper .embed-responsive-16by9 {*/
+		/*padding-bottom: 56.25%;*/
+	/*}*/
 	#channel-carousel{
 		padding-right: 48px;
 	}

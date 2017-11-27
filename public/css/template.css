@@ -240,8 +240,32 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .nicescroll-rails { z-index: 9999!important;}
 
 
+.popover {
+	background: #318ecd;
+	background: -moz-linear-gradient(left, #318ecd 0%, #318ecd 20%, #2ab8f5 100%);
+	background: -webkit-linear-gradient(left, #318ecd 0%,#318ecd 20%,#2ab8f5 100%);
+	background: linear-gradient(to right, #318ecd 0%,#318ecd 20%,#2ab8f5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#318ecd', endColorstr='#2ab8f5',GradientType=1 );
+	border: none;
+	color: #ffffff;
+	font-size: 13px;
+}
+.popover .popover-title {
+	background: #318ecd;
+	background: -moz-linear-gradient(left, #318ecd 0%, #318ecd 20%, #2ab8f5 100%);
+	background: -webkit-linear-gradient(left, #318ecd 0%,#318ecd 20%,#2ab8f5 100%);
+	background: linear-gradient(to right, #318ecd 0%,#318ecd 20%,#2ab8f5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#318ecd', endColorstr='#2ab8f5',GradientType=1 );
+	color: #ffffff;
+	font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Bold', tahoma;
+	font-size: 16px;
+}
 
+.popover .arrow::after { border-top-color: #2ea0de!important;}
 
+.popover-content {
+	white-space: pre-wrap;
+}
 /* LEADERBOARD WRAPPER */
 
 .leaderboard-wrappper { padding: 15px 0;}

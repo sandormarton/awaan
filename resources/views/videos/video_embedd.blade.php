@@ -5,9 +5,7 @@ if(Session::get('lang') == 'en'){
 }else{
     $title = $content->title_ar;
 }
-//dd($content);
 ?>
-
 @section('title',substr( $title, 0, 64))
 @section('social_header_meta')
 @include('include.social_header',['social_meta'=>$content,'meta'=>$content->ch_meta])
@@ -40,11 +38,19 @@ if(Session::get('lang') == 'en'){
                     if(!isset($title) || empty($title)){
                         $title = $content->title_en;
                     }
+                    if(isset($currentseasons->shows_parent) and !empty($currentseasons->shows_parent) and isset($currentseasons->shows_parent[0]) and !empty($currentseasons->shows_parent[0]) and isset($currentseasons->shows_parent[0]->title_ar) and !empty($currentseasons->shows_parent[0]->title_ar)){
+                        $cat = $currentseasons->shows_parent[0]->title_ar;
+                        $cat_id_return = $currentseasons->shows_parent[0]->id;
+                    }
                 }
                 else{
                     $title = $content->title_en;
                     if(!isset($title) || empty($title)){
                         $title = $content->title_ar;
+                    }
+                    if(isset($currentseasons->shows_parent) and !empty($currentseasons->shows_parent) and isset($currentseasons->shows_parent[0]) and !empty($currentseasons->shows_parent[0]) and isset($currentseasons->shows_parent[0]->title_en) and !empty($currentseasons->shows_parent[0]->title_en)){
+                        $cat = $currentseasons->shows_parent[0]->title_en;
+                        $cat_id_return = $currentseasons->shows_parent[0]->id;
                     }
                 }
                 ?>
@@ -88,6 +94,7 @@ if(Session::get('lang') == 'en'){
                         @if(!empty($currentseasons) && isset($currentseasons->videos) && is_array($currentseasons->videos) && sizeof($currentseasons->videos) > 0)
                             <div class="title-section">
                                 <h3>{{ trans('content.whole.more_episode2') }}</h3>
+                                <a href="{{URL::to('show/allprograms/'.$cat_id_return.'/'. $cat )}}" class="btn btn-awaanbluebtn btn-viewall">{{ trans('content.whole.return_to_category') }}</a>
                             </div>
                             <div class="content-div">
                                 <div class="row" id="related-episode-container">
@@ -100,7 +107,14 @@ if(Session::get('lang') == 'en'){
                                                 if (isset($item->description_ar) && !empty($item->description_ar)) {
                                                     $video_hover['desc'] = $item->description_ar;
                                                 }
+                                                        if (isset($item->cat_ar) && !empty($item->cat_ar)) {
+                                                            $cat_name = $item->cat_ar;
+                                                        }else{
+                                                            $cat_name ='';
+                                                        }
+
                                                 $video_hover['videotitle'] = $item->title_ar;
+
                                                 //  $video_hover['category']=$currentseasons->shows_parent[0]->title_ar;
                                                 ?>
                                                 @if(isset($currentseasons->shows_parent[0]->title_ar))
@@ -114,6 +128,11 @@ if(Session::get('lang') == 'en'){
                                             @else
                                                 <?php $video_hover['videotitle'] = $item->title_en;
                                                 $video_hover['desc'] = (isset($item->description_en) && !empty($item->description_en)) ? $item->description_en : false;
+                                                    if (isset($item->cat_en) && !empty($item->cat_en)) {
+                                                        $cat_name = $item->cat_en;
+                                                    }else{
+                                                        $cat_name ='';
+                                                    }
                                                 //  $video_hover['category']=$currentseasons->shows_parent[0]->title_en;
                                                 ?>
                                                 @if(isset($currentseasons->shows_parent[0]->title_en))
@@ -130,7 +149,7 @@ if(Session::get('lang') == 'en'){
                                             $img = config('mangoapi.mangodcn') . $item->img;
                                             ?>
 
-                                                <div class="col-md-4 col-sm-4 col-xs-6 video-col">
+                                                <div class="col-md-4 col-sm-4 col-xs-6 video-col" data-toggle="popover" data-trigger="hover" data-placement="top" title="{{$cat}}" data-content="<?php echo $title . '&#10;'. $item -> recorder_date ?>">
                                                     <a href="{{$url2}}?">
                                                         <p style="display: none">{{$title}}</p>
                                                         <div class="img-div">
@@ -252,6 +271,9 @@ if(Session::get('lang') == 'en'){
             </div>
         </div>
     </div>
+
+
+
     <!-- VIDEO WRAPPER [END]	-->
     @include('videos.get_videoembedd_modal',['embed'=>$content->embed,'vid'=>$content->id,'video'=>$content,'videosignature'=>$videosignature])
 @endsection
@@ -358,6 +380,7 @@ if(Session::get('lang') == 'en'){
                         setTimeout(function() {
                             $("body").getNiceScroll().resize();
                         }, 1000);
+                        jQuery('[data-toggle="popover"]').popover();
                     },
                     error: function(){}
                 });

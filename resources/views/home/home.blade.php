@@ -7,6 +7,9 @@
     ])
 @endsection
 @section('home')
+<?php
+//        print_r($home_data->ramadan_shows);die();
+        ?>
 <h1 style="display: none;">Awaan</h1>
 <h2 style="display: none;">Awaan</h2>
 <!-- MAIN CONTAINER [START] -->
@@ -21,6 +24,7 @@
                         <?php
                         if(Session::get('lang') == 'ar'){
                             $title = $item -> title_ar;
+
                         }else{
                             $title = $item -> title_en;
                         }
@@ -274,6 +278,7 @@
                             <?php
                                 if(Session::get('lang') == 'ar'){
                                     $title = $item -> title_ar;
+
                                 }else{
                                     $title = $item -> title_en;
                                 }

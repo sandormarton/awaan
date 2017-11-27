@@ -5,7 +5,11 @@
  * Date: 9/13/2017
  * Time: 1:22 PM
  */
-
+if(isset($content->cat->root_title) and !empty($content->cat->root_title)){
+    $cat = $content->cat->root_title;
+}else{
+    $cat = '';
+}
 ?>
 <?php $counter = 1;
 $video_hover['desc']=$video_hover['category']='';
@@ -23,17 +27,22 @@ if(isset($item->description_ar) && !empty($item->description_ar) && (Session::ge
 @if(Session::get('lang') == 'ar')
 <?php
 $video_hover['videotitle']= $item->title_ar;
+$cat_name = $item->cat_ar;
 ?>
 
 @else
 <?php
 $video_hover['videotitle']= $item->title_en;
+$cat_name = $item->cat_en;
 if(isset($item->description_en) && !empty($item->description_en)){
     $video_hover['desc']=$item->description_en;
 }
 ?>
 
 @endif
+
+
+
 
 <?php
 
@@ -44,7 +53,11 @@ if($counter == 4) {
 $url = route('video', [$item->id, \App\Helpers\Functions::cleanurl($item->title_ar)]);
 $share_url = route('video', [$item->id, rawurlencode(\App\Helpers\Functions::cleanurl($item->title_ar))]);
 ?>
-<div class="col-md-3 col-sm-4 col-xs-6 showpage-video-col">
+
+
+
+
+<div class="col-md-3 col-sm-4 col-xs-6 showpage-video-col"  data-toggle="popover" data-trigger="hover" data-placement="top"  title="{{$cat}}" data-content="<?php echo $video_hover['videotitle'] . '&#10;'. $item -> recorder_date ?>">
     <a href="{{$url}}?">
         <div class="img-div scaleZoomImg">
             <!--<img src="{{$img}}" class="img-responsive center-block" />-->

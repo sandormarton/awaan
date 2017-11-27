@@ -7,6 +7,9 @@
     ])
 @endsection
 @section('home')
+<?php
+//        print_r($home_data->ramadan_shows);die();
+        ?>
 <h1 style="display: none;">Awaan</h1>
 <h2 style="display: none;">Awaan</h2>
 <!-- MAIN CONTAINER [START] -->
@@ -21,11 +24,12 @@
                         <?php
                         if(Session::get('lang') == 'ar'){
                             $title = $item -> title_ar;
+
                         }else{
                             $title = $item -> title_en;
                         }
                         ?>
-                        {{--*/ $img = config('mangoapi.mangodcn').$item->img;/*--}}
+                        {{--*/ $img = config('mangoapi.mangodcn').$item->banner_img;/*--}}
 
                             <div class="item">
                                 <a class="silder-href" href="{{URL::to("video/{$item->id}/".\App\Helpers\Functions::cleanurl($title))}}">
@@ -274,6 +278,7 @@
                             <?php
                                 if(Session::get('lang') == 'ar'){
                                     $title = $item -> title_ar;
+
                                 }else{
                                     $title = $item -> title_en;
                                 }
@@ -524,7 +529,7 @@
                         items:1
                     },
                     400:{
-                        items:2
+                        items:1
                     },
                     767:{
                         items:2
@@ -542,7 +547,7 @@
                 navText   : ['',''],
                 rtl       : true,
                 loop      : true,
-                margin    : 25,
+                margin    : 5,
                 nav       : true,
                 responsive: {
                     0:{
@@ -558,7 +563,7 @@
                         items:6
                     },
                     1200:{
-                        items:7
+                        items:6
                     }
                 }
             });

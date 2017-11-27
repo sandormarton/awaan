@@ -31,8 +31,14 @@
             </div>
         </div><!-- CONTAINER [END]	-->
     </div>
-
-    <div class="channel-content-wrapper">
+    <?php
+        if(isset($channel->cover) and !empty($channel->cover)){
+            $live_cover = 'http://admin.mangomolo.com/analytics/'.$channel->cover;
+        }else{
+            $live_cover = '';
+        }
+    ?>
+    <div class="channel-content-wrapper" style="background: url({{$live_cover}}) ">
         <div class="container">
 
             <h4 class="content-title">@if(Session::get('lang') == 'ar') {{$channel->title_ar}} @else {{$channel->title_en}} @endif</h4>

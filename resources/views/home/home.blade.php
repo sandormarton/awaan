@@ -29,7 +29,7 @@
                             $title = $item -> title_en;
                         }
                         ?>
-                        {{--*/ $img = config('mangoapi.mangodcn').$item->img;/*--}}
+                        {{--*/ $img = config('mangoapi.mangodcn').$item->banner_img;/*--}}
 
                             <div class="item">
                                 <a class="silder-href" href="{{URL::to("video/{$item->id}/".\App\Helpers\Functions::cleanurl($title))}}">
@@ -529,7 +529,7 @@
                         items:1
                     },
                     400:{
-                        items:2
+                        items:1
                     },
                     767:{
                         items:2

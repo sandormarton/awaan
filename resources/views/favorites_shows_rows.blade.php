@@ -1,17 +1,29 @@
+
 <div class="favorite-shows-list-wrapper">
     <div class="container">
         <h3 class="module-title">{{ trans('content.shows_favorites.favshows') }}</h3>
         <div class="row">
             @foreach($shows  as $item)
                 <?php
-                $img = config('mangoapi.mangodcn').$item['cover'];
+                $img = config('mangoapi.mangodcn').$item['thumbnail'];
                 $uid = Session::get('user_info');
                 if(Session::get('lang') == 'en'){
                     $title = $item['title_en'];
-                    $url = route('show', [$item['id'], rawurlencode(App\Helpers\Functions::cleanurl($item['title_en']))]);
+                    if($item['is_radio'] == 1){
+                        $url = URL::to("radio/show/83/{$item['id']}/".rawurlencode(App\Helpers\Functions::cleanurl($item['title_en'])));
+                    }else{
+                        $url = route('show', [$item['id'], rawurlencode(App\Helpers\Functions::cleanurl($item['title_en']))]);
+
+                    }
+
                 }else{
                     $title = $item['title_ar'];
                     $url = route('show', [$item['id'], rawurlencode(App\Helpers\Functions::cleanurl($item['title_ar']))]);
+                    if($item['is_radio'] == 1){
+                        $url = URL::to("radio/show/83/{$item['id']}/".rawurlencode(App\Helpers\Functions::cleanurl($item['title_ar'])));
+                    }else{
+                        $url = route('show', [$item['id'], rawurlencode(App\Helpers\Functions::cleanurl($item['title_ar']))]);
+                    }
                 }
                 ?>
             <div class="col-md-3 col-sm-4 col-xs-6 favorite-shows-col">

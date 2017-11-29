@@ -5,6 +5,9 @@
     @foreach($currentseasons->videos as $item)
     @if(Session::get('lang') == 'ar')
     <?php
+    if(isset($currentseasons->shows_parent) and !empty($currentseasons->shows_parent) and isset($currentseasons->shows_parent[0]) and !empty($currentseasons->shows_parent[0]) and isset($currentseasons->shows_parent[0]->title_ar) and !empty($currentseasons->shows_parent[0]->title_ar)){
+        $cat = $currentseasons->shows_parent[0]->title_ar;
+    }
     if (isset($item->description_ar) && !empty($item->description_ar)) {
         $video_hover['desc'] = $item->description_ar;
     }
@@ -22,6 +25,10 @@
     @else
     <?php $video_hover['videotitle'] = $item->title_en;
     $video_hover['desc'] = (isset($item->description_en) && !empty($item->description_en)) ? $item->description_en : false;
+
+    if(isset($currentseasons->shows_parent) and !empty($currentseasons->shows_parent) and isset($currentseasons->shows_parent[0]) and !empty($currentseasons->shows_parent[0]) and isset($currentseasons->shows_parent[0]->title_en) and !empty($currentseasons->shows_parent[0]->title_en)){
+        $cat = $currentseasons->shows_parent[0]->title_en;
+    }
     //  $video_hover['category']=$currentseasons->shows_parent[0]->title_en;
     ?>
     @if(isset($currentseasons->shows_parent[0]->title_en))
@@ -38,7 +45,7 @@
     $img = config('mangoapi.mangodcn') . $item->img;
     ?>
 
-    <div class="col-md-4 col-sm-4 col-xs-6 video-col">
+    <div class="col-md-4 col-sm-4 col-xs-6 video-col" data-toggle="popover" data-trigger="hover" data-placement="top" title="{{$cat}}" data-content="<?php echo $title . '&#10;'. $item -> recorder_date ?>">
         <a href="{{$url2}}?">
             <div class="img-div">
                 {{--<img src="{{$img}}" class="img-responsive center-block" />--}}

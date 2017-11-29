@@ -20,12 +20,13 @@
                 @else
                     <a href="#" class="audio_media" onclick="return false;" data-id="{{$item->id}}" data-signature="{{$item->signature}}">
                 @endif
+                        <p style="display: none;">{{$item -> title_en}}</p>
                     <div class="media-object embed-responsive-item image-div lazy-image-handler" data-src="{{$img}}" style="background-image: url('{{asset("images/ajax-loader.gif")}}');background-size: cover;
                             background-position: top center;
                             background-repeat: no-repeat;
                             height: 108px;
                             width: 192px;"></div>
-                    <div class="overlay">
+                    <div class="overlay">لهف 
                         <img src="{{asset("images")}}/icon-play.png" alt="play icon" />
                     </div>
                 </a>

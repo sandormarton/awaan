@@ -151,6 +151,7 @@ return [
         'other_movies' => 'أفلام أخرى',
         'latestAdded' => 'آخر الاضافات',
         'related_movies' => 'أفلام مشابهة',
+        'return_to_show' => 'العودة للعرض',
     ],
     'video' => [
 
@@ -163,6 +164,7 @@ return [
         'getoffseturl' => 'شارك',
         'startat' => 'حدد الوقت ',
         'alsolike' => 'قد يعجبك أيضا',
+        'views' => 'المشاهدات',
         'embed' => ['width' => 'العرض',
             'height' => 'الطول',
             'videoplay' => 'التشغيل التلقائي',

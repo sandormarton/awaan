@@ -4,7 +4,7 @@
         <div class="row">
             @foreach($shows  as $item)
                 <?php
-                $img = config('mangoapi.mangodcn').$item['cover'];
+                $img = config('mangoapi.mangodcn').$item['thumbnail'];
                 $uid = Session::get('user_info');
                 if(Session::get('lang') == 'en'){
                     $title = $item['title_en'];

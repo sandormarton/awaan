@@ -13,7 +13,6 @@
                         $url = URL::to("radio/show/83/{$item['id']}/".rawurlencode(App\Helpers\Functions::cleanurl($item['title_en'])));
                     }else{
                         $url = route('show', [$item['id'], rawurlencode(App\Helpers\Functions::cleanurl($item['title_en']))]);
-
                     }
 
                 }else{

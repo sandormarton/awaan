@@ -266,7 +266,7 @@
                 }
             });
             var language = '';
-            var production_date = '';
+            var production_year = '';
             var order_type = '';
             var order = '';
             var channel_id = 0;
@@ -282,7 +282,7 @@
                         p: offset,
                         cat_id: cat_id,
                         language: language,
-                        production_date: production_date,
+                        production_year: production_year,
                         order_type: order_type,
                         order: order,
                     },
@@ -396,7 +396,7 @@
                         p: 1,
                         cat_id: cat_id,
                         language: language,
-                        production_date: production_date,
+                        production_year: production_year,
                         order_type: order_type,
                         order: order,
                         channel_id: channel_id
@@ -410,7 +410,7 @@
                             cat_id: cat_id,
                             cat_name: cat_name,
                             language: language,
-                            production_date: production_date,
+                            production_year: production_year,
                             order_type: order_type,
                             order: order,
                             channel_id: channel_id,
@@ -450,7 +450,7 @@
                 console.log('languange : ' + language);
                 var cat_id = jQuery('#loadmore-cat').attr('data-category-id');
                 var cat_name = jQuery('#cat_name_back').html();
-                console.log(' production_date '+production_date);
+                console.log(' production_year '+production_year);
                 console.log(' cat_id '+ cat_id);
                 jQuery.ajax({
                     type: "GET",
@@ -459,7 +459,7 @@
                         p: 1,
                         cat_id: cat_id,
                         language: language,
-                        production_date: production_date,
+                        production_year: production_year,
                         order_type: order_type,
                         order: order,
                         channel_id: channel_id,
@@ -472,7 +472,7 @@
                             cat_id: cat_id,
                             cat_name: cat_name,
                             language: language,
-                            production_date: production_date,
+                            production_year: production_year,
                             order_type: order_type,
                             order: order,
                             channel_id: channel_id,
@@ -506,7 +506,7 @@
             jQuery('#date-selector').change(function() {
                 jQuery('#loadmore-cat').css('display','inline-block');
                 jQuery('#programs-container').html('');
-                production_date = jQuery(this).val();
+                production_year = jQuery(this).val();
                 var cat_id = jQuery('#loadmore-cat').attr('data-category-id');
                 var cat_name = jQuery('#cat_name_back').html();
                 jQuery.ajax({
@@ -516,7 +516,7 @@
                         p: 1,
                         cat_id: cat_id,
                         language: language,
-                        production_date: production_date,
+                        production_year: production_year,
                         order_type: order_type,
                         order: order,
                         channel_id: channel_id,
@@ -529,7 +529,7 @@
                             cat_id: cat_id,
                             cat_name: cat_name,
                             language: language,
-                            production_date: production_date,
+                            production_year: production_year,
                             order_type: order_type,
                             order: order,
                             channel_id: channel_id,
@@ -577,7 +577,7 @@
                         p: 1,
                         cat_id: cat_id,
                         language: language,
-                        production_date: production_date,
+                        production_year: production_year,
                         order_type: order_type,
                         order: order,
                         channel_id: channel_id,
@@ -590,7 +590,7 @@
                             cat_id: cat_id,
                             cat_name: cat_name,
                             language: language,
-                            production_date: production_date,
+                            production_year: production_year,
                             order_type: order_type,
                             order: order,
                             channel_id: channel_id,
@@ -647,7 +647,7 @@
                         p: 1,
                         cat_id: cat_id,
                         language: language,
-                        production_date: production_date,
+                        production_year: production_year,
                         order_type: order_type,
                         order: order,
                         channel_id: channel_id,
@@ -660,7 +660,7 @@
                             cat_id: cat_id,
                             cat_name: cat_name,
                             language: language,
-                            production_date: production_date,
+                            production_year: production_year,
                             order_type: order_type,
                             order: order,
                             channel_id: channel_id,
@@ -705,7 +705,7 @@
             var cat_name = '{{$cat_name->title_ar}}';
             var channel_id = 0;
             var language = 0;
-            var production_date = 0;
+            var production_year = 0;
             var order_type = 0;
             var order = 0;
             var channel_name = "";
@@ -716,7 +716,7 @@
                 channel_id = old_data.channel_id;
 
                 if (typeof(old_data.language) !== 'undefined') language = old_data.language;
-                if (typeof(old_data.production_date) !== 'undefined') production_date = old_data.production_date;
+                if (typeof(old_data.production_year) !== 'undefined') production_year = old_data.production_year;
                 if (typeof(old_data.order_type) !== 'undefined') order_type = old_data.order_type;
                 if (typeof(old_data.order) !== 'undefined') order = old_data.order;
                 if (typeof(old_data.channel_name) !== 'undefined') channel_name = old_data.channel_name;
@@ -741,7 +741,7 @@
                     cat_id: cat_id,
                     channel_id: channel_id,
                     language: language,
-                    production_date: production_date,
+                    production_year: production_year,
                     order_type: order_type,
                     order: order,
                 },

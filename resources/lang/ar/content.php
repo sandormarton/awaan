@@ -44,6 +44,7 @@ return [
         'premium' => 'أوان Gold',
         'search' => 'محرك البحث',
         'favoritevideos' => 'حلقاتي المفضلة',
+        'favoritevideosfilms' => 'أفلامي المفضلة',
         'favoriteshows' => 'برامجي المفضلة',
         'signin' => 'تسجيل الدخول',
         'signout' => 'تسجيل خروج',
@@ -197,6 +198,7 @@ return [
 
         'noresult' => 'لا يوجد نتائج بحث',
         'favvideos' => 'الفيديوهات المفضلة',
+        'favvideosfilms' => 'الأفلام المفضلة',
     ],
     'shows_favorites' => [
 

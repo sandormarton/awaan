@@ -181,6 +181,7 @@
                             @if(Session::has('user_info'))
                                 <li><a href="#">{{Session::get('user_info')->username}}</a></li>
                                 <li><a href="{{URL::to("video/favoritesvideos")}}">{{ trans('content.showinnerright.favoritevideos') }}</a></li>
+                                <li><a href="{{URL::to("video/favoritesfilms")}}">{{ trans('content.showinnerright.favoritevideosfilms') }}</a></li>
                                 <li><a href="{{URL::to("shows/favoriteshows")}}">{{ trans('content.showinnerright.favoriteshows') }}</a></li>
                                 <li><a href="{{URL::to("auth/logout")}}">{{ trans('content.showinnerright.signout') }}</a></li>
                             @else

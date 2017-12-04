@@ -73,6 +73,7 @@ Route::get('shows/favoriteshows/{uid?}', ['as' => 'favoriteshows', 'uses' => 'Sh
 
 Route::get('allshows', ['as' => 'allshows', 'uses' => 'Shows@GetAllShows']);
 Route::get('video/favoritesvideos/{uid?}', ['as' => 'favoritesvideos', 'uses' => 'Video@GetUserFavorites']);
+Route::get('video/favoritesfilms/{uid?}', ['as' => 'favoritesfilms', 'uses' => 'Video@GetUserFavoritesFilms']);
 Route::get('video/resume', ['as' => 'GetUserResume', 'uses' => 'Video@GetUserResume']);
 
 

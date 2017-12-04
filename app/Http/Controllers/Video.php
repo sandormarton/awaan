@@ -256,6 +256,10 @@ class Video extends BaseController
         $categories = $api->getCategories();
         $fav_videos = $this->getFavoritesVideos($core_user->id);
         foreach ($fav_videos as $item) {
+            if(isset($item['parent']) and !empty($item['parent']) and (count($item['parent']) > 0) and isset($item['parent']['id']) and !empty($item['parent']['id']) and ($item['parent']['id']== 208109) )
+            {
+                continue;
+            }
             $this->data['item'] = $item;
             $favorites_videos_rows .= $this -> view('videos.favorites_videos_rows');
         }
@@ -263,6 +267,30 @@ class Video extends BaseController
         $this->data['categories'] = $categories;
         $this->data['favorites_videos_rows'] = $favorites_videos_rows;
         $html = $this -> view('videos.favroties_videos')->render();
+        echo $html;
+    }
+
+    public function GetUserFavoritesFilms(Request $request)
+    {
+        if (!$this->user)
+            return redirect()->to('/');
+
+        $core_user = Session::get('user_info');
+        $api = new ApiRequest();
+        $favorites_films_rows = '';
+        $categories = $api->getCategories();
+        $fav_videos = $this->getFavoritesVideos($core_user->id);
+        foreach ($fav_videos as $item) {
+            if(isset($item['parent']) and !empty($item['parent']) and (count($item['parent']) > 0) and isset($item['parent']['id']) and !empty($item['parent']['id']) and ($item['parent']['id']== 208109) )
+            {
+                $this->data['item'] = $item;
+                $favorites_films_rows .= $this -> view('videos.favorites_films_rows');
+            }
+        }
+
+        $this->data['categories'] = $categories;
+        $this->data['favorites_films_rows'] = $favorites_films_rows;
+        $html = $this -> view('videos.favroties_films')->render();
         echo $html;
     }
 

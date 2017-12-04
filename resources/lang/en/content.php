@@ -44,6 +44,7 @@ return [
         'premium' => 'Awaan Gold',
         'search' => 'Search',
         'favoritevideos' => 'Favorite Videos',
+        'favoritevideosfilms' => 'Favorite Films',
         'favoriteshows' => 'My Shows',
         'signin' => 'Sign In',
         'signout' => 'Sign Out',
@@ -193,6 +194,7 @@ return [
     'videos_favorites' => [
         'noresult' => 'No Result Found',
         'favvideos' => 'Favorit Videos',
+        'favvideosfilms' => 'Favorit Movies',
     ],
     'shows_favorites' => [
 

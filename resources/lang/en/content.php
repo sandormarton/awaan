@@ -98,6 +98,7 @@ return [
     'search' => [
         'videos' => 'Videos',
         'shows' => 'Shows',
+        'aflam' => 'Movies',
         'noresult' => 'No Result Found',
         'placeholder' => 'Search',
     ],

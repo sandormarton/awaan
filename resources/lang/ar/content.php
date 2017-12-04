@@ -100,6 +100,7 @@ return [
     'search' => [
         'videos' => 'الفيديوهات',
         'shows' => 'البرامج',
+        'aflam' => 'الأفلام',
         'noresult' => 'لا يوجد نتائج بحث',
         'placeholder' => 'ابحث',
     ],

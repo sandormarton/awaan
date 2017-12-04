@@ -48,6 +48,7 @@ class Search extends BaseController {
         $this->data['categories'] =  $cat_response->Categories;
         $this->data['shows'] = $this->data['searchcotent']->shows;
         $this->data['videos'] = $this->data['searchcotent']->videos;
+        $this->data['films'] = $this->data['searchcotent']->films;
 
         return $this -> view('searchs.search');
     }

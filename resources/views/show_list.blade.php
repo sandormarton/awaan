@@ -27,13 +27,21 @@ if(isset($item->description_ar) && !empty($item->description_ar) && (Session::ge
 @if(Session::get('lang') == 'ar')
 <?php
 $video_hover['videotitle']= $item->title_ar;
-$cat_name = $item->cat_ar;
+if(isset($item->cat_ar) and !empty($item->cat_ar)){
+    $cat_name = $item->cat_ar;
+}else{
+    $cat_name = '';
+}
 ?>
 
 @else
 <?php
 $video_hover['videotitle']= $item->title_en;
-$cat_name = $item->cat_en;
+if(isset($item->cat_en) and !empty($item->cat_en)){
+    $cat_name = $item->cat_en;
+}else{
+    $cat_name = '';
+}
 if(isset($item->description_en) && !empty($item->description_en)){
     $video_hover['desc']=$item->description_en;
 }

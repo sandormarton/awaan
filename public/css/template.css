@@ -779,7 +779,8 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	display: block; width: 100%;
 	background-image: url('../images/bg-showpage-banner.png'), url('../images/showpage-img.png');
   	background-repeat: no-repeat, no-repeat;
-  	background-position: center left, center right;
+  	/*background-position: center left, center right;*/
+  	background-position: center, center;
   	background-size: cover;
   	top: 0;
   	right: 0;
@@ -1039,7 +1040,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 .video-wrapper .video-content-wrapper { padding: 15px 0;}
 .video-wrapper .video-content-wrapper .video-detail-div { position: relative;}
-.video-wrapper .video-content-wrapper .video-detail-div .video-title { margin: 15px 0;}
+.video-wrapper .video-content-wrapper .video-detail-div .video-title { margin: 15px 0;width: 85%;}
 .video-wrapper .video-content-wrapper .video-detail-div .btns-div { position: absolute; left: 7px; top: 7px;}
 .video-wrapper .video-content-wrapper .video-detail-div .btns-div .btn { padding: 0; background: none;}
 
@@ -1306,6 +1307,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .radio-home-listof-shows .program-div .embed-responsive-item.top-section{
 	height:155px;
 }
+
 /*.radio-home-listof-shows .select2-container--default .select2-selection--single{*/
 	/*background: #f05e22;*/
 	/*background: -moz-linear-gradient(left, #f05e22 0%, #df4223 20%, #cc2423 100%);*/
@@ -1944,6 +1946,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 		padding-bottom: 16px;
 		margin-bottom: 16px;
 	}
+	.video-wrapper .video-content-wrapper .video-detail-div .video-title{  width:100%;}
 }
 
 

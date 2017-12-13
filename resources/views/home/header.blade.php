@@ -92,7 +92,7 @@
 //                                        $channel_title = $item->channel_title_en;
                                         }
                                         ?>
-                                        @if(!empty($title) and $item->premuim != 1 and $item->id != 25)
+                                        @if(!empty($title) and $item->premuim != 1 and $item->id != 25 and $item->id != 11)
                                             <?php
                                             if(isset($item->icon)) {
                                                 $img = config('mangoapi.mangodcn').$item->icon;

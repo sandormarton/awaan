@@ -775,24 +775,31 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 /* SHOWPAGE WRAPPER */
 
 .showpage-banner-wrapper { border-top: 1px solid #2bb6f3; background: #232323; }
-.showpage-banner-wrapper .banner-content { 
-	display: block; width: 100%;
-	background-image: url('../images/bg-showpage-banner.png'), url('../images/showpage-img.png');
+.showpage-banner-wrapper .banner-content.show-info-open {
+	display: block;
+
+	opacity: 1;
+
+}
+
+.showpage-banner-wrapper .banner-content {
+	width: 100%;
+	/*background-image: url('../images/bg-showpage-banner.png'), url('../images/showpage-img.png');*/
   	background-repeat: no-repeat, no-repeat;
   	/*background-position: center left, center right;*/
   	background-position: center, center;
   	background-size: cover;
   	top: 0;
   	right: 0;
-  	padding: 20px;
-  	min-height: 335px;
+  	padding: 30px 20px;
+	display: none;
 }
-
-
+.showpage-banner-wrapper .btn-hide-show-info{ margin: 10px;}
 .showpage-banner-wrapper .banner-content .showpage-title .showpage-title-span { font-family: "HelveticaNeueMEforSKY-Bold","MyriadPro-Bold",tahoma; font-size: 17px; margin-left: 15px;}
 .showpage-banner-wrapper .banner-content .showpage-title i.active { font-size: 15px; color: #318dcc;}
 .showpage-banner-wrapper .banner-content .showpage-details { font-size: 15px; padding-top: 10px; padding-bottom: 10px;}
-.showpage-banner-wrapper .banner-content .showpage-details .share-details { float: left;}
+.showpage-banner-wrapper .banner-content .showpage-details.showpage-details-desc { border-left: 1px solid #28a2d7;}
+.showpage-banner-wrapper .banner-content .showpage-details .share-details { display: table; margin: 0 auto;}
 .showpage-banner-wrapper .banner-content .showpage-details .link-section{ margin-bottom: 20px; margin-top: 20px;}
 .showpage-banner-wrapper .banner-content .showpage-details .link-section a { color: #ffffff; display: block; padding: 5px 30px 5px 5px;}
 .showpage-banner-wrapper .banner-content .showpage-details .link-section a:hover,
@@ -803,7 +810,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .showpage-banner-wrapper .banner-content .showpage-details .link-section a.rate-this-exhibition { background: url('../images/icon-star.png') no-repeat scroll right center;}
 .showpage-banner-wrapper .banner-content .showpage-details .link-section a.ratedshow { background: url('../images/icon-star-active.png') no-repeat scroll right center;}
 
-.showpage-banner-wrapper .banner-content .showpage-details .dropdown-section { margin-top: 20px; margin-bottom: 30px;}
+.showpage-banner-wrapper .banner-content .showpage-details .dropdown-section { margin-top: 20px; margin-bottom: 20px; display: table;}
 .showpage-banner-wrapper .banner-content .showpage-details .dropdown-section .showpage-dropdown {
 	width: 200px;
 	background: #000000; /* Old browsers */
@@ -1863,6 +1870,9 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .live-wrapper .second-live-upcomming {
 	margin-top: 46px;
 }
+
+
+
 @media (max-width: 1200px) {
 	.live-wrapper .second-live-upcomming {
 		margin-top: 0;
@@ -1911,7 +1921,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 
 @media (max-width: 991px) {
-
+	.showpage-banner-wrapper .banner-content .showpage-details.showpage-details-desc{ border-left:none;}
 	.distinctive-programs-section .content-text-wrapper { height: 295px;}
 	
 	.subscribe-page-wrapper .select-country .country-div ul li { padding: 0 3px;}

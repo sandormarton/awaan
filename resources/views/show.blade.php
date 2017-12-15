@@ -83,9 +83,9 @@ foreach($content->seasons as $id=>$item){
         <div class="container custom-margin-bottom-inverse">
             <div class="image-section">
 
-            	<div class="banner-image-div">
-            		<img src="{{$cover}}" class="img-responsive center-block" />
-            	</div>
+                <div class="banner-image-div">
+                    <img src="{{$cover}}" class="img-responsive center-block" />
+                </div>
                 <div>
                     <div class="showpage-title-extra">
                         <span class="showpage-title-span">{{$title}}</span>
@@ -94,19 +94,19 @@ foreach($content->seasons as $id=>$item){
                         </div>
                     </div>
                 </div>
-            	<!--<div class="banner-content" style="background-image: url({{$shadow_image}}),url({{$cover}})">-->
+            <!--<div class="banner-content" style="background-image: url({{$shadow_image}}),url({{$cover}})">-->
                 <div class="banner-content show-info-open">
                     <div class="row">
                         <div class="showpage-details showpage-details-desc col-md-9">
 
-                    {{--<div class="showpage-title">--}}
-                        {{--<span class="showpage-title-span">{{$title}}</span>--}}
-                        {{--<!--<i class="fa fa-star active"></i>--}}
-                        {{--<i class="fa fa-star active"></i>--}}
-                        {{--<i class="fa fa-star active"></i>--}}
-                        {{--<i class="fa fa-star active"></i>--}}
-                        {{--<i class="fa fa-star"></i>-->--}}
-                    {{--</div>--}}
+                            {{--<div class="showpage-title">--}}
+                            {{--<span class="showpage-title-span">{{$title}}</span>--}}
+                            {{--<!--<i class="fa fa-star active"></i>--}}
+                            {{--<i class="fa fa-star active"></i>--}}
+                            {{--<i class="fa fa-star active"></i>--}}
+                            {{--<i class="fa fa-star active"></i>--}}
+                            {{--<i class="fa fa-star"></i>-->--}}
+                            {{--</div>--}}
 
                             @if(!empty($description))
                                 <p>{!! $description !!}</p>
@@ -190,31 +190,31 @@ foreach($content->seasons as $id=>$item){
                         <div class="showpage-details col-md-3">
                             <div class="share-details">
 
-                            	@if(isset($content->seasons) && !empty($content->seasons) && is_array($content->seasons)  && sizeof($content->seasons) > 1)
-				                    <div class="dropdown-section">
-				                        <select class="form-control showpage-dropdown" id="season-selector">
-				                            <?php
+                                @if(isset($content->seasons) && !empty($content->seasons) && is_array($content->seasons)  && sizeof($content->seasons) > 1)
+                                    <div class="dropdown-section">
+                                        <select class="form-control showpage-dropdown" id="season-selector">
+                                            <?php
 
-				                            if(isset($content->seasons) && !empty($content->seasons) && is_array($content->seasons)){
-				                                foreach ($content->seasons as $season){
-				                                    if(Session::get('lang') == 'en'){
-				                                        $season_title = $season->title_en;
-				                                    }else{
-				                                        $season_title = $season->title_ar;
-				                                    }
-				                                    $season_url = URL::to("show/".Request::segment(2) ."/".\App\Helpers\Functions::cleanurl($season_title)."/".$season->id);
-				                                    if( !empty(Request::segment(4)) and Request::segment(4) == $season->id){
-				                                        echo '<option value="'.$season->id.'" data-url="'. $season_url.'" selected>'.$season_title.'</option>';
-				                                    }else{
-				                                        echo '<option value="'.$season->id.'" data-url="'.$season_url.'" >'.$season_title.'</option>';
-				                                    }
+                                            if(isset($content->seasons) && !empty($content->seasons) && is_array($content->seasons)){
+                                                foreach ($content->seasons as $season){
+                                                    if(Session::get('lang') == 'en'){
+                                                        $season_title = $season->title_en;
+                                                    }else{
+                                                        $season_title = $season->title_ar;
+                                                    }
+                                                    $season_url = URL::to("show/".Request::segment(2) ."/".\App\Helpers\Functions::cleanurl($season_title)."/".$season->id);
+                                                    if( !empty(Request::segment(4)) and Request::segment(4) == $season->id){
+                                                        echo '<option value="'.$season->id.'" data-url="'. $season_url.'" selected>'.$season_title.'</option>';
+                                                    }else{
+                                                        echo '<option value="'.$season->id.'" data-url="'.$season_url.'" >'.$season_title.'</option>';
+                                                    }
 
-				                                }
-				                            }
-				                            ?>
-				                        </select>
-				                    </div>
-				                @endif
+                                                }
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                @endif
 
 
                                 <div class="link-section">
@@ -343,11 +343,11 @@ foreach($content->seasons as $id=>$item){
     <script  type="text/javascript">
         jQuery(document).ready( function() {
             {{--if (jQuery(window).width() < 991) {--}}
-                {{--var show_info_section = jQuery('.showpage-banner-wrapper .banner-content');--}}
-                {{--if(show_info_section.hasClass('show-info-open')){--}}
-                    {{--show_info_section.removeClass('show-info-open');--}}
-                    {{--jQuery('.showpage-banner-wrapper .btn-hide-show-info').find('img').attr('src','{{asset("images/info-icon-open.png")}}');--}}
-                {{--}--}}
+            {{--var show_info_section = jQuery('.showpage-banner-wrapper .banner-content');--}}
+            {{--if(show_info_section.hasClass('show-info-open')){--}}
+            {{--show_info_section.removeClass('show-info-open');--}}
+            {{--jQuery('.showpage-banner-wrapper .btn-hide-show-info').find('img').attr('src','{{asset("images/info-icon-open.png")}}');--}}
+            {{--}--}}
             {{--}--}}
             jQuery('.btn-hide-show-info').click(function (e) {
                 var show_info_section = jQuery('.showpage-banner-wrapper .banner-content');
@@ -474,7 +474,7 @@ foreach($content->seasons as $id=>$item){
                 var url = jQuery(this).find('option:selected').attr('data-url');
 //                var title = 'sss';
                 window.location.href = url;
-{{--               console.log("{{URL::to("show/".Request::segment(2))}}" + "/" + title + "/" + season);--}}
+                {{--               console.log("{{URL::to("show/".Request::segment(2))}}" + "/" + title + "/" + season);--}}
             });
             @if(Session::has('user_info'))
             $("#rateYo").rateYo({

@@ -794,7 +794,11 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
   	padding: 30px 20px;
 	display: none;
 }
-.showpage-banner-wrapper .btn-hide-show-info{ margin: 10px;}
+.showpage-banner-wrapper .btn-hide-show-info{
+	margin: 10px;
+	float: left;
+	max-width: 20px;
+	margin-top: 5px;}
 .showpage-banner-wrapper .banner-content .showpage-title .showpage-title-span { font-family: "HelveticaNeueMEforSKY-Bold","MyriadPro-Bold",tahoma; font-size: 17px; margin-left: 15px;}
 .showpage-banner-wrapper .banner-content .showpage-title i.active { font-size: 15px; color: #318dcc;}
 .showpage-banner-wrapper .banner-content .showpage-details { font-size: 15px; padding-top: 10px; padding-bottom: 10px;}
@@ -1872,7 +1876,14 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 }
 
 
-
+.showpage-title-extra .showpage-title-span{
+	color: #4582b8;
+	font-size: 18px;
+}
+.showpage-title-extra{
+	padding: 12px 20px;
+	background: #2e2e2e;
+}
 @media (max-width: 1200px) {
 	.live-wrapper .second-live-upcomming {
 		margin-top: 0;
@@ -2087,7 +2098,8 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	.homebanner-wrapper .channel-carousel .channel-div { width: 150px; margin: 0 auto;}
 
 	.showpage-banner-wrapper .banner-content .showpage-title .showpage-title-span { display: block;}
-	
+	/*.showpage-title-extra .showpage-title-span { display: block;}*/
+
 	.menuprogramCollapse .menuprogram-list .menuprogram-content a h4 { font-size: 13px; margin: 0;}
 	.menuprogramCollapse .menuprogram-list .menuprogram-time span { padding: 0;}
 

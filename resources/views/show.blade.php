@@ -86,19 +86,27 @@ foreach($content->seasons as $id=>$item){
             	<div class="banner-image-div">
             		<img src="{{$cover}}" class="img-responsive center-block" />
             	</div>
+                <div>
+                    <div class="showpage-title-extra">
+                        <span class="showpage-title-span">{{$title}}</span>
+                        <div class="btn-hide-show-info">
+                            <img src="{{asset("images/info-icon-close.png")}}" class="img-responsive center-block" />
+                        </div>
+                    </div>
+                </div>
             	<!--<div class="banner-content" style="background-image: url({{$shadow_image}}),url({{$cover}})">-->
                 <div class="banner-content show-info-open">
                     <div class="row">
                         <div class="showpage-details showpage-details-desc col-md-9">
 
-                    <div class="showpage-title">
-                        <span class="showpage-title-span">{{$title}}</span>
-                        <!--<i class="fa fa-star active"></i>
-                        <i class="fa fa-star active"></i>
-                        <i class="fa fa-star active"></i>
-                        <i class="fa fa-star active"></i>
-                        <i class="fa fa-star"></i>-->
-                    </div>
+                    {{--<div class="showpage-title">--}}
+                        {{--<span class="showpage-title-span">{{$title}}</span>--}}
+                        {{--<!--<i class="fa fa-star active"></i>--}}
+                        {{--<i class="fa fa-star active"></i>--}}
+                        {{--<i class="fa fa-star active"></i>--}}
+                        {{--<i class="fa fa-star active"></i>--}}
+                        {{--<i class="fa fa-star"></i>-->--}}
+                    {{--</div>--}}
 
                             @if(!empty($description))
                                 <p>{!! $description !!}</p>
@@ -234,9 +242,7 @@ foreach($content->seasons as $id=>$item){
                         </div>
                     </div>
                 </div>
-                <div class="btn-hide-show-info">
-                    <img src="{{asset("images/info-icon-close.png")}}" class="img-responsive center-block" />
-                </div>
+
             </div>
         </div>
     </div>
@@ -336,13 +342,13 @@ foreach($content->seasons as $id=>$item){
 @section("additional_scripts")
     <script  type="text/javascript">
         jQuery(document).ready( function() {
-            if (jQuery(window).width() < 991) {
-                var show_info_section = jQuery('.showpage-banner-wrapper .banner-content');
-                if(show_info_section.hasClass('show-info-open')){
-                    show_info_section.removeClass('show-info-open');
-                    jQuery('.showpage-banner-wrapper .btn-hide-show-info').find('img').attr('src','{{asset("images/info-icon-open.png")}}');
-                }
-            }
+            {{--if (jQuery(window).width() < 991) {--}}
+                {{--var show_info_section = jQuery('.showpage-banner-wrapper .banner-content');--}}
+                {{--if(show_info_section.hasClass('show-info-open')){--}}
+                    {{--show_info_section.removeClass('show-info-open');--}}
+                    {{--jQuery('.showpage-banner-wrapper .btn-hide-show-info').find('img').attr('src','{{asset("images/info-icon-open.png")}}');--}}
+                {{--}--}}
+            {{--}--}}
             jQuery('.btn-hide-show-info').click(function (e) {
                 var show_info_section = jQuery('.showpage-banner-wrapper .banner-content');
                 if(show_info_section.hasClass('show-info-open')){

@@ -111,7 +111,11 @@ class Video extends BaseController
         /* Parse the video signature */
         $video_signature = $this->parseVideoUrl($videocontent->embed)['signature'][0];
 
-//        $videocontent->embed = str_replace("%", "%25", $videocontent->embed);
+        if(isset($videocontent->protected) and $videocontent->protected != 1){
+            $videocontent->embed = str_replace("http://admin.mangomolo.com/analytics/index.php/customers/embed/video",
+                                               "http://player.mangomolo.com/v1/video", $videocontent->embed);
+        }
+
         $this->data['currentseasons'] = $current;
         $this->data['otherseasons'] = $this->video_response->ShowSeasons;
         $this->data['featuredshows'] = $featuredshows;

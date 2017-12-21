@@ -57,9 +57,9 @@
                 <div class="catchupvideo-div">
                     <div class="embed-responsive embed-responsive-16by9">
                         @if(!is_null($video) && isset($video->id) && $video->id)
-                            <iframe title="{{$video->title_ar}}" class="embed-responsive-item" id="video_player" src="http://admin.mangomolo.com/analytics/index.php/customers/embed/video?id={{$video->id}}&user_id={{$video->user_id}}&countries=Q0M=&w=100%25&h=100%25&filter=DENY&signature={{$video->signature}}&jwplayer=7" allowfullscreen></iframe>
+                            <iframe title="{{$video->title_ar}}" class="embed-responsive-item" id="video_player" src="http://player.mangomolo.com/v1/video?id={{$video->id}}&user_id={{$video->user_id}}&countries=Q0M=&w=100%25&h=100%25&filter=DENY&signature={{$video->signature}}" allowfullscreen></iframe>
                         @else
-                            <iframe title="{{$channel->title_ar}}" class="embed-responsive-item" src="http://admin.mangomolo.com/analytics/index.php/customers/embed/index?id={{base64_encode($channel->user_id)}}&channelid={{base64_encode($channel->id)}}&countries=Q0M=&w=100%25&h=100%25&filter=DENY&signature={{$channel->signature}}&jwplayer=7" allowfullscreen></iframe>
+                            <iframe title="{{$channel->title_ar}}" class="embed-responsive-item" src="http://player.mangomolo.com/v1/live?id={{base64_encode($channel->user_id)}}&channelid={{base64_encode($channel->id)}}&countries=Q0M=&w=100%25&h=100%25&filter=DENY&signature={{$channel->signature}}" allowfullscreen></iframe>
                         @endif
                     </div>
                 </div>

@@ -106,10 +106,13 @@
                                         ?>
                                         <div class="item">
 
+
+
+
                                             <a href="{{URL::to("radio/{$item->id}/".\App\Helpers\Functions::cleanurl($title))}}">
                                                 <p style="display: none">{{$title}}</p>
                                                 <div class="channel-div channel-sama-div channel-{{$item->id}}-div">
-                                                    <img src="{{$img}}" alt="{{$title}}" title="{{$title}}" style=" height: 107px;"/>
+                                                    <img src="{{$img}}" alt="{{$title}}" title="{{$title}}"/>
                                                     <div class="seperator" data-color="{{$item->id}}"></div>
                                                     @if(isset($item->live) && is_array($item->live) && count($item->live) > 0)
                                                         <div class="program-time">{{\App\Helpers\Functions::convertFormat($item->live[0]->start)}} - {{\App\Helpers\Functions::convertFormat($item->live[0]->stop)}}</div>

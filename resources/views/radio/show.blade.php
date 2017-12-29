@@ -43,6 +43,7 @@
                             <?php $img=((!empty($content->cat->cover))?config('mangoapi.mangodcn').$content->cat->cover:asset("images/cover-not-available.jpg")); ?>
                             <div class="audio-current-details-div" data-mh="heightConsistancy">
                                 <div class="img-div" style="background-image: url({{$img}});background-size: cover;background-position: center top;background-repeat: no-repeat;">
+                                    <div class="audio-show-title"><?php echo $current_audio->title_en;?></div>
                                     <div class="row" style="height: 264px;">
                                         @if(isset($content->audio) && is_array($content->audio) && count($content->audio) > 0)
                                             <div class="col-md-12 player show-audio-player" id="video_embed_player"></div>
@@ -58,7 +59,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             @if(isset($first_audio))
-                                                <p><i class="fa fa-clock-o"></i> {{$first_audio->recorder_date}}</p>
+                                                <p class="radio-time-caption"><i class="fa fa-clock-o"></i> {{$first_audio->recorder_date}}</p>
                                             @endif
                                         </div>
                                     </div>
@@ -86,7 +87,7 @@
 
                                         </div>
                                         @if(isset($first_audio))
-                                            <a href="#" style="color: white;" class="audio_media" onclick="return false;" data-id="{{$first_audio->id}}" data-signature="{{$first_audio->signature}}">
+                                            <a href="#" style="color: white;" class="audio_media" onclick="return false;" data-title="{{(Session::get('lang') == 'ar')?$first_audio->title_ar:$first_audio->title_en}}" data-id="{{$first_audio->id}}" data-signature="{{$first_audio->signature}}">
                                                 <div class="media-body">
                                                     <p class="date">{{$first_audio->recorder_date}}</p>
                                                     <div class="title-media kh-ellipsis">{{(Session::get('lang') == 'ar')?$first_audio->title_ar:$first_audio->title_en}}</div>
@@ -100,15 +101,15 @@
                                     @if(isset($more_videos[0]))
                                         <div class="programs-div">
                                             <h3 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}</h3>
-                                            <a href="#" onclick="return false;" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[0]->recorder_date}}</a>
-                                            <a href="#" onclick="return false;" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
+                                            <a href="#" onclick="return false;" data-title="{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[0]->recorder_date}}</a>
+                                            <a href="#" onclick="return false;" data-title="{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
                                         </div>
                                     @endif
                                     @if(isset($more_videos[1]))
                                         <div class="programs-div">
                                             <h3 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$more_videos[1]->title_ar:$more_videos[1]->title_en}}</h3>
-                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[1]->recorder_date}}</a>
-                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
+                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" data-title="{{(Session::get('lang') == 'ar')?$more_videos[1]->title_ar:$more_videos[1]->title_en}}"  class="audio_media program-date kh-ellipsis">{{$more_videos[1]->recorder_date}}</a>
+                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" data-title="{{(Session::get('lang') == 'ar')?$more_videos[1]->title_ar:$more_videos[1]->title_en}}"  class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
                                         </div>
                                     @endif
 
@@ -252,7 +253,9 @@
 //                    player = new playerjs.Player($("#video_embedd")[0]);
                     media_id = $(this).data('id');
                     media_signature = $(this).data('signature');
-
+                    var media_name = $(this).data('title');
+                    console.log(media_name);
+                    $('.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .audio-show-title').html(media_name);
                     if(!$(this).hasClass('btn-pause')) {
                         $('#video_embedd').attr('src', '');
                         $('#video_embedd').hide();

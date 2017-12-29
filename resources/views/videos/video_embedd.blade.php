@@ -29,7 +29,7 @@ if(Session::get('lang') == 'en'){
                             @include('videos.embedd_code',['embeddcode'=> $content->embed,'show' => $content, 'channel_userid' => $channel_userid, 'offset' => $offset])
                 </div>
                 @else
-                <div class="embed-responsive embed-responsive-16by9" style="background: white;color: black;font-size: 24px;margin: 0 auto;text-align: center;padding-top: 100px;">
+                <div class="embed-responsive embed-responsive-16by9" style="padding-bottom: 10.25%;background: #d8d8d8;color: black;font-size: 24px;margin: 0 auto;text-align: center;padding-top: 100px;">
                     {{ trans('content.whole.non_available') }}
                 </div>
                 @endif

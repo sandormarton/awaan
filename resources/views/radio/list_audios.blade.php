@@ -18,7 +18,7 @@
                 @if(isset($need_links) && $need_links == "yes")
                     <a href="{{URL::to("radio/audio/{$current_channel->id}/{$item->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$item -> title_ar:$item -> title_en))}}" data-title="" data-id="{{$item->id}}" data-signature="{{$item->signature}}">
                 @else
-                    <a href="#" class="audio_media" data-title="{{$item->title_en}}" onclick="return false;" data-id="{{$item->id}}" data-signature="{{$item->signature}}">
+                    <a href="#" class="audio_media" data-show-date="{{$item -> recorder_date}}" data-title="{{(Session::get('lang') == 'ar')?$item -> title_ar:$item -> title_en }}" onclick="return false;" data-id="{{$item->id}}" data-signature="{{$item->signature}}">
                 @endif
                         <p style="display: none;">{{$item -> title_en}}</p>
                     <div class="media-object embed-responsive-item image-div lazy-image-handler" data-src="{{$img}}" style="background-image: url('{{asset("images/ajax-loader.gif")}}');background-size: cover;
@@ -36,7 +36,7 @@
                     @if(isset($need_links) && $need_links == "yes")
                         <a href="{{URL::to("radio/audio/{$current_channel->id}/{$item->id}/".\App\Helpers\Functions::cleanurl((Session::get('lang') == 'ar')?$item -> title_ar:$item -> title_en))}}" data-id="{{$item->id}}" data-signature="{{$item->signature}}">
                     @else
-                        <a href="#" class="audio_media" data-title="{{$item->title_en}}" onclick="return false;" data-id="{{$item->id}}" data-signature="{{$item->signature}}">
+                        <a href="#" class="audio_media" data-show-date="{{$item -> recorder_date}}" data-title="{{(Session::get('lang') == 'ar')?$item -> title_ar:$item -> title_en}}" onclick="return false;" data-id="{{$item->id}}" data-signature="{{$item->signature}}">
                     @endif
                         {{(Session::get('lang') == 'ar')?$item->title_ar:$item->title_en}}
                     </a>

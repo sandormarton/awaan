@@ -43,7 +43,7 @@
                             <?php $img=((!empty($content->cat->cover))?config('mangoapi.mangodcn').$content->cat->cover:asset("images/cover-not-available.jpg")); ?>
                             <div class="audio-current-details-div" data-mh="heightConsistancy">
                                 <div class="img-div" style="background-image: url({{$img}});background-size: cover;background-position: center top;background-repeat: no-repeat;">
-                                    <div class="audio-show-title"><?php echo $current_audio->title_en;?></div>
+
                                     <div class="row" style="height: 264px;">
                                         @if(isset($content->audio) && is_array($content->audio) && count($content->audio) > 0)
                                             <div class="col-md-12 player show-audio-player" id="video_embed_player"></div>
@@ -51,31 +51,7 @@
                                     </div>
                                     {{--<img src="{{asset("images")}}/audio-program-img.png" class="img-responsive" />--}}
                                 </div>
-                                <div class="text-div">
-                                    <h2 class="program-date">{{(Session::get('lang') == 'ar')?$content->cat->title_ar:$content->cat->title_en}}</h2>
-                                    <div class="row">
-                                        <div class="col-md-9">
-                                            <p>{{(Session::get('lang') == 'ar')?$content->cat->description_ar:$content->cat->description_en}}</p>
-                                        </div>
-                                        <div class="col-md-3">
-                                            @if(isset($first_audio))
-                                                <p class="radio-time-caption"><i class="fa fa-clock-o"></i> {{$first_audio->recorder_date}}</p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    @if(Session::has('user_info'))
-                                        <?php
-                                        $uid = Session::get('user_info');
-                                        ?>
-                                        @if(isset($content->cat->faved_id) and !empty($content->cat->faved_id))
-                                            <a href="#" class="btn btn-plus favadd favorited" data-channeluserid="<?=$uid->id?>" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}"><i class="fa fa-minus"></i></a>
-                                        @else
-                                            <a href="#" class="btn btn-plus favadd" data-channeluserid="<?=$uid->id?>" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}"><i class="fa fa-plus"></i></a>
-                                        @endif
 
-                                        <div id="rateYo" style="display: inline-block;top: 5px;" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}" data-channeluserid="<?=$uid->id?>"></div>
-                                    @endif
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-4 audio-top-right-col">
@@ -101,15 +77,8 @@
                                     @if(isset($more_videos[0]))
                                         <div class="programs-div">
                                             <h3 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}</h3>
-                                            <a href="#" onclick="return false;" data-title="{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[0]->recorder_date}}</a>
-                                            <a href="#" onclick="return false;" data-title="{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
-                                        </div>
-                                    @endif
-                                    @if(isset($more_videos[1]))
-                                        <div class="programs-div">
-                                            <h3 class="kh-ellipsis">{{(Session::get('lang') == 'ar')?$more_videos[1]->title_ar:$more_videos[1]->title_en}}</h3>
-                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" data-title="{{(Session::get('lang') == 'ar')?$more_videos[1]->title_ar:$more_videos[1]->title_en}}"  class="audio_media program-date kh-ellipsis">{{$more_videos[1]->recorder_date}}</a>
-                                            <a href="#" onclick="return false;" data-id="{{$more_videos[1]->id}}" data-signature="{{$more_videos[1]->signature}}" data-title="{{(Session::get('lang') == 'ar')?$more_videos[1]->title_ar:$more_videos[1]->title_en}}"  class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
+                                            <a href="#" onclick="return false;" data-show-date="{{$more_videos[0] -> recorder_date}}" data-title="{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-date kh-ellipsis">{{$more_videos[0]->recorder_date}}</a>
+                                            <a href="#" onclick="return false;" data-show-date="{{$more_videos[0] -> recorder_date}}" data-title="{{(Session::get('lang') == 'ar')?$more_videos[0]->title_ar:$more_videos[0]->title_en}}" data-id="{{$more_videos[0]->id}}" data-signature="{{$more_videos[0]->signature}}" class="audio_media program-play"><img src="{{asset("images")}}/icon-play.png" alt="play icon" /></a>
                                         </div>
                                     @endif
 
@@ -121,6 +90,41 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="audio-top-wrapper-info">
+                    <div class="text-div">
+                        <div class="program-date title-info" data-toggle="1">
+                            <span>{{(Session::get('lang') == 'ar')?$content->cat->title_ar:$content->cat->title_en}}</span>
+                            <div class="btn-hide-show-info">
+                                <img src="{{asset('images/info-icon-close.png')}}" class="img-responsive center-block">
+                            </div>
+                        </div>
+
+                        <div class="row context-data">
+                            <div class="col-md-9">
+                                @if(isset($current_audio))<p class="audio-show-title2">{{(Session::get('lang') == 'ar')?$current_audio->title_ar:$current_audio->title_en}}</p> @endif
+                                <p>{{(Session::get('lang') == 'ar')?$content->cat->description_ar:$content->cat->description_en}}</p>
+                            </div>
+                            <div class="col-md-3">
+
+                                @if(isset($current_audio))<p style="display: none" class="radio-time-caption"><i class="fa fa-clock-o"></i> {{$current_audio->recorder_date}}</p> @endif
+
+                            </div>
+                        </div>
+
+                        @if(Session::has('user_info'))
+                            <?php
+                            $uid = Session::get('user_info');
+                            ?>
+                            @if(isset($content->cat->faved_id) and !empty($content->cat->faved_id))
+                                <a href="#" class="btn btn-plus favadd favorited" data-channeluserid="<?=$uid->id?>" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}"><i class="fa fa-minus"></i></a>
+                            @else
+                                <a href="#" class="btn btn-plus favadd" data-channeluserid="<?=$uid->id?>" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}"><i class="fa fa-plus"></i></a>
+                            @endif
+
+                            <div id="rateYo" style="display: inline-block;top: 5px;" data-lang="{{Session::get('lang')}}" data-id="{{$content->cat->id}}" data-channeluserid="<?=$uid->id?>"></div>
+                        @endif
                     </div>
                 </div>
 
@@ -214,6 +218,18 @@
         }
 
         $(document).ready( function() {
+            $(document).find(".radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper-info .text-div .title-info").on('click',function(e){
+                var open = $(this).data('toggle');
+                if(open){
+                    $('.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper-info .text-div .context-data').slideUp();
+                    $(this).data('toggle',0);
+                    $(this).find('img').attr('src','{{asset("images/info-icon-open.png")}}');
+                }else{
+                    $('.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper-info .text-div .context-data').slideDown();
+                    $(this).data('toggle',1);
+                    $(this).find('img').attr('src','{{asset("images/info-icon-close.png")}}');
+                }
+            });
 
                 @if(isset($current_audio->id)){
                 var player;
@@ -254,8 +270,10 @@
                     media_id = $(this).data('id');
                     media_signature = $(this).data('signature');
                     var media_name = $(this).data('title');
+                    var media_date = $(this).data('show-date');
                     console.log(media_name);
-                    $('.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper .audio-show-title').html(media_name);
+                    $('.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper-info .audio-show-title2').html(media_name);
+                    $('.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper-info .radio-time-caption').html('<i class="fa fa-clock-o"></i> ' + media_date);
                     if(!$(this).hasClass('btn-pause')) {
                         $('#video_embedd').attr('src', '');
                         $('#video_embedd').hide();

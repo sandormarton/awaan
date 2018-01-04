@@ -18,6 +18,12 @@
         float: left;
     }
 }
+.radio-time-caption{
+    text-align: right;
+}
+/*.radio-home-listof-shows .radio-showdetails-wrapper .audio-top-wrapper-info .audio-show-title2{*/
+    /*text-align: right;*/
+/*}*/
 
 .select2-container { float: right; margin-right: 8px;}
 .select2-container .select2-selection--single .select2-selection__rendered { padding-left: 20px!important; padding-right: 35px!important;}

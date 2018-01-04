@@ -334,7 +334,7 @@ return [
 
         "latest_add" => "Latest add",
         "more_episodes" => "More episodes",
-        "watch_all_episodes" => "Watch all episodes",
+        "watch_all_episodes" => "Listen to all episodes",
 
         "episodes" => "Episodes",
         "no_episodes" => "There is no episodes.",

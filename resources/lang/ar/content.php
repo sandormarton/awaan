@@ -345,7 +345,7 @@ return [
 
         "latest_add" => "أخر الاضافات",
         "more_episodes" => "المزيد من الحلقات",
-        "watch_all_episodes" => "مشاهدة جميع الحلقات",
+        "watch_all_episodes" => "الاستماع لجميع الحلقات",
 
         "episodes" => "الحلقات",
         "no_episodes" => "لا يوجد حلقات",

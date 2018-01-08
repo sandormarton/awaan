@@ -36,10 +36,13 @@ if(Session::get('lang') == 'en'){
             </div>
             <div class="video-content-wrapper">
                 <?php
+                $cat = '';
+
                     if(isset($content->cat_id) and !empty($content->cat_id))
                         $cat_id_return = $content->cat_id;
                     else
                         $cat_id_return = 0;
+
                 if(Session::get('lang') == 'ar'){
                     $title = $content->title_ar;
                     if(!isset($title) || empty($title)){

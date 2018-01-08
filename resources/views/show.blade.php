@@ -16,6 +16,7 @@ $production_year = (isset($content->cat->production_year))?$content->cat->produc
 $authors = $content->cat->authors;
 
 foreach($content->seasons as $id=>$item){
+    $title = '';
     if(Session::get('lang') == 'en'){
         $shadow_image = asset('images/bg-showpage-banner-en.png');
         if(!empty($item -> title_en) && $item->id == Request::segment(4)){
@@ -261,6 +262,9 @@ foreach($content->seasons as $id=>$item){
                 ?>
                 @if (count($content->videos) > 0)
                     @foreach($content->videos as $item)
+                        <?php
+                            $title = '';
+                        ?>
                         @if(Session::get('lang') == 'ar')
                             <?php
                             $title = $item->title_ar;

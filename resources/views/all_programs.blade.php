@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 @section('title',trans('content.pagetitle.allprograms'))
 @section('social_header_meta')
@@ -21,7 +22,7 @@
                     <label for="language-selector" style="display: none">language selector</label>
                     <select class="form-control sortcategory-dropdown" id="language-selector">
                         <option>{{trans('content.whole.language')}}</option>
-                        @if(isset($content->all_language) and !empty($content->all_language))
+                        @if(isset($content->all_language) and !empty($content->all_language) and  is_array($content->all_language) and count($content->all_language) > 0)
                             @foreach($content->all_language  as $item)
                                 <option value="{{$item}}">{{trans('content.languanges.'.$item)}}</option>
                             @endforeach

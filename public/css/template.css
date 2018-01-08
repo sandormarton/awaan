@@ -1158,7 +1158,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 .live-wrapper .channel-content-wrapper .uplcoming-shows-program { background: #151515; border-top: 1px solid #151515; color: #ffffff; font-size: 15px; padding: 15px; margin-top: 2px; position: relative;}
 .live-wrapper .channel-content-wrapper .uplcoming-shows-program span { display: block;}
-.live-wrapper .channel-content-wrapper .uplcoming-shows-program span.uplcoming-shows-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.live-wrapper .channel-content-wrapper .uplcoming-shows-program span.uplcoming-shows-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap;width:76%;}
 .live-wrapper .channel-content-wrapper .uplcoming-shows-program .uplcoming-shows-time { color: #eaebeb; font-family: "MyriadPro-Regular","HelveticaNeueMEforSKY-Light",tahoma; padding-top: 5px;}
 .live-wrapper .channel-content-wrapper .uplcoming-show-div:hover .uplcoming-shows-program,
 .live-wrapper .channel-content-wrapper .uplcoming-show-div.active .uplcoming-shows-program,
@@ -1923,6 +1923,9 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	font-size: 18px;
 }
 @media (max-width: 1200px) {
+	.live-wrapper .channel-content-wrapper .uplcoming-shows-program span.uplcoming-shows-title{
+		width:74%;
+	}
 	.live-wrapper .second-live-upcomming {
 		margin-top: 0;
 	}
@@ -1970,6 +1973,9 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 
 @media (max-width: 991px) {
+	.live-wrapper .channel-content-wrapper .uplcoming-shows-program span.uplcoming-shows-title{
+		width:83%;
+	}
 	.showpage-banner-wrapper .banner-content .showpage-details.showpage-details-desc{ border-left:none;}
 	.distinctive-programs-section .content-text-wrapper { height: 295px;}
 

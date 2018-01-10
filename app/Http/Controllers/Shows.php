@@ -391,11 +391,14 @@ class Shows extends BaseController {
             $result['count'] = count( $this->data['content']);
 
             $lang_html = '<option>'.trans('content.whole.language').'</option>';
-            foreach ($all->all_language as $langu){
-                $lang_html .= ' <option value="'.$langu.'">'.trans('content.languanges.'.$langu).'</option>';
+            if(isset($all->all_language) and !empty($all->all_language) and  is_array($all->all_language) and count($all->all_language) > 0) {
+                foreach ($all->all_language as $langu) {
+                    $lang_html .= ' <option value="' . $langu . '">' . trans('content.languanges.' . $langu) . '</option>';
+                }
             }
             $date_html = '<option>'.trans('content.whole.order_date').'</option>';
-            foreach ($all->available_years as $year){
+
+                foreach ($all->available_years as $year){
                 $date_html .= ' <option value="'.$year.'">'.$year.'</option>';
             }
 

@@ -36,14 +36,20 @@ if(Session::get('lang') == 'en'){
             </div>
             <div class="video-content-wrapper">
                 <?php
+                $cat = '';
+
                     if(isset($content->cat_id) and !empty($content->cat_id))
                         $cat_id_return = $content->cat_id;
                     else
                         $cat_id_return = 0;
+
                 if(Session::get('lang') == 'ar'){
                     $title = $content->title_ar;
                     if(!isset($title) || empty($title)){
                         $title = $content->title_en;
+                    }
+                    if(!isset($title) || empty($title)){
+                        $title = '';
                     }
                     if(isset($currentseasons->shows_parent) and !empty($currentseasons->shows_parent) and isset($currentseasons->shows_parent[0]) and !empty($currentseasons->shows_parent[0]) and isset($currentseasons->shows_parent[0]->title_ar) and !empty($currentseasons->shows_parent[0]->title_ar)){
                         $cat = $currentseasons->shows_parent[0]->title_ar;
@@ -54,6 +60,9 @@ if(Session::get('lang') == 'en'){
                     $title = $content->title_en;
                     if(!isset($title) || empty($title)){
                         $title = $content->title_ar;
+                    }
+                    if(!isset($title) || empty($title)){
+                        $title = '';
                     }
                     if(isset($currentseasons->shows_parent) and !empty($currentseasons->shows_parent) and isset($currentseasons->shows_parent[0]) and !empty($currentseasons->shows_parent[0]) and isset($currentseasons->shows_parent[0]->title_en) and !empty($currentseasons->shows_parent[0]->title_en)){
                         $cat = $currentseasons->shows_parent[0]->title_en;
@@ -129,7 +138,12 @@ if(Session::get('lang') == 'en'){
                                                 <?php
                                                     $url = URL::to('video/'.$item->id.'/'.rawurlencode(\App\Helpers\Functions::cleanurl($item->title_ar)));
                                                     $url2 = URL::to('video/'.$item->id.'/'.\App\Helpers\Functions::cleanurl($item->title_ar));
-                                                    $title = $item->title_ar;
+                                                    if(!isset($item->title_ar) || empty($item->title_ar)){
+                                                        $title = '';
+                                                    }else{
+                                                        $title = $item->title_ar;
+                                                    }
+
                                                     ?>
                                             @else
                                                 <?php $video_hover['videotitle'] = $item->title_en;
@@ -147,7 +161,11 @@ if(Session::get('lang') == 'en'){
                                                     <?php
                                                     $url = URL::to('video/'.$item->id.'/'.rawurlencode(\App\Helpers\Functions::cleanurl($item->title_en)));
                                                     $url2 = URL::to('video/'.$item->id.'/'.\App\Helpers\Functions::cleanurl($item->title_en));
-                                                    $title = $item->title_en;
+                                                    if(!isset($item->title_en) || empty($item->title_en)){
+                                                        $title = '';
+                                                    }else{
+                                                        $title = $item->title_en;
+                                                    }
                                                     ?>
                                             @endif
                                             <?php

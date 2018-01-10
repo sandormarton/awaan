@@ -189,6 +189,7 @@ return [
         'Badawi' => 'بدوي',
         'Terki' => 'تركي',
         'Arabic' => 'عربي',
+        'Fosha' => 'فصحى',
     ],
     'videos_favorites_rows' => [
 

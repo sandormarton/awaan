@@ -164,6 +164,7 @@ return [
         'Badawi' => 'بدوي',
         'Terki' => 'تركي',
         'Arabic' => 'Arabic',
+        'Fosha' => 'فصحى',
     ],
     'video' => [
         'favorites' => 'Favorites',

@@ -51,6 +51,10 @@ class Video extends BaseController
                 'limit_sv' => 6,
                 'start_sv' => 0,
             ]);
+
+
+
+
         }else{
             $apiobj = new ApiRequest([
                 'video_id' => $vid,
@@ -117,6 +121,25 @@ class Video extends BaseController
         }
 
         $this->data['currentseasons'] = $current;
+
+        if(isset($current->show_id) and !empty($current->show_id)){
+            if(Session::get('lang') == 'en'){
+                $lang = 'en';
+            }else{
+                $lang = 'ar';
+            }
+            $apiSeason = new ApiRequest([
+                'p' => 1,
+                'limit' => 1,
+                'cast' => 0,
+                't' => time(),
+                'lang' => $lang,
+            ]);
+            $this->data['dd_seasons'] = $apiSeason->getShowDetails($current->show_id, null);
+
+        }
+
+
         $this->data['otherseasons'] = $this->video_response->ShowSeasons;
         $this->data['featuredshows'] = $featuredshows;
         $this->data['content'] = $videocontent;

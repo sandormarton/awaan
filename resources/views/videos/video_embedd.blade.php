@@ -9,6 +9,8 @@ if(Session::get('lang') == 'en'){
     $parent_title = $content->cat_title;
 }
 ?>
+
+
 @section('title',substr( $title, 0, 64))
 @section('social_header_meta')
 @include('include.social_header',['social_meta'=>$content,'meta'=>$content->ch_meta])
@@ -109,7 +111,24 @@ if(Session::get('lang') == 'en'){
                         @if(!empty($currentseasons) && isset($currentseasons->videos) && is_array($currentseasons->videos) && sizeof($currentseasons->videos) > 0)
                             <div class="title-section">
                                 <h3>{{ trans('content.whole.more_episode2') }}</h3>
-                                <a href="{{URL::to('show/'.$cat_id_return.'/'. $parent_title )}}" class="btn btn-awaanbluebtn btn-viewall">{{$parent_title}}</a>
+                                @if(isset($dd_seasons) and !empty($dd_seasons) and isset($dd_seasons->seasons) && !empty($dd_seasons->seasons) && is_array($dd_seasons->seasons)  && sizeof($dd_seasons->seasons) > 1)
+                                    <div class="dropdown-section" >
+                                        <select class="form-control showpage-dropdown" id="season-selector">
+                                            <?php
+                                            foreach ($dd_seasons->seasons as $season){
+                                                if(Session::get('lang') == 'en'){
+                                                    $season_title = $season->title_en;
+                                                }else{
+                                                    $season_title = $season->title_ar;
+                                                }
+                                                $season_url = URL::to("show/". $currentseasons->show_id ."/".\App\Helpers\Functions::cleanurl($season_title)."/".$season->id);
+                                                echo '<option value="'.$season->id.'" data-url="'.$season_url.'" >'.$season_title.'</option>';
+
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                @endif
                             </div>
                             <div class="content-div">
                                 <div class="row" id="related-episode-container">

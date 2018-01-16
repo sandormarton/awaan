@@ -1057,7 +1057,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 .video-wrapper .video-content-wrapper .sm-detail-div .sm-buttons-div { text-align: left; margin-bottom: 15px;}
 
-.video-wrapper .video-content-wrapper .more-episodes-div .title-section h3 { margin: 15px 0; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 50%;}
+.video-wrapper .video-content-wrapper .more-episodes-div .title-section h3 { margin: 15px 0; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 50%;margin-top: 5px;}
 .video-wrapper .video-content-wrapper .more-episodes-div .title-section .btn-viewall { float: left; font-family: 'HelveticaNeueMEforSKY-Reg', 'MyriadPro-Semibold', tahoma; padding: 7px 35px; font-size: 16px; margin: 8px 0;}
 
 .video-wrapper .video-content-wrapper .more-episodes-div .img-div { }
@@ -1922,6 +1922,11 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	color: #2bb6f3;
 	font-size: 18px;
 }
+.more-episodes-div .dropdown-section{
+	width: 200px;
+	display: inline-block;
+	float: left;
+}
 @media (max-width: 1200px) {
 	.live-wrapper .channel-content-wrapper .uplcoming-shows-program span.uplcoming-shows-title{
 		width:74%;
@@ -2120,6 +2125,10 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 
 @media (max-width: 500px) {
+	.more-episodes-div .dropdown-section {
+		width: 100%;
+		margin-bottom: 20px;
+	}
 	#offset_modal .title-copy{
 		font-size: 17px;
 		text-align: center;

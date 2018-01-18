@@ -136,6 +136,13 @@
 		width: 20%;
 		float: right;
 	}
+	.aflam-image{
+		height: 297px !important;
+	}
+	.aflam-image-cover{
+		height: 382px !important;
+		max-width: 275px;
+	}
 }
 
 ::-moz-selection {
@@ -1675,9 +1682,12 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	-webkit-transform: scale(1.08);
 	transform: scale(1.08);
 }
-.aflam-image { background-size: cover; background-position: top center; background-repeat: no-repeat; height: 390px !important;}
-.aflam-image2 { background-size: cover; background-position: top center; background-repeat: no-repeat; height: 305px !important;}
-
+.aflam-image { background-size: cover; background-position: top center; background-repeat: no-repeat; height: 362px !important;}
+.aflam-image2 { background-size: cover; background-position: top center; background-repeat: no-repeat; height: 285px !important;}
+.aflam-image {
+	/*height: 382px !important;*/
+	/*max-width: 275px;*/
+}
 .films-programs-section .owl-carousel .owl-stage{
 	float: right;
 }
@@ -2027,7 +2037,20 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 }
 
 
+@media (max-width: 880px) {
+	.aflam-image {
+		height: 327px !important;
+	}
+	.aflam-image-cover{
+		height: 382px !important;
+		max-width: 275px;
+	}
+}
 @media (max-width: 767px) {
+	.aflam-image-cover{
+		height: 382px !important;
+		max-width: 275px;
+	}
 	.live-upcoming-mobo{
 		float: none;
 		margin:0 auto;
@@ -2132,6 +2155,9 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 
 @media (max-width: 500px) {
+	.aflam-image2{
+		height: 251px !important;
+	}
 	.more-episodes-div .dropdown-section {
 		width: 100%;
 		margin-bottom: 20px;
@@ -2147,10 +2173,13 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 		margin-top: -38px;
 	}
 	.aflam-image{
-		height: 273px !important;
+		height: 243px !important;
 	}
 	.aflam-image-cover{
-		height: 563px !important;
+		height: 382px !important;
+	}
+	.aflam-image-cover{
+		/*height: 563px !important;*/
 	}
 }
 @media (max-width: 400px) {

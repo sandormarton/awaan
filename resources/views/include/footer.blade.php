@@ -4,7 +4,7 @@
 
         <div class="row">
             <div class="col-md-6 col-sm-6 text-awaan-logo">
-                <img src="{{asset('images/logo.png')}}" alt="awaan logo" class="img-responsive center-block" /><a class="terms-footer"  target="_blank" href="http://www.dmi.gov.ae/privacy.asp?pgTitle=terms&ChannelID=10&lang=ar">{{ trans('content.whole.terms') }}</a>
+                <img src="{{asset('images/logo.png')}}" alt="awaan logo" class="img-responsive center-block" /><a class="terms-footer"  target="_blank" href="http://www.dmi.gov.ae/privacy.asp?pgTitle=terms&ChannelID=10&lang=ar">{{ trans('content.whole.terms') }}</a><a class="footer-app-href" href="/app">{{ trans('content.app.apps') }}</a>
             </div>
             <div class="col-md-6 col-sm-6 text-awaan-sm">
                 <span>Awaan &copy; 2017</span>

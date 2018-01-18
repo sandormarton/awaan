@@ -153,6 +153,9 @@ return [
         'latestAdded' => 'Latest added',
         'related_movies' => 'Related movies',
     ],
+    'app' => [
+        'apps' => 'Applications',
+    ],
     'languanges' => [
         'English' => 'انكليزي',
         'Saudi' => 'سعودي',

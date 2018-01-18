@@ -21,11 +21,9 @@
                     <a href="#" class="audio_media" data-show-date="{{$item -> recorder_date}}" data-title="{{(Session::get('lang') == 'ar')?$item -> title_ar:$item -> title_en }}" onclick="return false;" data-id="{{$item->id}}" data-signature="{{$item->signature}}">
                 @endif
                         <p style="display: none;">{{$item -> title_en}}</p>
-                    <div class="media-object embed-responsive-item image-div lazy-image-handler" data-src="{{$img}}" style="background-image: url('{{asset("images/ajax-loader.gif")}}');background-size: cover;
+                    <div class="media-object embed-responsive-item image-div lazy-image-handler audio-show-page-thumb" data-src="{{$img}}" style="background-image: url('{{asset("images/ajax-loader.gif")}}');background-size: cover;
                             background-position: top center;
-                            background-repeat: no-repeat;
-                            height: 140px;
-                            width: 278px;"></div>
+                            background-repeat: no-repeat;"></div>
                     <div class="overlay">
                         <img src="{{asset("images")}}/icon-play.png" alt="play icon" />
                     </div>

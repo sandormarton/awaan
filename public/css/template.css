@@ -1944,6 +1944,10 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	margin-right: 8px;
 	color: #cacaca;
 }
+.audio-show-page-thumb{
+	height: 140px;
+	width: 278px;
+}
 @media (max-width: 1200px) {
 	.live-wrapper .channel-content-wrapper .uplcoming-shows-program span.uplcoming-shows-title{
 		width:74%;
@@ -2155,6 +2159,10 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 
 
 @media (max-width: 500px) {
+	.audio-show-page-thumb{
+		height: 100px;
+		width: 200px;
+	}
 	.aflam-image2{
 		height: 251px !important;
 	}

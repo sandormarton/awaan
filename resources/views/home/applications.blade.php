@@ -6,10 +6,6 @@
 	<!-- MAIN CONTAINER [START] -->
 	<div class="site-main-container">
 
-		<!-- HEADER WRAPPER [START] -->
-		@include('home.header')
-		<!-- HEADER WRAPPER [END] -->
-
 		<!-- BANNER WRAPPER [START] -->
 		<div class="smarttvbanner-wrapper clearfix">
 
@@ -27,11 +23,11 @@
 						<img src="{{asset("images/smart-tv-banner-1.jpg")}}" class="slide-img img-responsive" title="smart-tv-banner" alt="smart-tv-banner">
 						<div class="carousel-caption">
 							<div class="caption-image" data-animation="animated flipInX">
-								<img src="{{asset("images/logo-medium.png")}}" class="caption-img" title="AWAAN" alt="AWAAN" />
+								{{--								<img src="{{asset("images/logo-medium.png")}}" class="caption-img" title="AWAAN" alt="AWAAN" />--}}
 							</div>
 							<div class="caption-content">
-								<h4 data-animation="animated fadeInRight">Your favorite Channels & all the Latest Episodes</h4>
-								<h2 data-animation="animated fadeInRight">FREE  Now on <a href="#">awaan.ae</a></h2>
+								<h4 data-animation="animated fadeInRight">{{ trans('content.app.f1') }}</h4>
+								<h2 data-animation="animated fadeInRight">{{ trans('content.app.f2') }}<a href="#">awaan.ae</a></h2>
 							</div>
 						</div>
 					</div>
@@ -39,11 +35,11 @@
 						<img src="{{asset("images/smart-tv-banner-2.jpg")}}" class="slide-img img-responsive" title="smart-tv-banner2" alt="smart-tv-banner2">
 						<div class="carousel-caption">
 							<div class="caption-image" data-animation="animated flipInX">
-								<img src="{{asset("images/logo-medium.png")}}" class="caption-img" title="Awaan" alt="Awaan" />
+								{{--								<img src="{{asset("images/logo-medium.png")}}" class="caption-img" title="Awaan" alt="Awaan" />--}}
 							</div>
 							<div class="caption-content">
-								<h4 data-animation="animated fadeInRight">Your favorite Channels & all the Latest Episodes</h4>
-								<h2 data-animation="animated fadeInRight">FREE  Now on <a href="#">awaan.ae</a></h2>
+								<h4 data-animation="animated fadeInRight">{{ trans('content.app.f1') }}</h4>
+								<h2 data-animation="animated fadeInRight">{{ trans('content.app.f2') }}<a href="#">awaan.ae</a></h2>
 							</div>
 						</div>
 					</div>
@@ -51,11 +47,11 @@
 						<img src="{{asset("images/smart-tv-banner-3.jpg")}}" class="slide-img img-responsive" title="smart-tv-banner3" alt="smart-tv-banner3">
 						<div class="carousel-caption">
 							<div class="caption-image" data-animation="animated flipInX">
-								<img src="{{asset("images/logo-medium.png")}}" class="caption-img" title="Awaan" alt="Awaan" />
+								{{--<img src="{{asset("images/logo-medium.png")}}" class="caption-img" title="Awaan" alt="Awaan" />--}}
 							</div>
 							<div class="caption-content">
-								<h4 data-animation="animated fadeInRight">Your favorite Channels & all the Latest Episodes</h4>
-								<h2 data-animation="animated fadeInRight">FREE  Now on <a href="#">awaan.ae</a></h2>
+								<h4 data-animation="animated fadeInRight">{{ trans('content.app.f1') }}</h4>
+								<h2 data-animation="animated fadeInRight">{{ trans('content.app.f2') }}<a href="#">awaan.ae</a></h2>
 							</div>
 						</div>
 					</div>
@@ -85,7 +81,7 @@
 					<div class="smarttv-content-cotnainer">
 
 						<img src="{{asset("images/smart-samsung-tvs.png")}}" class="img-responsive center-block" title="smart-samsung-tvs" alt="smart-samsung-tvs" />
-						<h4 class="smarttv-text">Awaan Video on Demand (VOD) gives you unlimited access to thousands of premium content from different categories such as entertainment, drama, news, etc..</h4>
+						<h4 class="smarttv-text">{{ trans('content.app.first_content') }}</h4>
 
 					</div>
 				</div>
@@ -96,10 +92,10 @@
 				<div class="container">
 					<div class="smarttv-tvtype-cotnainer">
 
-						<img src="{{asset("images/logo-medium.png")}}" class="img-repsonsive" title="Awaan" alt="Awaan" />
+						{{--						<img src="{{asset("images/logo-medium.png")}}" class="img-repsonsive" title="Awaan" alt="Awaan" />--}}
 						<h4 class="smarttv-tvtype-info">
-							Enjoy watched live streaming, catchup, or VOD content from any smart device or smart tv and <br/>
-							<span>for free.</span>
+							{{ trans('content.app.second_content') }}<br/>
+							<span>{{ trans('content.app.third_content') }}</span>
 						</h4>
 						<ul class="list-inline smarttv-tvtype-list">
 							<li><a href="#"><img src="{{asset("images/smarttv-appletv.png")}}" class="img-responsive" title="smarttv-appletv" alt="smarttv-appletv" /></a></li>
@@ -129,6 +125,6 @@
 	<script>
         $('body').addClass('loaded');
 	</script>
-	
+
 @endsection
 <!-- MAIN CONTAINER [END] -->

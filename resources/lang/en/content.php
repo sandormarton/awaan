@@ -155,6 +155,10 @@ return [
     ],
     'app' => [
         'apps' => 'Applications',
+        'first_content' => 'Awaan Video on Demand (VOD) gives you unlimited access to thousands of premium content from different categories such as entertainment, drama, news, etc..',
+        'third_content' => 'for free.',
+        'f1' => 'Your favorite Channels & all the Latest Episodes',
+        'f2' => 'FREE  Now on ',
     ],
     'languanges' => [
         'English' => 'انكليزي',

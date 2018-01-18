@@ -1927,6 +1927,9 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 	display: inline-block;
 	float: left;
 }
+#Smarttvbanner-carousel .carousel-inner>.item>img{
+	margin: 0 auto;
+}
 @media (max-width: 1200px) {
 	.live-wrapper .channel-content-wrapper .uplcoming-shows-program span.uplcoming-shows-title{
 		width:74%;

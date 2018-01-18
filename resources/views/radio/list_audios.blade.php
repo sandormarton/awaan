@@ -10,7 +10,7 @@
     @foreach($audio_list as $item)
         <?php
             $img = "";
-            $img=((!empty($content->cat->cover))?config('mangoapi.mangodcn').$content->cat->cover:asset("images/cover-not-available.jpg"));
+            $img=((!empty($content->cat->thumbnail))?config('mangoapi.mangodcn').$content->cat->thumbnail:asset("images/cover-not-available.jpg"));
             if(!empty($item->img)) $img = config('mangoapi.mangodcn').$item->img;
         ?>
         <div class="media">
@@ -24,8 +24,8 @@
                     <div class="media-object embed-responsive-item image-div lazy-image-handler" data-src="{{$img}}" style="background-image: url('{{asset("images/ajax-loader.gif")}}');background-size: cover;
                             background-position: top center;
                             background-repeat: no-repeat;
-                            height: 108px;
-                            width: 192px;"></div>
+                            height: 140px;
+                            width: 278px;"></div>
                     <div class="overlay">
                         <img src="{{asset("images")}}/icon-play.png" alt="play icon" />
                     </div>

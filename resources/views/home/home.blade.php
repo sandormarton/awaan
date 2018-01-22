@@ -317,7 +317,7 @@
                     {{--<div class="clearfix-mobo"></div>--}}
                     <label for="channels-dropdown" style="display: none">Channel dropdown</label>
                     <select id="channels-dropdown" class="form-control viewall-dropdown">
-                        <option value="">{{ trans('content.whole.view_all') }}</option>
+                        {{--<option value="">{{ trans('content.whole.view_all') }}</option>--}}
                         @if(isset($channels))
                             @foreach($channels as $item)
                                 @if($item->premuim != 1 && $item->catchup == 1)
@@ -821,8 +821,11 @@
                 });
             };
 
+
+
             $( "#channels-dropdown" ).change(function() {
                 channel = $( "#channels-dropdown" ).val();
+                console.log(channel);
                 update_data();
             });
             $( "#dates-dropdown" ).change(function() {

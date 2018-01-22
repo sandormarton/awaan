@@ -101,21 +101,23 @@
                                     $title = $item->title_ar;
                                 }
                              ?>
-                            @if(!empty($title))
-                                <?php
-                                if(isset($item->icon)) {
-//                                    $img = config('mangoapi.mangodcn').$item->icon;
-                                    $img = asset("images/cat-icon/".$item->id.".png");
-                                }
-                                ?>
-                                    <div class="item">
-                                        <a href="#" class="category-selector" data-category-id="{{$item->id}}" data-category-name="{{$title}}">
-                                            <div class="showscategory-sama-div" data-cat-color="{{$item->id}}">
-                                                <span class="kh-ellipsis">{{$title}}</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                <?php $i++; ?>
+                            @if(($catid != 30348 and $item->id != 30348) or ($catid == 30348))
+                                @if(!empty($title))
+                                    <?php
+                                    if(isset($item->icon)) {
+    //                                    $img = config('mangoapi.mangodcn').$item->icon;
+                                        $img = asset("images/cat-icon/".$item->id.".png");
+                                    }
+                                    ?>
+                                        <div class="item">
+                                            <a href="#" class="category-selector" data-category-id="{{$item->id}}" data-category-name="{{$title}}">
+                                                <div class="showscategory-sama-div" data-cat-color="{{$item->id}}">
+                                                    <span class="kh-ellipsis">{{$title}}</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php $i++; ?>
+                                @endif
                             @endif
                         @endforeach
                     @endif

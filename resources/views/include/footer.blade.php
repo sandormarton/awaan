@@ -12,7 +12,6 @@
                 <a href="https://twitter.com/OnAwaan" target="_blank"><h4 style="display: none">twitter page</h4><i class="fa fa-twitter"></i></a>
             </div>
         </div>
-
     </div>
 
 </footer>

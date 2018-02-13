@@ -11,7 +11,7 @@
 @section('main-content')
     <h1 style="display: none;">{{trans('content.pagetitle.allprograms')}}</h1>
     <h2 style="display: none;">{{trans('content.pagetitle.allprograms')}}</h2>
-<!-- MAIN CONTAINER [START] -->
+    <!-- MAIN CONTAINER [START] -->
     <!--  SHOWS CAROUSEL SECTION	[START]	-->
     <div class="showscategory-carouellist-wrapper">
         <div class="container">
@@ -38,10 +38,10 @@
                         @endif
                     </select>
                     {{--<select class="form-control sortcategory-dropdown last-dropdown" id="type-selector">--}}
-                        {{--<option value="desc">{{trans('content.whole.order_date_desc')}}</option>--}}
-                        {{--<option value="asc">{{trans('content.whole.order_date_asc')}}</option>--}}
-                        {{--<option value="desc" data-order="alpha">{{trans('content.whole.order_alpha_desc')}}</option>--}}
-                        {{--<option value="asc" data-order="alpha">{{trans('content.whole.order_alpha_asc')}}</option>--}}
+                    {{--<option value="desc">{{trans('content.whole.order_date_desc')}}</option>--}}
+                    {{--<option value="asc">{{trans('content.whole.order_date_asc')}}</option>--}}
+                    {{--<option value="desc" data-order="alpha">{{trans('content.whole.order_alpha_desc')}}</option>--}}
+                    {{--<option value="asc" data-order="alpha">{{trans('content.whole.order_alpha_asc')}}</option>--}}
                     {{--</select>--}}
                     <label for="category-selector-drop" style="display: none">category selector drop</label>
                     <select class="form-control sortcategory-dropdown last-dropdown" id="category-selector-drop">
@@ -75,7 +75,7 @@
                             }
                             ?>
                             @if(!empty($title) and $item->premuim != 1 and $item->id != 25)
-                                    <option value="{{$title}}" data-id="{{$item->id}}">{{$title}}</option>
+                                <option value="{{$title}}" data-id="{{$item->id}}">{{$title}}</option>
                             @endif
                         @endforeach
                     </select>
@@ -95,19 +95,20 @@
                     @if(isset($categories) and !empty($categories))
                         @foreach($categories  as $item)
                             <?php
-                                if(Session::get('lang') == 'en'){
-                                    $title = $item->title_en;
-                                }else{
-                                    $title = $item->title_ar;
-                                }
-                             ?>
-                            @if(!empty($title))
-                                <?php
-                                if(isset($item->icon)) {
-//                                    $img = config('mangoapi.mangodcn').$item->icon;
-                                    $img = asset("images/cat-icon/".$item->id.".png");
-                                }
-                                ?>
+                            if(Session::get('lang') == 'en'){
+                                $title = $item->title_en;
+                            }else{
+                                $title = $item->title_ar;
+                            }
+                            ?>
+                            @if(($catid != 30348 and $item->id != 30348) or ($catid == 30348))
+                                @if(!empty($title))
+                                    <?php
+                                    if(isset($item->icon)) {
+                                        //                                    $img = config('mangoapi.mangodcn').$item->icon;
+                                        $img = asset("images/cat-icon/".$item->id.".png");
+                                    }
+                                    ?>
                                     <div class="item">
                                         <a href="#" class="category-selector" data-category-id="{{$item->id}}" data-category-name="{{$title}}">
                                             <div class="showscategory-sama-div" data-cat-color="{{$item->id}}">
@@ -115,17 +116,18 @@
                                             </div>
                                         </a>
                                     </div>
-                                <?php $i++; ?>
+                                    <?php $i++; ?>
+                                @endif
                             @endif
                         @endforeach
                     @endif
 
                     {{--<div class="item">--}}
-                        {{--<a href="{{URL::to("relatedshows/{$item->id}/".\App\Helpers\Functions::cleanurl($item->title_ar))}}">--}}
-                            {{--<div style="background: {{$color_array[$i]}};" class="showscategory-sama-div" onMouseOver="this.style.background='url({{$img}})'" onMouseOut="this.style.background=' {{$color_array[$i]}}'">--}}
-                                {{--<span>{{str_limit($item->title_ar,18)}}</span>--}}
-                            {{--</div>--}}
-                        {{--</a>--}}
+                    {{--<a href="{{URL::to("relatedshows/{$item->id}/".\App\Helpers\Functions::cleanurl($item->title_ar))}}">--}}
+                    {{--<div style="background: {{$color_array[$i]}};" class="showscategory-sama-div" onMouseOver="this.style.background='url({{$img}})'" onMouseOut="this.style.background=' {{$color_array[$i]}}'">--}}
+                    {{--<span>{{str_limit($item->title_ar,18)}}</span>--}}
+                    {{--</div>--}}
+                    {{--</a>--}}
                     {{--</div>--}}
 
                 </div>
@@ -153,23 +155,23 @@
             <h3 id="cat_name">{{$cat_title}}</h3>
             <div class="row" id="programs-container">
                 @if($catid != 208109)
-                @foreach($content->shows as $item)
-                    <?php
-                    if(Session::get('lang') == 'en'){
-                        $title = $item->title_en;
-                    }else{
-                        $title = $item->title_ar;
-                    }
-                    ?>
-                    @if(!empty($title))
+                    @foreach($content->shows as $item)
                         <?php
-                        if(isset($item->thumbnail)) {
-                            $img = config('mangoapi.mangodcn').$item->thumbnail;
-                        }
-                        elseif(isset($item->img)) {
-                            $img = config('mangoapi.mangodcn').$item->img;
+                        if(Session::get('lang') == 'en'){
+                            $title = $item->title_en;
+                        }else{
+                            $title = $item->title_ar;
                         }
                         ?>
+                        @if(!empty($title))
+                            <?php
+                            if(isset($item->thumbnail)) {
+                                $img = config('mangoapi.mangodcn').$item->thumbnail;
+                            }
+                            elseif(isset($item->img)) {
+                                $img = config('mangoapi.mangodcn').$item->img;
+                            }
+                            ?>
                             <div class="col-md-3 col-sm-4 col-xs-6 shows-video-col">
                                 <a href="{{URL::to("{$other_content['route']}/{$item->id}/".\App\Helpers\Functions::cleanurl("{$title}"))}}">
                                     <p style="display: none">{{$title}}</p>
@@ -182,8 +184,8 @@
                                     <a href="#" class="title-link">{{$title}}</a>
                                 </div>
                             </div>
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
                 @else
                     @foreach($content->videos as $item)
                         <?php
@@ -294,16 +296,16 @@
                         // $('#loader-icon').hide();
                     },
                     success: function(data){
-                       if(data['count'] >= 16){
-                           jQuery('#programs-container').append(data['html']);
-                           offset = Number(offset) + 1;
-                           console.log('offset' + offset);
-                           console.log('offset' + data['count']);
-                           jQuery('#loadmore-cat').attr('data-category-offset',offset);
-                       }else{
-                           jQuery('#programs-container').append(data['html']);
-                           jQuery('#loadmore-cat').css('display','none');
-                       }
+                        if(data['count'] >= 16){
+                            jQuery('#programs-container').append(data['html']);
+                            offset = Number(offset) + 1;
+                            console.log('offset' + offset);
+                            console.log('offset' + data['count']);
+                            jQuery('#loadmore-cat').attr('data-category-offset',offset);
+                        }else{
+                            jQuery('#programs-container').append(data['html']);
+                            jQuery('#loadmore-cat').css('display','none');
+                        }
                         jQuery(".lazy-image-handler").Lazy({
                             onFinishedAll: function() {
                                 jQuery(this).removeData("src");
@@ -359,12 +361,12 @@
                         jQuery('#date-selector').html(data['date_html']);
                         console.log('lang' + data['lang_html']);
                         console.log('date_html' + data['date_html']);
-                       if(data['count'] >= 16){
-                           jQuery('#programs-container').html(data['html']);
-                       }else{
-                           jQuery('#programs-container').html(data['html']);
-                           jQuery('#loadmore-cat').css('display','none');
-                       }
+                        if(data['count'] >= 16){
+                            jQuery('#programs-container').html(data['html']);
+                        }else{
+                            jQuery('#programs-container').html(data['html']);
+                            jQuery('#loadmore-cat').css('display','none');
+                        }
                         jQuery(".lazy-image-handler").Lazy({
                             onFinishedAll: function() {
                                 jQuery(this).removeData("src");

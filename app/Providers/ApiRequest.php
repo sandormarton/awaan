@@ -322,7 +322,7 @@ class ApiRequest {
 
     public function getFavoritesShows() {
 
-        $this->url = "//admin.mangomolo.com/analytics/index.php/plus/favorites_shows?user_id=".config('mangoapi.user_id')."".$this->extraquery."&key=".config('mangoapi.apikey');
+        $this->url = "http://admin.mangomolo.com/analytics/index.php/plus/favorites_shows?user_id=".config('mangoapi.user_id')."".$this->extraquery."&key=".config('mangoapi.apikey');
 
         if(!empty($this->url)) {
             $responses = json_decode(file_get_contents($this->url), true);
@@ -386,7 +386,7 @@ class ApiRequest {
             $q = config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id');
         }
 
-        $this->url = config('mangoapi.base_uri').'index.php/plus/getchanneldetails?key='.$q.'&channel_id='.$channel_id.'';
+        $this->url = config('mangoapi.base_uri').'index.php/plus/getchanneldetails?key='.$q.'&channel_id='.$channel_id.'&t=';
 
         if(!empty($this->url)) {
             $responses = $this->GetResponse(array('url' => $this->url));
@@ -408,7 +408,7 @@ class ApiRequest {
      * @return mixed
      */
     public function liveChannels() {
-        $this->url = config('mangoapi.base_uri').'index.php/plus/live_channels?key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&json=true';
+        $this->url = config('mangoapi.base_uri').'index.php/plus/live_channels?key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&json=true&t=1';
         $responses = $this->GetResponse(array('url' => $this->url));
         return \GuzzleHttp\json_decode($responses);
     }
@@ -430,7 +430,7 @@ class ApiRequest {
      * @return mixed
      */
     public function liveNext($channel_id) {
-        $this->url = config('mangoapi.base_uri').'index.php/plus/live_next?key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&channel_id='.$channel_id.'&t='.(time()+120);
+        $this->url = config('mangoapi.base_uri').'index.php/plus/live_next?key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&channel_id='.$channel_id.'&t='.(time());
 
         $responses = $this->GetResponse(array('url' => $this->url));
         return \GuzzleHttp\json_decode($responses);
@@ -572,6 +572,7 @@ class ApiRequest {
     {
         $this->url = config('mangoapi.base_uri') . 'index.php/nand?scope='.config('mangoapi.clientscope').'&action=CategoryWithVideos&key=' . config('mangoapi.apikey') . $this->extraquery . '&user_id=' . config('mangoapi.user_id').'xx=1';
         $responses = $this->GetResponse(array('url' => $this->url));
+
 //        echo  $this->url;
 //        echo '<br>';
 //        echo($responses);die();
@@ -862,5 +863,50 @@ class ApiRequest {
             return \GuzzleHttp\json_decode($responses);
         }
         return false;
+    }
+
+    public function getMostViewedCategories($device_id = "") {
+        $this->url = 'index.php/plus/get_top_by_device_id?key='.config('mangoapi.apikey').'&user_id=71&device_id='.$device_id.'&from_date=2017-01-01%2000:00:00&to_date=2018-01-01%2000:00:00&type=categories';
+        if(!empty($this->url)) {
+            $responses = $this->GetResponse(array('url' => $this->url));
+        }
+        return \GuzzleHttp\json_decode($responses);
+        //return json_decode($responses, true);
+    }
+
+    public function getMostViewedShows($device_id = "") {
+        $this->url = 'index.php/plus/get_top_by_device_id?key='.config('mangoapi.apikey').'&user_id=71&device_id='.$device_id.'&from_date=2017-01-01%2000:00:00&to_date=2018-01-01%2000:00:00&type=shows';
+        if(!empty($this->url)) {
+            $responses = $this->GetResponse(array('url' => $this->url));
+        }
+        return \GuzzleHttp\json_decode($responses);
+        //return json_decode($responses, true);
+    }
+
+    public function getVideosViews($device_id = "") {
+        $this->url = 'index.php/plus/get_views_count?key='.config('mangoapi.apikey').'&user_id=71&device_id='.$device_id.'&from_date=2017-01-01%2000:00:00&to_date=2018-01-01%2000:00:00';
+        if(!empty($this->url)) {
+            $responses = $this->GetResponse(array('url' => $this->url));
+        }
+        return \GuzzleHttp\json_decode($responses);
+        //return json_decode($responses, true);
+    }
+
+    public function getFavChannel($device_id = "") {
+        $this->url = 'index.php/plus/get_top_by_device_id?key='.config('mangoapi.apikey').'&user_id=71&device_id='.$device_id.'&from_date=2017-01-01%2000:00:00&to_date=2018-01-01%2000:00:00&type=channels';
+        if(!empty($this->url)) {
+            $responses = $this->GetResponse(array('url' => $this->url));
+        }
+        return \GuzzleHttp\json_decode($responses);
+        //return json_decode($responses, true);
+    }
+
+    public function getWeKnowData($device_id = "") {
+        $this->url = 'index.php/plus/we_know_data?key='.config('mangoapi.apikey').'&user_id=71&device_id='.$device_id.'&from_date=2017-01-01%2000:00:00&to_date=2018-01-01%2000:00:00&type=shows&gg=11';
+        if(!empty($this->url)) {
+            $responses = $this->GetResponse(array('url' => $this->url));
+        }
+        return \GuzzleHttp\json_decode($responses);
+        //return json_decode($responses, true);
     }
 }

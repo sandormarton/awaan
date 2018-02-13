@@ -206,6 +206,9 @@ foreach($content->seasons as $id=>$item){
                                                     $season_url = URL::to("show/".Request::segment(2) ."/".\App\Helpers\Functions::cleanurl($season_title)."/".$season->id);
                                                     if( !empty(Request::segment(4)) and Request::segment(4) == $season->id){
                                                         echo '<option value="'.$season->id.'" data-url="'. $season_url.'" selected>'.$season_title.'</option>';
+                                                    }else if(empty(Request::segment(4)) and isset($content->default_season) and $content->default_season == $season->id){
+                                                        $season_url = URL::to("show/".Request::segment(2) ."/".\App\Helpers\Functions::cleanurl($season_title)."/".$season->id);
+                                                        echo '<option value="'.$season->id.'" data-url="'. $season_url.'" selected>'.$season_title.'</option>';
                                                     }else{
                                                         echo '<option value="'.$season->id.'" data-url="'.$season_url.'" >'.$season_title.'</option>';
                                                     }

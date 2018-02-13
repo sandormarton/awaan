@@ -33,38 +33,47 @@
     </div>
     <?php
         if(isset($channel->cover) and !empty($channel->cover)){
-            $live_cover = 'http://admin.mangomolo.com/analytics/'.$channel->cover;
+            $live_cover = asset("images/live/".$channel->id.".jpg") ;
         }else{
             $live_cover = '';
         }
     ?>
-    <div class="channel-content-wrapper" style="background: url({{$live_cover}});background-size: cover; ">
+    <div class="channel-content-wrapper">
         <div class="container">
 
             <h4 class="content-title">@if(Session::get('lang') == 'ar') {{$channel->title_ar}} @else {{$channel->title_en}} @endif</h4>
-            <div class="row">
-                <div class="col-lg-9 col-md-8">
+
                     <div class="video-player-div">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe title="{{$channel->title_ar}}" class="embed-responsive-item" src="http://player.mangomolo.com/v1/live?id={{base64_encode($channel->user_id)}}&channelid={{base64_encode($channel->id)}}&countries=Q0M=&w=100%25&h=100%25&filter=DENY&signature={{$channel->signature}}" allowfullscreen="allowfullscreen" scrolling="no" style="border: 0; overflow: hidden"></iframe>
                         </div>
+            </div>
+
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3">
+
                     <div class="uplcoming-shows-wrapper">
+    	<div class="container">
                         <div class="row">
                             @if(isset($channel->catchup) && $channel->catchup)
                                 @foreach($live_next as $index => $item)
 
-                                    @if(!is_object($item) || $index == 2)
+	                    @if(!is_object($item) || $index == 3)
                                         @break
                                     @endif
-                                        <div class="col-md-12 col-sm-6 col-xs-12 live-upcoming-mobo">
+	                        <div class="col-md-4 col-sm-4 col-xs-12 live-upcoming-mobo">
                                             <div class="uplcoming-show-div @if($index == 0) active  @else second-live-upcomming @endif">
                                                 <div class="uplcoming-shows-img-div" style="background-image: url('{{$item->img}}');"></div>
                                                 <div class="uplcoming-shows-program ">
                                                     <div class="overlay"></div>
-                                                    <span class="uplcoming-shows-title">{{$item->title}} - @if($index == 0) على الهواء @else يعرض بعد قليل @endif</span>
+                                                    <span class="uplcoming-shows-title">
+                                                        {{$item->title}} -
+                                                        @if($index == 0) على الهواء
+                                                        @elseif($index == 1)
+                                                             بعد قليل
+                                                        @elseif($index == 2)
+                                                           التالي
+                                                        @endif</span>
                                                     <span class="uplcoming-shows-time">{{$item->start_time}} - {{$item->stop_time}}</span>
                                                 </div>
                                             </div>
@@ -74,10 +83,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    </div>
 
 </div>
 

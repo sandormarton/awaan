@@ -20,7 +20,7 @@
     };
 </script>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="{{asset("/js/jquery.backstretch.min.js")}}"></script>
 
 @if(ends_with(Route::currentRouteAction(), 'Home@index'))
     <script>
@@ -44,6 +44,7 @@
                 {{--};--}}
                 {{--//eModal.alert(options);--}}
             {{--}--}}
+
         });
     </script>
 @endif

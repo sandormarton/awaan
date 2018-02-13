@@ -53,7 +53,7 @@
     <div class="catchupvideo-wrapper">
         <div class="container">
 
-            <div class="col-lg-9 col-md-9 center-col catchupvideo-col">
+            <div class="col-lg-12 col-md-12 center-col catchupvideo-col">
                 <div class="catchupvideo-div">
                     <div class="embed-responsive embed-responsive-16by9">
                         @if(!is_null($video) && isset($video->id) && $video->id)

@@ -1,0 +1,302 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 26, 2017, 12:47:03 PM
+    Author     : majd
+*/
+/*We know what you did 2017*/
+
+/*  HelveticaNeueMEforSKY-Bold  */
+@font-face {
+    font-family: 'HelveticaNeueMEforSKY-Bold';
+    src: url('../fonts/HelveticaNeueMEforSKY-Bold/HelveticaNeueMEforSKY-Bold.eot');
+    src: local('?'), url('../fonts/HelveticaNeueMEforSKY-Bold/HelveticaNeueMEforSKY-Bold.woff') format('woff'), 
+        url('../fonts/HelveticaNeueMEforSKY-Bold/HelveticaNeueMEforSKY-Bold.ttf') format('truetype'), 
+        url('../fonts/HelveticaNeueMEforSKY-Bold/HelveticaNeueMEforSKY-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*  HelveticaNeueMEforSKY-Reg  */
+@font-face {
+    font-family: 'HelveticaNeueMEforSKY-Reg';
+    src: url('../fonts/HelveticaNeueMEforSKY-Reg/HelveticaNeueMEforSKY-Reg.eot');
+    src: local('?'), url('../fonts/HelveticaNeueMEforSKY-Reg/HelveticaNeueMEforSKY-Reg.woff') format('woff'), 
+        url('../fonts/HelveticaNeueMEforSKY-Reg/HelveticaNeueMEforSKY-Reg.ttf') format('truetype'), 
+        url('../fonts/HelveticaNeueMEforSKY-Reg/HelveticaNeueMEforSKY-Reg.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+     background-color:#212324;
+    margin: 0;
+}
+section.weknow{
+    background-color:#212324;
+    height:100%;
+    padding: 30px 0;
+    font-family: 'HelveticaNeueMEforSKY-Reg';
+}
+
+.logo-wrapper{
+    text-align: center;
+}
+.weknow-carousel-wrapper{
+    padding: 70px 0;
+    padding-bottom: 70px;
+}
+.weknow-count-views{
+    position: absolute;
+    top: 130px;
+    right: 0;
+    left: 0;
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'HelveticaNeueMEforSKY-Reg';
+}
+
+section.weknow .show-img-wrapper{
+    width: 300px;
+    margin: auto;
+}
+
+section.weknow .channel-img-wrapper{
+    width: 200px;
+    margin: auto;
+}
+
+
+section.weknow div.channel-main-result {
+
+    margin-top: 30px !important;
+}
+
+.weknow-carousel-wrapper .main-img img{
+    margin: auto;
+    height: 220px;
+    width: auto;
+}
+
+section.weknow div.show-main-result {
+    color:#ffffff;
+    text-align:center;
+    margin-top: 70px;
+}
+
+section.weknow div.cat-main-result {
+    color: #ffffff;
+    margin: auto;
+    background: url(../images/viewed-categories-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 160px;
+    max-width: 300px;
+    margin-top: 40px;
+}
+section.weknow div.cat-main-result h2{
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    line-height: 160px;
+    font-family: 'HelveticaNeueMEforSKY-Reg';
+}
+
+.weknow-social-wrapper{
+    text-align: center;
+}
+
+.weknow-social-wrapper h5{
+    color: #fff;
+    margin-top:15px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: 'HelveticaNeueMEforSKY-Reg';
+}
+
+.weknow-social-wrapper ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.weknow-social-wrapper ul li{
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+}
+
+.weknow-social-wrapper ul li img{
+    text-align: center;
+    width: 100%;
+}
+
+section.weknow .owl-dots {
+    margin-top: 10px;
+    position: absolute;
+    bottom: -200px;
+    right: 0;
+    left: 0;
+}
+
+section.weknow .owl-theme .owl-dots .owl-dot.active span{
+    background:#318dcc !important;
+}
+
+span.count_bold{
+    font-weight: bold;
+    font-family: 'HelveticaNeueMEforSKY-Bold';
+}
+
+.owl-prev {
+    width: 15px;
+    /* height: 100px; */
+    position: absolute;
+    top: 50%;
+    margin-left: 10px !important;
+    display: block!IMPORTANT;
+    border: 0px solid black;
+    background: none !important;
+}
+
+.owl-next {
+width: 15px;
+    /* height: 100px; */
+    position: absolute;
+    top: 50%;
+    /* margin-left: -20px !important; */
+    right: -5px;
+    display: block !important;
+    background: none !important;
+    border: 0px solid black;
+    margin-right: 35px !important;
+}
+
+.weknow .fa{
+    font-size: 30px;
+}
+
+ .border-on{
+    border-left: 1px solid;
+}
+/*Responsive*/
+@media only screen and (max-width: 768px) {
+
+.border-on{
+        border-left: none;
+    }
+
+    section.weknow .show-img-wrapper{
+        max-width: 150px;
+        margin: auto;
+    }
+
+
+    .weknow-carousel-wrapper {
+        padding: 20px 0;
+        padding-bottom: 0px;
+    }
+
+
+    .weknow-count-views{
+        position: absolute;
+        top: 100px;
+        right: 0;
+        left: 0;
+        display: block;
+        color: #ffffff;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .weknow-carousel-wrapper .main-img img{
+        margin: auto;
+        height: 150px;
+        width: auto;
+    }
+
+    section.weknow div.show-main-result {
+        color:#ffffff;
+        text-align:center;
+        margin-top: 20px;
+    }
+
+
+    section.weknow div.cat-main-result {
+        color: #ffffff;
+        width: 150px;
+        margin: auto;
+        height: 75px;
+        background: url(../images/viewed-categories-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: auto;
+
+    }
+    section.weknow div.cat-main-result h2{
+        color: #ffffff;
+        text-align: center;
+        width: 100%;
+        line-height: 70px;
+        font-family: 'HelveticaNeueMEforSKY-Reg';
+    }
+
+    .weknow-social-wrapper{
+        text-align: center;
+    }
+
+    .weknow-social-wrapper h5{
+        color: #fff;
+        margin-top:15px;
+        margin-bottom: 10px;
+        font-size: 22px;
+        font-family: 'HelveticaNeueMEforSKY-Reg';
+    }
+
+    .weknow-social-wrapper ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .weknow-social-wrapper ul li{
+        display: inline-block;
+        width: 80px;
+        text-align: center;
+    }
+
+    .weknow-social-wrapper ul li img{
+        text-align: center;
+        width: 100%;
+    }
+
+    section.weknow .owl-dots {
+        margin-top: 10px;
+        position: absolute;
+        bottom: -170px;
+        right: 0;
+        left: 0;
+    }
+
+    section.weknow .owl-theme .owl-dots .owl-dot.active span{
+        background:#318dcc !important;
+    }
+    
+    .owl-next {
+    margin-right: 15px !important;
+}
+
+    .owl-prev {
+    margin-left: -10px !important;
+}
+
+    section.weknow .channel-img-wrapper{
+        width: 60px;
+        margin: auto;
+    }
+}

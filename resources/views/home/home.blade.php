@@ -821,8 +821,11 @@
                 });
             };
 
+
+
             $( "#channels-dropdown" ).change(function() {
                 channel = $( "#channels-dropdown" ).val();
+                console.log(channel);
                 update_data();
             });
             $( "#dates-dropdown" ).change(function() {

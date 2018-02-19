@@ -100,6 +100,7 @@ return [
         'videos' => 'Videos',
         'shows' => 'Shows',
         'aflam' => 'Movies',
+        'radio' => 'Radio',
         'noresult' => 'No Result Found',
         'placeholder' => 'Search',
     ],

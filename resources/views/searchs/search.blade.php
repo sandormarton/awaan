@@ -13,6 +13,7 @@
             <div id="shows-tap" class="active-tap ">{{ trans('content.search.shows') }} ({{count($shows)}})</div>
             <div id="videos-tap">{{ trans('content.search.videos') }} ({{count($videos)}})</div>
             <div id="aflam-tap">{{ trans('content.search.aflam') }} ({{count($films)}})</div>
+            <div id="radio-tap">{{ trans('content.search.radio') }} ({{count($audios)}})</div>
         </div>
         @if(sizeof($shows)>0)
             <?php $is_empty = false; ?>
@@ -31,6 +32,11 @@
             @if(sizeof($films)>0)
                 @include('searchs.aflamsearch')
             @endif
+
+            @if(sizeof($audios)>0)
+                @include('searchs.audiosearch')
+            @endif
+
             @if($is_empty)
 
             <div class="alert alert-danger">
@@ -64,26 +70,43 @@
                 jQuery('#shows-tap').removeClass('active-tap');
                 jQuery('#aflam-tap').removeClass('active-tap');
                 jQuery('#videos-tap').addClass('active-tap');
+                jQuery('#radio-tap').removeClass('active-tap');
                 jQuery('#videos-search').css('display','inherit');
                 jQuery('#shows-search').css('display','none');
                 jQuery('#aflam-search').css('display','none');
+                jQuery('#radio-search').css('display','none');
             });
             jQuery('body').on('click','#shows-tap', function(e) {
                 jQuery('#shows-tap').addClass('active-tap');
                 jQuery('#aflam-tap').removeClass('active-tap');
                 jQuery('#videos-tap').removeClass('active-tap');
+                jQuery('#radio-tap').removeClass('active-tap');
                 jQuery('#videos-search').css('display','none');
                 jQuery('#aflam-search').css('display','none');
                 jQuery('#shows-search').css('display','inherit');
+                jQuery('#radio-search').css('display','none');
             });
 
             jQuery('body').on('click','#aflam-tap', function(e) {
                 jQuery('#aflam-tap').addClass('active-tap');
                 jQuery('#videos-tap').removeClass('active-tap');
                 jQuery('#shows-tap').removeClass('active-tap');
+                jQuery('#radio-tap').removeClass('active-tap');
                 jQuery('#videos-search').css('display','none');
                 jQuery('#shows-search').css('display','none');
                 jQuery('#aflam-search').css('display','inherit');
+                jQuery('#radio-search').css('display','none');
+            });
+
+            jQuery('body').on('click','#radio-tap', function(e) {
+                jQuery('#aflam-tap').removeClass('active-tap');
+                jQuery('#videos-tap').removeClass('active-tap');
+                jQuery('#shows-tap').removeClass('active-tap');
+                jQuery('#radio-tap').addClass('active-tap');
+                jQuery('#videos-search').css('display','none');
+                jQuery('#shows-search').css('display','none');
+                jQuery('#aflam-search').css('display','none');
+                jQuery('#radio-search').css('display','inherit');
             });
         });
 

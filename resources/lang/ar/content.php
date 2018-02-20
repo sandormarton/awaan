@@ -102,6 +102,7 @@ return [
         'videos' => 'الفيديوهات',
         'shows' => 'البرامج',
         'aflam' => 'الأفلام',
+        'radio' => 'راديو',
         'noresult' => 'لا يوجد نتائج بحث',
         'placeholder' => 'ابحث',
     ],
@@ -343,6 +344,7 @@ return [
         'FRIDAY' => 'الجمعة',
         'SATURDAY' => 'السبت',
         'DAILY' => 'يومياً',
+        'SUNDAY TO THURSDAY' => 'من الأحد الى الخميس',
 
         'Sun' => 'الأحد',
         'Mon' => 'الاثنين',

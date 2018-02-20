@@ -100,6 +100,7 @@ return [
         'videos' => 'Videos',
         'shows' => 'Shows',
         'aflam' => 'Movies',
+        'radio' => 'Radio',
         'noresult' => 'No Result Found',
         'placeholder' => 'Search',
     ],
@@ -331,6 +332,7 @@ return [
         'FRIDAY' => 'FRIDAY',
         'SATURDAY' => 'SATURDAY',
         'DAILY' => 'Daily',
+        'SUNDAY TO THURSDAY' => 'SUNDAY TO THURSDAY',
 
         'Sun' => 'SUNDAY',
         'Mon' => 'MONDAY',

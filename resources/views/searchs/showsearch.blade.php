@@ -4,7 +4,12 @@
         @foreach($shows as $item)
         <?php
         $img = config('mangoapi.mangodcn').$item->cover;
+        $url = "";
+        if($item->is_radio == "1"){
+            $url = URL::to("radio/show/{$item->ch_id}/{$item->id}/".\App\Helpers\Functions::cleanurl($item->title_ar));
+        }else{
             $url = route('show', [$item->id, ($item->title_ar)]);
+        }
         ?>
             <?php
             if(Session::get('lang') == 'en'){

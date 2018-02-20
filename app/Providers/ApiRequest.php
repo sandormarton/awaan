@@ -909,4 +909,23 @@ class ApiRequest {
         return \GuzzleHttp\json_decode($responses);
         //return json_decode($responses, true);
     }
+
+
+    function getPlaybackURL($video_id) {
+        //$url = 'http://admin.mangomolo.com/analytics/index.php/plus/GetSchedule?user_id=71&key=e2c420d928d4bf8ce0ff2ec1&channel_id=13';
+        $this->url = config('mangoapi.base_uri').'index.php/plus/getStreamURL?key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&video_id='.$video_id;
+        if(!empty($this->url)) {
+            $responses = $this->GetResponse(array('url' => $this->url));
+        }
+        return \GuzzleHttp\json_decode($responses);
+    }
+
+    function getUserVideos() {
+        //$url = 'http://admin.mangomolo.com/analytics/index.php/plus/GetSchedule?user_id=71&key=e2c420d928d4bf8ce0ff2ec1&channel_id=13';
+        $this->url = config('mangoapi.base_uri').'index.php/apps/accountVideos?key='.config('mangoapi.apikey').'&user_id='.config('mangoapi.user_id').'&t='.time();
+        if(!empty($this->url)) {
+            $responses = $this->GetResponse(array('url' => $this->url));
+        }
+        return \GuzzleHttp\json_decode($responses);
+    }
 }

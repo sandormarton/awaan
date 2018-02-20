@@ -91,47 +91,7 @@
             }
             ?>
 
-    <script type="text/javascript" src="https://happinessmeterqa.dubai.gov.ae/HappinessMeter2/source/jquery.fancybox.js?v=2.1.5"></script>
-    <link rel="stylesheet" type="text/css" href="https://happinessmeterqa.dubai.gov.ae/HappinessMeter2/source/jquery.fancybox.css?v=2.1.5" media="screen" />
 
-    <style type="text/css">
-        .fancybox-custom .fancybox-skin {
-            box-shadow: 0 0 50px #222;
-        }
-
-        body {
-            /*max-width: 700px;*/
-            margin: 0 auto;
-        }
-
-        #foo {
-            position: fixed;
-            bottom: 0px;
-            left: 15px;
-            background-color: #318ECD;
-            padding: 10px;
-            z-index: 99999;
-        }
-    </style>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.fancybox').fancybox();
-        });
-
-        var pageName = (function () {
-            var a = window.location.href,
-                b = a.lastIndexOf("/");
-            return a.substr(b + 1);
-        }());
-
-        function autoClick() {
-            if (pageName == 'TransactionIndex.aspx') {
-                document.getElementById('onload').click();
-            }
-        }
-
-    </script>
-
+    
 
 </head>

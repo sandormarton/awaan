@@ -14,6 +14,7 @@ class RequestMiddleware
         'radio/show/*/*/*',
         'live/',
         'WeKnow/',
+        'feed/mrss',
     ];
 
     /**

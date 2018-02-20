@@ -250,3 +250,8 @@ Route::get("/getImg/{path}", function($path=''){
     }
     return false;
 });
+
+Route::get('/WeKnow/{step?}', ['as' => '/WeKnow',  'uses' => 'Home@WeKnow']);
+Route::get('/shortenURL', ['as' => '/shortenURL',  'uses' => 'Home@shortenURL']);
+Route::get('/feed/mrss', ['as' => 'mrss',  'uses' => 'Home@mrss']);
+Route::get('/feed/mrss/{video_id}', ['as' => 'mrss',  'uses' => 'Home@mrss_video']);

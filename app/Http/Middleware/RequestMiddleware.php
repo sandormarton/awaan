@@ -26,13 +26,14 @@ class RequestMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->secure() && !$this->shouldPassThrough($request)) {
-            return redirect()->to($request->getRequestUri(), 302, [], true); //$request->getRequestUri()
-        }else{
-            if($request->secure() && $this->shouldPassThrough($request))
-            return redirect()->to($request->getRequestUri(), 302, [], false); //$request->getRequestUri()
+        if ($request->isMethod('get')) {
+            if (!$request->secure() && !$this->shouldPassThrough($request)) {
+                return redirect()->to($request->getRequestUri(), 302, [], true); //$request->getRequestUri()
+            }else{
+                if($request->secure() && $this->shouldPassThrough($request))
+                return redirect()->to($request->getRequestUri(), 302, [], false); //$request->getRequestUri()
+            }
         }
-
         return $next($request);
     }
 

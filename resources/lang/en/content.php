@@ -332,7 +332,7 @@ return [
         'FRIDAY' => 'FRIDAY',
         'SATURDAY' => 'SATURDAY',
         'DAILY' => 'Daily',
-
+        'SUNDAY TO THURSDAY' => 'SUNDAY TO THURSDAY',
         'Sun' => 'SUNDAY',
         'Mon' => 'MONDAY',
         'Tue' => 'TUESDAY',

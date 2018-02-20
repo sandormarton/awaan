@@ -344,6 +344,7 @@ return [
         'FRIDAY' => 'الجمعة',
         'SATURDAY' => 'السبت',
         'DAILY' => 'يومياً',
+        'SUNDAY TO THURSDAY' => 'من الأحد الى الخميس',
 
         'Sun' => 'الأحد',
         'Mon' => 'الاثنين',

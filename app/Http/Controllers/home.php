@@ -477,7 +477,6 @@ class Home extends BaseController
         echo $c;
     }
 
-
     function mrss(){
         ini_set('memory_limit', '-1');
 
@@ -487,21 +486,24 @@ class Home extends BaseController
 //        if (!\Cache::has($page_key)) {
 
             $date= \request()->input('date');
+            $this->data['page'] = $page= (\request()->input('page') > 0) ? \request()->input('page') : 1;
+
             $api = new ApiRequest();
             $result = "";
-            $videos = $api->getUserVideos();
+            $videos = $api->getUserVideos($page);
 
             if($date){
-                foreach ($videos as $video) {
+                foreach ($videos->results as $video) {
                     if(date("Y-m-d",strtotime($video->create_time)) >= $date){
                         $result[] = $video;
                     }
                 }
             }else{
-                $result = $videos;
+                $result = $videos->results;
             }
 
             $this->data['videos'] = $result;
+            $this->data["total_count"] = isset($videos->total)?$videos->total:"0";
 
             $content = view('videos.mrss' , $this->data);
             unset($videos);
@@ -518,7 +520,14 @@ class Home extends BaseController
 //            \Cache::put($page_key, $content, 60 * 24);
 //        }
 
-        return response($content, '200')->header('Content-Type', 'text/xml')->header('Content-Length', strlen($content))->header('Content-Disposition', 'attachment; filename="awaan_mrss_'.date('YmdHis').'.xml"');
+        return response($content, '200')
+            ->header('Content-Type', 'text/xml')
+//            ->header('Content-Disposition', 'attachment; filename="awaan_mrss_'.date('YmdHis').'.xml"')
+//            ->header('Content-Transfer-Encoding', 'binary')
+            ->header('Expires', '0')
+            ->header('Pragma', 'public')
+            ->header('Cache-Control', 'must-revalidate')
+            ->header('Content-Length', strlen($content));
 
     }
 

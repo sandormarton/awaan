@@ -429,18 +429,19 @@
                             @foreach($home_data->featured_shows as $item)
                                 <?php
                                 if(Session::get('lang') == 'ar'){
-                                    $title = $item->title_ar;
-                                    $cat_title = $item->cat_title;
-                                    $desc = $item->desc_ar;
+                                    $title = (isset($item->title_ar)) ? $item->title_ar : "";
+                                    $cat_title = (isset($item->cat_title)) ? $item->cat_title : "";
+                                    $desc = (isset($item->desc_ar)) ? $item->desc_ar : "";
                                     $back_over = asset('images/bg-showpage-banner.png');
                                 }else{
-                                    $title = $item->title_en;
-                                    $cat_title = $item->cat_title_en;
-                                    $desc = $item->desc_en;
+                                    $title = (isset($item->title_en)) ? $item->title_en : "";
+                                    $cat_title = (isset($item->cat_title_en)) ? $item->cat_title_en : "";
+                                    $desc = (isset($item->desc_en)) ? $item->desc_en : "";
                                     $back_over = asset('images/bg-showpage-banner-en.png');
                                 }
                                 ?>
                                 {{--*/ $cover = config('mangoapi.mangodcn').$item->cover;/*--}}
+                                @if(isset($item->id))
                                 <div id="program-{{$item->id}}" style="background-image: url({{$back_over}}),url({{$cover}}), url(../images/overlay-programs-details.png);" class="distinctive-programs-details">
                                     <div class="program-title">
                                         <span class="program-title-span">{{$title}}</span>
@@ -503,6 +504,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             @endforeach
                         @endif
                     </div>

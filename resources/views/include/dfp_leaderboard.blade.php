@@ -1,4 +1,4 @@
-<div class="leaderboard-wrappper text-center hidden-xs collapse in" id="TopLeaderboardCollapse">
+<div class="leaderboard-wrappper text-center collapse in" id="TopLeaderboardCollapse">
     <div class="container">
         <button class="btn btn-leaderboard-close pull-right" type="button" data-toggle="collapse" data-target="#TopLeaderboardCollapse" aria-expanded="false" aria-controls="TopLeaderboardCollapse">{{ trans('content.whole.close_add') }} [<i class="fa fa-times"></i>]</button>
 

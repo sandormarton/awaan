@@ -9,6 +9,11 @@
         </div>
 
     </div>
+		<div id="foo">
+			<a class="fancybox fancybox.iframe" id="happinessIcon" href="https://happinessmeter.dmi.ae/PostData.aspx?type=application&cid=20">
+				<img src="https://happinessmeter.dmi.ae/Images/SideIcon.png" border="0" alt="">
+			</a>
+		</div>
 
     <div class="site-main-container" id="site-main-container">
 

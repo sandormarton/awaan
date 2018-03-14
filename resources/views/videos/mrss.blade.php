@@ -22,6 +22,7 @@
                 <dfpvideo:keyvalues key="awaan_episode" value="{{$video->id}}" type="int"/>
                 <dfpvideo:keyvalues key="awaan_season" value="{{$video->season_id}}" type="int"/>
                 <dfpvideo:keyvalues key="awaan_title" value="{{trim($video->title_ar)}}" type="string"/>
+                <dfpvideo:keyvalues key="awaan_genre" value="{{(isset($video->parent_title_en))?($video->parent_title_en): $video->parent_title_ar}}" type="string"/>
                 <dfpvideo:keyvalues key="awaan_showID" value="{{(isset($video->cat_id))?($video->cat_id): false}}" type="int"/>
                 <dfpvideo:keyvalues key="awaan_showname" value="{{(isset($video->category_title))?(trim($video->category_title)): false}}" type="string"/>
                 <dfpvideo:keyvalues key="awaan_tvchannel" value="{{(isset($video->channel_title))?(trim($video->channel_title)): false}}" type="string"/>

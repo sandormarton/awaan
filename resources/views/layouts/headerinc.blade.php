@@ -14,6 +14,7 @@
 
     <script type="text/javascript" src="https://happinessmeterqa.dubai.gov.ae/HappinessMeter2/source/jquery.fancybox.js?v=2.1.5"></script>
     <link rel="stylesheet" type="text/css" href="https://happinessmeterqa.dubai.gov.ae/HappinessMeter2/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
     <style type="text/css">
         .fancybox-custom .fancybox-skin {
             box-shadow: 0 0 50px #222;

@@ -155,6 +155,8 @@ return [
         'latestAdded' => 'آخر الاضافات',
         'related_movies' => 'أفلام مشابهة',
         'return_to_show' => 'العودة للعرض',
+        'watch_live' => 'شاهد البث الحي',
+        'watch_previews_videos' => 'شاهد الفيديوهات السابقة‎',
     ],
     'video' => [
 

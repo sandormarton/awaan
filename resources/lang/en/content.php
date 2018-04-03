@@ -153,6 +153,8 @@ return [
         'other_movies' => 'Other Movies',
         'latestAdded' => 'Latest added',
         'related_movies' => 'Related movies',
+        'watch_live' => 'Watch Live',
+        'watch_previews_videos' => 'Watch previews videos',
     ],
     'app' => [
         'apps' => 'Applications',

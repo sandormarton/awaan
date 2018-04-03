@@ -121,8 +121,12 @@ if(Session::get('lang') == 'en'){
                                                 }else{
                                                     $season_title = $season->title_ar;
                                                 }
+                                                $selected_season = '';
+                                                if($currentseasons->season_id == $season->id){
+                                                    $selected_season = 'selected';
+                                                }
                                                 $season_url = URL::to("show/". $currentseasons->show_id ."/".\App\Helpers\Functions::cleanurl($season_title)."/".$season->id);
-                                                echo '<option value="'.$season->id.'" data-url="'.$season_url.'" >'.$season_title.'</option>';
+                                                echo '<option '.$selected_season.' value="'.$season->id.'" data-url="'.$season_url.'" >'.$season_title.'</option>';
 
                                             }
                                             ?>
@@ -430,6 +434,10 @@ if(Session::get('lang') == 'en'){
                 return false;
             });
 
+            jQuery('#season-selector').change(function() {
+                var url = jQuery(this).find('option:selected').attr('data-url');
+                window.location.href = url;
+            });
         });
 
     </script>

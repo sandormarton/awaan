@@ -10,6 +10,7 @@ class RequestMiddleware
         'catchup/*/*',
         'live/*/*',
         'video/*/*',
+        'video/*',
         'radio/*/*',
         'radio/show/*/*/*',
         'live/',

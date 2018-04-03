@@ -77,7 +77,7 @@
                             <li class="@if('' == Request::segment(1)) active @endif"><a href="{{URL::to('/')}}?">{{ trans('content.showinnerright.home') }}</a></li>
                             <li class="@if(('allprograms' == Request::segment(2)) &&('30348' == Request::segment(3))) active @endif"><a href="{{URL::to('show/allprograms/30348/'. trans('content.whole.series') )}}">{{ trans('content.whole.series') }}</a></li>
                             <li class="dropdown @if(( Request::segment(1) == 'radio') || ( Request::segment(1) == 'channels')) active @endif">
-                                <a href="{{URL::to('channels')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     {{ trans('content.showinnerright.channels') }}
                                 </a>
                                 <div class="dropdown-menu channel-menu">

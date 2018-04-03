@@ -69,13 +69,6 @@ class Home extends BaseController
         ));
         $this->data['movies'] = $api->getCategryWithVideos();
 
-        $api = new ApiRequest(array('cat_id' => '208672',
-                                    'p' => 1,
-                                    'limit' => 12,
-                              ));
-
-        $this->data["world_cup"] = $api->getCategryWithVideos();
-
 //        $contents = view('home.home')->with('channels');
 //        return response($contents)->header('Expires', gmdate('D, d M Y H:i:s \G\M\T', time() + (60 * 60)));
 

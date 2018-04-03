@@ -485,28 +485,7 @@ body { background: #2E2E2E; font-family: 'HelveticaNeueMEforSKY-Light', 'MyriadP
 .homeprogramssection-wrapper .homeprograms-section.films-programs-section .item:hover .content h4 a,
 .homeprogramssection-wrapper .homeprograms-section.films-programs-section .item:focus .content h4 a { color: #29799e;}
 
-/* DUBAI WORLD CUP LIST */
 
-.dubaiworldcup-wrapper { }
-.dubaiworldcup-wrapper .dubaiworldcup-container { background: url('../images/bg-dwc-container.png') no-repeat; background-size: cover;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-title { border-bottom: 1px solid #000000; padding: 10px 15px;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper { padding: 0 15px;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .title { font-family: 'HelveticaNeueMEforSKY-Bold', 'MyriadPro-Semibold', tahoma; padding: 10px 0; font-size: 20px;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .row { margin-left: -15px; margin-right: -15px;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper [class^="col-"],
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper [class*=" col-"] { padding-left: 15px; padding-right: 15px;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-right-col { border-left: 1px solid #000000;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .img-div { position: relative; height: 135px; overflow: hidden; border: 1px solid #997c4e;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .img-div img.program-img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; object-fit: cover; min-width: 100%; min-height: 100%;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .img-div .overlay { background: url('../images/dwc-overlay-bg.png'); position: absolute; bottom: 0; height: 100%; width: 100%;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .img-div .content-div { position: absolute; bottom: 0; width: 100%; padding: 10px; color: #FFFFFF;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .img-div .content-div .play-icon { margin-bottom: 10px; width: auto;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .owl-nav { position: absolute; top: -33px; left: 0;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .owl-nav div { display: inline-block; float: left; padding: 0 10px; font-size: 18px;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .owl-nav div:first-child { padding-left: 0;}
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel .owl-nav div:last-child { padding-right: 0;}
-
-.dubaiworldcup-wrapper .dubaiworldcup-container .dubaiworldcup-programs-wrapper .dubaiworldcup-programs-carousel.dwclive-previous-videos-carousel .img-div { border: none;}
 
 /* HOME PROGRAMS SECTION WRAPPER */
 

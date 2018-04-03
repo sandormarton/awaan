@@ -133,85 +133,6 @@
     </div>
     <!--  HOME BANNER WRAPPER [END]		-->
 
-    <!--  DUBAI WORLD CUP LIST [START]	-->
-    <div class="dubaiworldcup-wrapper">
-        <div class="container">
-
-            <div class="dubaiworldcup-container">
-                <div class="dubaiworldcup-title">
-                    <img src="{{ asset("images/dwc-logo.png")}}" class="img-responsive" />
-                </div>
-                <div class="dubaiworldcup-programs-wrapper">
-                    <div class="row">
-                        <div class="col-md-3 dubaiworldcup-programs-right-col">
-                            <div class="title">{{ trans('content.whole.watch_live') }}</div>
-                            <div class="program-list-div">
-                                <div id="dwclive-broadcasts-carousel" class="dwclive-broadcasts-carousel dubaiworldcup-programs-carousel owl-carousel">
-                                    @if(isset($channels) && is_array($channels) && count($channels) > 0)
-                                        @foreach($channels as $item)
-                                            <?php
-                                            if(Session::get('lang') == 'ar'){
-                                                $title = $item -> title_ar;
-                                            }else{
-                                                $title = $item -> title_en;
-                                            }
-                                            ?>
-                                            {{--*/ $img = config('mangoapi.mangodcn').$item->secondary_thumbnail;/*--}}
-                                            @if($item->id != "25" && $item->id != "12")
-                                                @continue
-                                            @endif
-                                            <div class="item">
-                                                <div class="img-div">
-                                                    <a href="{{URL::to("live/{$item->id}/".\App\Helpers\Functions::cleanurl($title))}}">
-                                                        <img src="{{ $img }}" class="program-img img-responsove center-block">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-9 dubaiworldcup-programs-left-col">
-                            <div class="title">{{ trans('content.whole.watch_previews_videos') }}‎</div>
-                            <div class="program-list-div">
-                                <div id="dwclive-previous-videos-carousel" class="dwclive-previous-videos-carousel dubaiworldcup-programs-carousel owl-carousel">
-                                    @if(isset($world_cup) && isset($world_cup->videos) && is_array($world_cup->videos))
-                                        @foreach(array_reverse($world_cup->videos) as $item)
-                                            <?php
-                                            if(Session::get('lang') == 'ar'){
-                                                $title = $item -> title_ar;
-                                            }else{
-                                                $title = $item -> title_en;
-                                            }
-                                            $url = route('video', [$item->id, (\App\Helpers\Functions::cleanurl($title))]);
-                                            $img = config('mangoapi.mangodcn').$item->img;
-                                            ?>
-                                            <div class="item">
-                                                <div class="img-div">
-                                                    <a href="{{$url}}">
-                                                        <img src="{{ $img }}" class="program-img img-responsove center-block">
-                                                        <div class="overlay"></div>
-                                                        <div class="content-div">
-                                                            <img src="{{ asset("images/icon-dwc-play-icon.png")}}" class="play-icon">
-                                                            {{$title}}
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!--  DUBAI WORLD CUP LIST [END]	-->
-
 <!--  RESUME LIST [START]	-->
 @if(!empty($resume_list) && count($resume_list) > 0)
 
@@ -595,100 +516,12 @@
     </div>
     <!-- 	 DISTINCTIVE PROGRAMS SECTION WRAPPER [END]		-->
 
-<div class="modal fade bs-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="onload">
-
-    <div class="modal-dialog center-col">
-
-        <!-- Modal content-->
-        <div class="modal-content" style="background-color: rgba(0,0,0,0.80); border: 0 !important;">
-            <div class="modal-header" style="background-color: rgba(0,0,0,0.29); border: 0 !important;">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title"></h4>
-            </div>
-            <div class="modal-body text-center" style="padding:0; margin:0">
-                <img class="img-responsive" src="{{asset("images/DWC-Awaan-Teaser2-V1.jpg")}}">
-            </div>
-            <div class="modal-footer text-center" style="background-color: rgba(0,0,0,0.29); border: 0 !important; text-align: center">
-                <button type="button" class="btn btn-default btn-dismiss" data-dismiss="modal">Don't show this again</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 @endsection
 
 @section("additional_scripts")
     <script type="text/javascript">
 
         jQuery(document).ready( function() {
-
-            localStorage.setItem('show_dismiss', '1');
-            // localStorage.setItem('dialog_dismiss', '0');
-
-            if(localStorage.getItem('dialog_dismiss') === '1'){
-                localStorage.removeItem('show_dismiss');
-            }
-
-            if(localStorage.getItem('show_dismiss') === '1'){
-                $('#onload').modal('show');
-            }
-
-            $(".btn-dismiss").click(function () {
-                localStorage.setItem('show_dismiss', '0');
-                localStorage.setItem('dialog_dismiss', '1');
-            });
-
-            jQuery('#dwclive-broadcasts-carousel').owlCarousel({
-                navText   : ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
-                rtl       : true,
-                loop      : true,
-                margin    : 0,
-                nav       : true,
-                responsive: {
-                    0:{
-                        items:1
-                    },
-                    400:{
-                        items:1
-                    },
-                    767:{
-                        items:1
-                    },
-                    991:{
-                        items:1
-                    },
-                    1200:{
-                        items:1
-                    }
-                }
-            });
-
-            jQuery('#dwclive-previous-videos-carousel').owlCarousel({
-                navText   : ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
-                rtl       : true,
-                loop      : true,
-                margin    : 10,
-                nav       : true,
-                responsive: {
-                    0:{
-                        items:1
-                    },
-                    400:{
-                        items:1
-                    },
-                    767:{
-                        items:2
-                    },
-                    991:{
-                        items:2
-                    },
-                    1200:{
-                        items:3
-                    }
-                }
-            });
-
 
             jQuery('#homebanner-carousel').owlCarousel({
                 navText   : ['',''],

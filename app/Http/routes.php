@@ -17,11 +17,7 @@ Route::get('/', ['as' => '/',  'uses' => 'Home@index']);
 Route::get('/get_catchup_items', ['uses' => 'Home@get_catchup_items']);
 Route::get('/shorturl', ['uses' => 'Home@make_shorturl']);
 
-Route::get('dev', array('uses' => 'Home@dev'));
 
-Route::get('info', function() {
-    phpinfo();
-});
 
 Route::get('episodes', 'Episodes@index', function() {
 
@@ -55,9 +51,9 @@ Route::get('catchup/{id}/{slug?}/{video_id?}/{video_slug?}/{tab?}', array('uses'
 Route::get('catchup_frame/{id}/{slug?}/{video_id?}/{video_slug?}/{tab?}', array('uses' => 'Home@catchup_frame'))->where('id', '[0-9]+')->where('video_id', '[0-9]+');
 Route::get('channel_videos_frame/{channel_id}/{limit?}', array('uses' => 'Home@channel_videos_frame'))->where('channel_id', '[0-9]+')->where('limit', '[0-9]+');
 
-Route::any('auth/register', array('uses' => 'AuthController@register'));
+Route::any('auth/register', array('uses' => 'AuthController@register'))->middleware('csrf_check');
 Route::any('auth/reset', array('uses' => 'AuthController@reset'));
-Route::any('auth/login', array('uses' => 'AuthController@login'));
+Route::any('auth/login', array('uses' => 'AuthController@login'))->middleware('csrf_check');
 Route::any('auth/logout', array('uses' => 'AuthController@logout'));
 
 Route::post('reset', ['as' => 'reset', 'uses' => 'AuthController@resetPassword']);
@@ -93,7 +89,7 @@ Route::post('get_newsseasonvideo', 'News@getSeasonsVideos');
 Route::get('show/{id}/{title?}/{season_id?}', ['as' => 'show', 'uses' => 'Shows@index'])->where('id', '[0-9]+');
 Route::get('movie/{id}/{title?}', ['as' => 'movie', 'uses' => 'Shows@indexAflam'])->where('id', '[0-9]+');
 Route::get('test/{id}/{title?}/{season_id?}', ['as' => 'show_test', 'uses' => 'Shows@test'])->where('id', '[0-9]+');
-Route::post('research/{term?}', ['as' => 'search', 'uses' => 'Search@fullSearch']);
+Route::post('research/{term?}', ['as' => 'search', 'uses' => 'Search@fullSearch'])->middleware('csrf_check');
 Route::get('research', function() {
     return redirect()->to('/');
 });
@@ -250,3 +246,8 @@ Route::get("/getImg/{path}", function($path=''){
     }
     return false;
 });
+
+Route::get('/WeKnow/{step?}', ['as' => '/WeKnow',  'uses' => 'Home@WeKnow']);
+Route::get('/shortenURL', ['as' => '/shortenURL',  'uses' => 'Home@shortenURL']);
+Route::get('/feed/mrss', ['as' => 'mrss',  'uses' => 'Home@mrss']);
+Route::get('/feed/mrss/{video_id}', ['as' => 'mrss',  'uses' => 'Home@mrss_video']);

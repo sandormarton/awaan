@@ -89,18 +89,18 @@
                                         <label>
                                             <input type="checkbox" name="terms_conditions" title="This is a required field" id="terms_conditions" required>
                                             <span data-i18n="register.agree">   {{ trans('content.register.agree') }}   </span>
-                                            <a href="http://www.dmi.gov.ae/privacy.asp?pgTitle=terms&ChannelID=10&lang=ar"  title="opens in a new window" target="_blank">
+                                            <a href="http://www.dmi.gov.ae/privacy.asp?pgTitle=terms&ChannelID=10&lang=ar"  title="opens in a new window" target="_blank"  rel="noopener noreferrer">
                                                 <span data-i18n="register.term">{{ trans('content.register.term') }}  </span>
                                             </a>
                                             <span data-i18n="register.and">{{ trans('content.register.and') }}</span>
-                                            <a href="http://www.dmi.gov.ae/privacy.asp?pgTitle=privacy&ChannelID=10&lang=ar" title="opens in a new window" target="_blank">
+                                            <a href="http://www.dmi.gov.ae/privacy.asp?pgTitle=privacy&ChannelID=10&lang=ar" title="opens in a new window" target="_blank"  rel="noopener noreferrer">
                                             	<span>{{ trans('content.register.privacypolicy') }} </span>
                                             </a>
-                                             <!--<a href="http://www.dmi.gov.ae/static.asp?pgTitle=terms&ChannelID=10&lang=ar" target="_blank">
+                                             <!--<a href="http://www.dmi.gov.ae/static.asp?pgTitle=terms&ChannelID=10&lang=ar" target="_blank"  rel="noopener noreferrer">
                                                 <span data-i18n="register.term">{{ trans('content.register.term') }}  </span>
                                             </a>
                                             <span data-i18n="register.and">{{ trans('content.register.and') }}</span>
-                                            <a href="http://www.dmi.gov.ae/static.asp?pgTitle=privacy&ChannelID=10&lang=ar" target="_blank">
+                                            <a href="http://www.dmi.gov.ae/static.asp?pgTitle=privacy&ChannelID=10&lang=ar" target="_blank"  rel="noopener noreferrer">
                                             	<span>{{ trans('content.register.privacypolicy') }} </span>
                                             </a> -->
                                         </label>

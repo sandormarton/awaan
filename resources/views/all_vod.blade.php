@@ -71,10 +71,10 @@
                             <div class="image-box">
                                 <?php $vid_url = URL::to("{$other_content['route']}/{$item->id}")."/".rawurlencode(App\Helpers\Functions::cleanurl($item->title_ar)); ?>
                             	<div class="social-sharing-thumb-div">
-	                        		<a href="https://www.facebook.com/sharer/sharer.php?u={{$vid_url}}" data-share-url="{{($vid_url)}}" data-share-type="facebook" target="_blank">
+	                        		<a href="https://www.facebook.com/sharer/sharer.php?u={{$vid_url}}" data-share-url="{{($vid_url)}}" data-share-type="facebook" target="_blank"  rel="noopener noreferrer">
 	                        			<img src="{{asset("images/icon-facebook.png")}}" title="facebook" alt="facebook" />
 	                        		</a>
-	                        		<a href="https://twitter.com/intent/tweet?url={{$vid_url}}&via=OnAwaan" data-share-url="{{($vid_url)}}" data-share-type="twitter" target="_blank">
+	                        		<a href="https://twitter.com/intent/tweet?url={{$vid_url}}&via=OnAwaan" data-share-url="{{($vid_url)}}" data-share-type="twitter" target="_blank"  rel="noopener noreferrer">
 	                        			<img src="{{asset("images/icon-twitter.png")}}" title="twitter" alt="twitter" />
 	                        		</a>
 	                        	</div>

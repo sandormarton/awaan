@@ -98,12 +98,12 @@
 							<span>{{ trans('content.app.third_content') }}</span>
 						</h4>
 						<ul class="list-inline smarttv-tvtype-list">
-							<li><a target="_blank" href="https://itunes.apple.com/lb/app/awaan/id641607453?mt=8"><img src="{{asset("images/smarttv-appletv.png")}}" class="img-responsive" title="smarttv-appletv" alt="smarttv-appletv" /></a></li>
-							<li><a target="_blank" href="http://www.samsung.com/sa_en/tv-apps/"><img src="{{asset("images/smarttv-samsungtv.png")}}" class="img-responsive" title="smarttv-samsungtv" alt="smarttv-samsungtv" /></a></li>
+							<li><a target="_blank"  rel="noopener noreferrer" href="https://itunes.apple.com/lb/app/awaan/id641607453?mt=8"><img src="{{asset("images/smarttv-appletv.png")}}" class="img-responsive" title="smarttv-appletv" alt="smarttv-appletv" /></a></li>
+							<li><a target="_blank"  rel="noopener noreferrer" href="http://www.samsung.com/sa_en/tv-apps/"><img src="{{asset("images/smarttv-samsungtv.png")}}" class="img-responsive" title="smarttv-samsungtv" alt="smarttv-samsungtv" /></a></li>
 							<li><a href="#"><img src="{{asset("images/smarttv-humaxtv.png")}}" class="img-responsive" title="smarttv-humaxtv" alt="smarttv-humaxtv" /></a></li>
 							<li><a href="#"><img src="{{asset("images/smarttv-chromecasttv.png")}}" class="img-responsive" title="smarttv-chromecasttv" alt="smarttv-chromecasttv" /></a></li>
-							<li><a target="_blank" href="https://itunes.apple.com/lb/app/awaan/id641607453?mt=8"><img src="{{asset("images/smarttv-iostv.png")}}" class="img-responsive" title="smarttv-iostv" alt="smarttv-iostv" /></a></li>
-							<li class="border-no"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.dotcomlb.dcn&hl=en"><img src="{{asset("images/smarttv-androidtv.png")}}" class="img-responsive" title="smarttv-androidtv" alt="smarttv-androidtv" /></a></li>
+							<li><a target="_blank"  rel="noopener noreferrer" href="https://itunes.apple.com/lb/app/awaan/id641607453?mt=8"><img src="{{asset("images/smarttv-iostv.png")}}" class="img-responsive" title="smarttv-iostv" alt="smarttv-iostv" /></a></li>
+							<li class="border-no"><a target="_blank"  rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.dotcomlb.dcn&hl=en"><img src="{{asset("images/smarttv-androidtv.png")}}" class="img-responsive" title="smarttv-androidtv" alt="smarttv-androidtv" /></a></li>
 						</ul>
 
 					</div>

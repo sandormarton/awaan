@@ -114,7 +114,11 @@
                         document.getElementById('onload').click();
                     }
                 }
-
+               $.ajaxSetup({
+                 headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+    });
             </script>
             <?php
             $apiobj = new \App\Providers\ApiRequest();

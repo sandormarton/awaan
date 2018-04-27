@@ -12,3 +12,5 @@ storage/*/*/*.php
 .env.*.php
 .env.php
 .env
+storage/framework
+storage/logs

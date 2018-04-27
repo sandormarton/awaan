@@ -127,8 +127,8 @@
                     <footer>
 
                         <ul class="footer-sm-ul">
-                            <li><a target="_blank" title="Facebook" href="https://www.facebook.com/OnAwaan/"><img src="{{ asset("images/icon-sm-facebook.png")}} " alt="Facebook"></a></li>
-                            <li><a target="_blank" title="Twitter" href="https://twitter.com/OnAwaan"><img src="{{ asset("images/icon-sm-twitter.png")}}" alt="Twitter"></a></li>
+                            <li><a target="_blank"  rel="noopener noreferrer" title="Facebook" href="https://www.facebook.com/OnAwaan/"><img src="{{ asset("images/icon-sm-facebook.png")}} " alt="Facebook"></a></li>
+                            <li><a target="_blank"  rel="noopener noreferrer" title="Twitter" href="https://twitter.com/OnAwaan"><img src="{{ asset("images/icon-sm-twitter.png")}}" alt="Twitter"></a></li>
                         </ul>
 
                     </footer>

@@ -23,7 +23,7 @@
             <div class="section signup-container">
                 <div class="col-lg-5 col-md-7 col-sm-9 center-col signup-box-col">
                     <h2 class="title">{{ trans('content.loginmodal.reg') }}</h2>
-                    <form id="my-register-form">
+                    <form id="my-register-form"  method="POST">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="alert alert-danger alert-cont login_error" style="display: none;">
@@ -132,13 +132,14 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" required> {{ trans('content.register.agree') }}
-                                        <a href="http://www.dmi.gov.ae/privacy.asp?pgTitle=privacy&ChannelID=10&lang=ar" title="opens in a new window" target="_blank">
+                                        <a href="http://www.dmi.gov.ae/privacy.asp?pgTitle=privacy&ChannelID=10&lang=ar" title="opens in a new window" target="_blank"  rel="noopener noreferrer">
                                             <span>{{ trans('content.register.privacypolicy') }} </span>
                                         </a>
                                     </label>
                                 </div>
                             </div>
                         </div>
+                           <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         <div class="seperator"></div>
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6">

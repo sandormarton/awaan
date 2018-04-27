@@ -65,6 +65,7 @@
                                     </div>
                                 </div>
                             </div>
+                                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         </form>
                         <div class="extra-links">
                                     <a href="#" class="btn btn-block btn-facebook fb_login"><i class="ion-social-facebook">

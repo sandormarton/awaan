@@ -100,8 +100,8 @@ if(Session::get('lang') == 'en'){
                     <div class="col-md-3 col-sm-4 sm-detail-div">
                         <div class="sm-buttons-div">
                             <a class="hidden-lg visible-sm visible-xs hidden-md" href="whatsapp://send?text={{$shareurl}}" data-action="share/whatsapp/share"><img src="{{asset('images/icon-whatsapp.png')}}"  alt="share on whatsapp"/></a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u={{$shareurl}}" data-share-url="{{($shareurl)}}" data-share-type="facebook" target="_blank"><img src="{{asset('images/icon-fblike.png')}}"  alt="share on facebook"/></a>
-                            <a href="https://twitter.com/intent/tweet?url={{$shareurl}}&via=OnAwaan" data-share-url="{{($shareurl)}}" data-share-type="twitter" target="_blank"><img src="{{asset('images/icon-twtweet.png')}}"  alt="Tweet"/></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{$shareurl}}" data-share-url="{{($shareurl)}}" data-share-type="facebook" target="_blank"  rel="noopener noreferrer"><img src="{{asset('images/icon-fblike.png')}}"  alt="share on facebook"/></a>
+                            <a href="https://twitter.com/intent/tweet?url={{$shareurl}}&via=OnAwaan" data-share-url="{{($shareurl)}}" data-share-type="twitter" target="_blank"  rel="noopener noreferrer"><img src="{{asset('images/icon-twtweet.png')}}"  alt="Tweet"/></a>
                         </div>
                     </div>
                 </div>

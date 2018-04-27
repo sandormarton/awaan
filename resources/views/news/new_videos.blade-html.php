@@ -336,9 +336,9 @@
     <div class="shareModal-body">
         <span>Share</span>
         <ul class="footer-sm-ul">
-            <li><a href="#" title="Facebook" target="_blank"><img alt="Facebook" src="images/icon-sm-facebook.png" /></a></li>
-            <li><a href="#" title="Twitter" target="_blank"><img alt="Twitter" src="images/icon-sm-twitter.png" /></a></li>
-            <li><a href="#" title="Youtube" target="_blank"><img alt="Youtube" src="images/icon-sm-youtube.png" /></a></li>
+            <li><a href="#" title="Facebook" target="_blank"  rel="noopener noreferrer"><img alt="Facebook" src="images/icon-sm-facebook.png" /></a></li>
+            <li><a href="#" title="Twitter" target="_blank"  rel="noopener noreferrer"><img alt="Twitter" src="images/icon-sm-twitter.png" /></a></li>
+            <li><a href="#" title="Youtube" target="_blank"  rel="noopener noreferrer"><img alt="Youtube" src="images/icon-sm-youtube.png" /></a></li>
         </ul>
     </div>
 </div>

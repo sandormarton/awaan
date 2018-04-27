@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
  *  */
 
-use App\Helpers\XmlStreamer;
+
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
@@ -548,12 +548,5 @@ class Home extends BaseController
     }
 }
 
-class SimpleXmlStreamer extends XmlStreamer {
-    public function processNode($xmlString, $elementName, $nodeIndex) {
-        $xml = simplexml_load_string($xmlString);
 
-        // Do something with your SimpleXML object
 
-        return true;
-    }
-}

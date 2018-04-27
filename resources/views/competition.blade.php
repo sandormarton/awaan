@@ -63,10 +63,10 @@
                             <p>{{ trans('competition.app_download') }}</p>
                             <br/>
                             <p>
-                                <a href="https://play.google.com/store/apps/details?id=com.dotcomlb.dcn&hl=en" title="Google Play" target="_blank"><img src="{{URL::to("images/gitex/icon-google-play.png")}}" class="img-responsivecenter-block" /></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.dotcomlb.dcn&hl=en" title="Google Play" target="_blank"  rel="noopener noreferrer"><img src="{{URL::to("images/gitex/icon-google-play.png")}}" class="img-responsivecenter-block" /></a>
                             </p>
                             <p>
-                                <a href="https://itunes.apple.com/lb/app/awaan/id641607453?mt=8" title="Apple App Store" target="_blank"><img src="{{URL::to("images/gitex/icon-apple-store.png")}}" class="img-responsivecenter-block" /></a>
+                                <a href="https://itunes.apple.com/lb/app/awaan/id641607453?mt=8" title="Apple App Store" target="_blank"  rel="noopener noreferrer"><img src="{{URL::to("images/gitex/icon-apple-store.png")}}" class="img-responsivecenter-block" /></a>
                             </p>
                         </div>
 

@@ -17,11 +17,7 @@ Route::get('/', ['as' => '/',  'uses' => 'Home@index']);
 Route::get('/get_catchup_items', ['uses' => 'Home@get_catchup_items']);
 Route::get('/shorturl', ['uses' => 'Home@make_shorturl']);
 
-Route::get('dev', array('uses' => 'Home@dev'));
 
-Route::get('info', function() {
-    phpinfo();
-});
 
 Route::get('episodes', 'Episodes@index', function() {
 

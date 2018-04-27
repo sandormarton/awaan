@@ -47,7 +47,7 @@
             ?>
             <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 show-cont">
                 <div class="thumbnail">
-                    <a href="{{$url}}" target="_blank">
+                    <a href="{{$url}}" target="_blank"  rel="noopener noreferrer">
                         <img class="video-image" style="background-image: url({{$img}});">
                         <div class="caption">
                             <h4 class="show-title">{{$item->title_ar}}</h4>

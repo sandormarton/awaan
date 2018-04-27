@@ -16,6 +16,7 @@
                     </span>
                     <input type="text" name="search" class="form-control"  placeholder="{{ trans('content.showinnerright.shows') }}" />
                 </div>
+                     <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
             </form>
         </div>
     </div>
@@ -53,9 +54,9 @@
     </div>
     <div class="innerpage-rightbar-smbar">
         <ul class="footer-sm-ul">
-            <li><a target="_blank" title="Facebook" href="#"><img src="{{asset("images/icon-sm-facebook.png")}}" alt="Facebook"></a></li>
-            <li><a target="_blank" title="Twitter" href="#"><img src="{{asset("images/icon-sm-twitter.png")}}" alt="Twitter"></a></li>
-            <li><a target="_blank" title="Youtube" href="#"><img src="{{asset("images/icon-sm-youtube.png")}}" alt="Youtube"></a></li>
+            <li><a target="_blank"  rel="noopener noreferrer" title="Facebook" href="#"><img src="{{asset("images/icon-sm-facebook.png")}}" alt="Facebook"></a></li>
+            <li><a target="_blank"  rel="noopener noreferrer" title="Twitter" href="#"><img src="{{asset("images/icon-sm-twitter.png")}}" alt="Twitter"></a></li>
+            <li><a target="_blank"  rel="noopener noreferrer" title="Youtube" href="#"><img src="{{asset("images/icon-sm-youtube.png")}}" alt="Youtube"></a></li>
             @if(Session::get('lang') == 'en')
                 <li><a title="عربي" href="{{URL::to('set/ar')}}"><img src="{{asset("images/icon-ar.png")}}" alt="عربي"></a></li>
             @else

@@ -201,7 +201,7 @@
                                     <li>
                                         <a id="fb-anchor"
                                            href="https://www.facebook.com/sharer/sharer.php?u={{URL::to("")}}/WeKnow/1/?device_id={{$device_id}}&redirect_uri={{URL::to("")}}/WeKnow/1/?device_id={{$device_id}}"
-                                           target="_blank" data-action="share/facebook/share">
+                                           target="_blank"  rel="noopener noreferrer" data-action="share/facebook/share">
                                             <img src="{{asset("/knows/images/weknow-fb.png")}}"/>
                                         </a>
                                     </li>

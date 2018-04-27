@@ -172,13 +172,13 @@
         <div class="shareModal-body">
             <span>Share</span>
             <ul class="footer-sm-ul">
-                <li><a href="#" title="Facebook ,opens in a new window" target="_blank"><img alt="Facebook icon"
+                <li><a href="#" title="Facebook ,opens in a new window" target="_blank"  rel="noopener noreferrer"><img alt="Facebook icon"
                                                                                              src="{{asset("images/icon-sm-facebook.png")}}"/><span
                                 class="hidden">Share on facebook</span></a></li>
-                <li><a href="#" title="Twitter ,opens in a new window" target="_blank"><img alt="Twitter icon"
+                <li><a href="#" title="Twitter ,opens in a new window" target="_blank"  rel="noopener noreferrer"><img alt="Twitter icon"
                                                                                             src="{{asset("images/icon-sm-twitter.png")}}"/><span
                                 class="hidden">Share on twitter</span></a></li>
-                <li><a href="#" title="Youtube ,opens in a new window" target="_blank"><img alt="Youtube icon"
+                <li><a href="#" title="Youtube ,opens in a new window" target="_blank"  rel="noopener noreferrer"><img alt="Youtube icon"
                                                                                             src="{{asset("images/icon-sm-youtube.png")}}"/><span
                                 class="hidden">Share on youtube</span></a></li>
             </ul>

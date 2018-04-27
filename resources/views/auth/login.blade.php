@@ -22,7 +22,7 @@
             <div class="section login-container">
                 <div class="col-lg-5 col-md-7 col-sm-9 center-col login-box-col">
                     <h2 class="title">{{ trans('content.loginmodal.signin') }}</h2>
-                    <form id="my-login-form">
+                    <form id="my-login-form" method="POST">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="alert alert-danger alert-cont login_error" style="display: none;">
@@ -57,6 +57,7 @@
                                 <button type="submit" class="btn btn-block btn-awaanbluebtn btn-login">{{ trans('content.loginmodal.signin') }}</button>
                             </div>
                         </div>
+                           <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     </form>
 
                     <div class="seperator"></div>
